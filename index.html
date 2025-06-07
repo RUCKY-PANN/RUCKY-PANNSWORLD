@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUCKY-PANN</title>
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/sphere.css">
+    <link rel="stylesheet" href="../static/css/effect.css">
+
+</head>
+
+<body>
+
+    <h1 class="site-title"><a href="index.html">RUCKY-PANN</a></h1>
+
+    <div class="menu-bar">
+    <img src="../images/triangle.png" class="menu-arrow">
+    </div>
+    
+    <div class="scene">
+        <div class="clouds"></div>
+        <div class="torii"></div>
+        <div class="ocean"></div>
+        <div class="sky"></div>
+    </div>
+
+ /*ローディング*/   
+<div class="loading-screen">
+    <div class="spinner"></div>
+</div>
+
+<div class="pond">
+    <div class="ripple"></div>
+    <div class="sphere"></div>
+</div>
+
+<div class="koi">
+    <div class="tail"></div>
+    <div class="leftFin"></div>
+    <div class="rightFin"></div>
+</div>
+
+<div class="arrows">
+    <img src="../static/images/arrow.png" class="arrow">
+    <img src="../static/images/arrow_shadow.png" class="shadow">
+    <img src="../static/images/point.png" class="point">
+</div>
+
+<div class="sphere">
+    <img src="../static/images/arrow.png" class="arrow" onclick="showDialog()">
+</div>
+
+<div class="dialog" id="dialog">
+    <div class="dialog-content">
+        <img src="../static/images/map_bg.png" class="dialog-bg">
+        <img src="../static/images/map_icon.png" class="dialog-icon">
+        <h2 class="dialog-title">エリアマップ</h2>
+        <p class="dialog-text">この場所についての説明が表示されます。</p>
+    </div>
+</div>
+
+<div class="koi">
+    <img src="../static/images/koi.png" class="koi-body">
+    <div class="speech-bubble">ここが神秘の池だよ。</div>
+</div>
+/*sab_menu*/
+<div class="menu-bar">
+    <img src="../static/images/menu-arrow.png" class="menu-arrow" id="menuArrow" onclick="toggleMenu()">
+</div>
+
+<div class="menu-content" id="menu">
+    <img src="../static/images/menu-bg.png" class="menu-bg">
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="overlay" id="overlay"></div>
+
+
+    <script type="module" src="../static/js/modules/three.js"></script>
+    <script type="module" src="../static/js/modules/gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</body>
+</html>
