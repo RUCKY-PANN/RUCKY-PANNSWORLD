@@ -1,0 +1,26 @@
+
+🧩 じゃあ、なぜ違うのか？
+✅ 1. ファイル名とエクスポート名の関係
+- PlanetContext.jsx の場合、コンポーネントやフック（usePlanetContext）を export しているので、
+
+Reactの慣習に従って PascalCase（大文字始まり） にするのが自然
+
+
+- 一方 areaData.js は、ただのデータオブジェクト（areaData）を export しているだけなので、camelCase（小文字始まり） が一般的
+// areaData.js
+export const areaData = {
+  Catroid: { /* ... */ },
+  AquaCore: { /* ... */ },
+}
+
+
+✅ 2. Reactの命名規則
+- コンポーネント → PlanetCanvas, PlanetInterior（PascalCase）
+- フック → usePlanetContext（camelCase）
+- データ → areaData, planetMap, themeConfig（camelCase）
+つまり、役割によって命名スタイルが変わるんです。
+
+
+
+もし areaData を AreaData にしたいなら、export名も AreaData に変える必要があります。
+でも、React界隈では camelCase のままが主流です。

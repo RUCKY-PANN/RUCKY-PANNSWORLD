@@ -1,0 +1,339 @@
+.Content_section_charalist {
+  width: 100%;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.setumei_wrap {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  gap: 1rem;
+  margin: 0 auto;
+  transform: none !important;
+  perspective: none !important;
+  filter: none !important;
+}
+.setumeiBtn {
+  font-family: 'Meiryo', sans-serif;
+  display: flex;
+  position: relative;
+  border-radius: 25px;
+  border: white 1px solid;
+  border-color: bisque;
+  background: #080874ff;
+  color: white;
+  padding: 20px;
+  font-size: 1rem;
+  width: 230px;
+  height: 70px;
+  animation: bounce 1s infinite ease-in-out;
+  cursor: pointer;
+  gap: 0.5rem;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.setumeiBtn:hover {
+  opacity: 0.5;
+}
+.setumeiBtn:active {
+  transform: scale(0.5rem);
+}
+
+.setumei {
+  border-radius: 16px;
+  width: 66%;
+  height: auto;
+  padding: 30px;
+  flex-direction: column;
+  font-family: 'meirio', sans-serif;
+  font-size: 0.95rem;
+  border-radius: 16px;
+  border: white 1px solid;
+  border-color: bisque;
+  background: #080874ff;
+  color: white;
+  align-items: center;
+  gap: 1rem;
+  position: fixed; /* ← これが「どこにも負けない」ポジション！ */
+  z-index: 2147483647;
+  top: 25%;
+  left: 23%;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-20px); /* 少し上から */
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s;
+
+  box-shadow: 0 12px 24px rgba(0, 0, 0.2, 0.6); /* 深めで神秘感UP */
+}
+
+.setumeiCloseBtn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  z-index: 999999;
+  transition: opacity 0.3s ease;
+}
+.setumeiCloseBtn:hover {
+  opacity: 0.6;
+}
+
+.setumei.fade-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.setumei h4 {
+  font-size: 1.2rem;
+  padding: 8px;
+  width: 100%;
+  height: auto;
+  font-weight: bold;
+}
+.setumei_in_wrap {
+  display: flex;
+  width: 75%;
+  height: auto;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+}
+.setumei_img {
+  display: flex;
+  gap: 2rem;
+}
+
+/*   アコーディオンバー    */
+.acrordion_bar {
+  font-family: 'Astronau', sans-serif;
+  font-size: 2.2rem;
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  text-align: left;
+  border-top: white 1px solid;
+  border-bottom: 2px rgb(4, 4, 12) solid;
+  background: #0000806a;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.acrordion_bar :hover {
+  background: #7676946a;
+}
+.spanfont {
+  font-family: 'Meiryo', sans-serif;
+  font-size: 1rem;
+  color: #fefbfb;
+}
+
+/*     アコーディオン      */
+.category_wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* アコーディオンの下のコンテンツ */
+.accordion-content {
+  background-color: rgba(118, 207, 237, 0.05); /* 透明の背景感 */
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+/* カード群を横並び＋折り返しに */
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+/* カード全体 */
+.character-card {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  border-top: 2px solid #fefbfb;
+  border-left: 2px solid #b4b2f4;
+  border-bottom: 2px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #bebef6;
+}
+
+/* ヘッダー */
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 2; /* ← これを追加！ */
+  background-color: rgba(255, 255, 0, 0.3); /* 薄黄色で可視化 */
+}
+
+.char-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: rgb(88, 74, 74);
+  padding-left: 8px;
+}
+
+.char-tag {
+  width: 6px;
+  height: 24px;
+  border-left: 4px solid rgb(17, 0, 255);
+  margin-left: 0.5rem;
+  border-radius: 4px;
+}
+
+/* メイン画像部 */
+.card-main {
+  position: relative;
+  padding: 0.5rem;
+}
+
+.thumbnail-wrapper {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+}
+
+.thumbnail img {
+  width: 70%; /* 好きなサイズに変更 */
+  height: auto; /* 縦横比を保つ */
+  object-fit: contain;
+  position: absolute;
+  bottom: 1%;
+  left: 2%;
+}
+
+.char-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ステータスアイコン（太陽） */
+.energy-status {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 6px;
+  border-radius: 50%;
+  color: rgb(49, 65, 206);
+  font-size: 0.9rem;
+  z-index: 1;
+}
+
+/* フッター */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  background-color: #333377;
+}
+
+.card-footer .favorite,
+.card-footer .like {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* 画像と数字の間の余白 */
+}
+
+.card-footer .favorite span,
+.card-footer .like span {
+  font-size: 0.9rem; /* 数値の見た目 */
+  color: #fff;
+}
+
+.card-footer .favorite img,
+.card-footer .like img {
+  width: 20px;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0)); /* 初期状態 */
+}
+
+/* 🟡 hover時：白い光でふわっと */
+.card-footer .favorite img:hover,
+.card-footer .like img:hover {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+  transform: scale(1.03);
+}
+
+/* 🔵 active時：青く発光＋縮小 */
+.card-footer .favorite img:active,
+.card-footer .like img:active {
+  transform: scale(0.96);
+  filter: drop-shadow(0 0 8px rgba(0, 150, 255, 0.8));
+}
+
+.detail-button img {
+  background-color: #001f3f;
+  padding: 4px 8px;
+  border-radius: 10px;
+  color: #fff;
+  border: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 0px rgba(255, 255, 255, 0); /* 初期は光なし */
+}
+
+/* ホバー：白く発光 */
+.detail-button img:hover {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  transform: scale(1.03);
+}
+
+/* アクティブ：縮小＋青く発光 */
+.detail-button img:active {
+  transform: scale(0.96);
+  box-shadow: 0 0 10px rgba(0, 150, 255, 0.8);
+}
+
+.category_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+h4.categorySetumei {
+  text-align: center;
+  font-size: 1.3rem;
+  border-bottom: 1px solid #b4b2f4;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}

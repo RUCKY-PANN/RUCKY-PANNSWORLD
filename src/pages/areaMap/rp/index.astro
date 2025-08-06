@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import '../../../styles/areaMap_rp.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import { getMeta } from '../../../utils/metaManager';
+
+const meta = getMeta('/pages/areaMap/rp/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb areaNameJa="R-Pエリア" areaNameEn="R-P AREA" />
+
+        <p class="area_txt_p">なんだか神々しいですね。すごい密集しています。</p>
+
+        <div class="area_wrap">
+          <div class="Content_section">
+            <section class="area_section_block scroll-fade">
+              <p class="area_txt_p_rp scroll-fade">
+                PANN'S ROIDたちの創造主にして、世界に静かに存在する独立組織。
+              </p>
+
+              <div class="area_head_photo_block_rp"></div>
+
+              <div class="area_section_colum_rp">
+                <div class="area_p_rp">
+                  <p>
+                    <dt class="area_txt_efec">
+                      PANN’S
+                      ROID達の設計・開発、製造。謎の組織によって作られた独立機関。
+                    </dt>
+                    <dd>
+                      <ul>
+                        <li>
+                          ■ 組織の目的■<br
+                          />詳細は不明、自律型知性体による平和的社会形成を目指すために設立と言われている。
+                        </li>
+                        <li>■球体の世界■<br />Sphereを生成とB-Smoothの生成</li>
+                        <li>
+                          ■ 組織の構造 ■<br />
+                          特徴と謎 組織の創設者は今も不明。 ただし、RUCKY-PANNの構造そのものがこの組織の意志を反映しているとされる。
+                        </li>
+                        <li>
+                          ※「PANN」という略称には、“Project for Autonomous
+                          Neural Nexus”という裏の解釈も存在。
+                        </li>
+                        <li>
+                          錦鯉「P-GOD」から受け継ぐエネルギーをAMPという新たなエネルギーを生み出す。
+                        </li>
+                      </ul>
+                    </dd>
+                  </p>
+                </div>
+                <div class="area_img_rp">
+                  <img src="/images/area/rp/area_rp_2.png" alt="入口ゲート" />
+                </div>
+              </div>
+            </section>
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_rp2">
+                <div class="area_img_rp">
+                  <figure>
+                    <img src="/images/area/rp/area_rp_3.png" alt="「P-GOD」" />
+                    <figcaption>「P-GOD」</figcaption>
+                  </figure>
+                  <figure>
+                    <img
+                      src="/images/area/rp/area_rp_6.png"
+                      alt="P-GODが成分したAquaCore"
+                    />
+                    <figcaption>P-GODが成分したAquaCore</figcaption>
+                  </figure>
+                  <figure>
+                    <img
+                      src="/images/area/rp/area_rp_7.png"
+                      alt="「R-P」製造の「AMP」"
+                    />
+                    <figcaption>「R-P」製造の「AMP」</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_rp">
+                <div class="area_p_rp2">
+                  <p>
+                    <dt class="area_txt_efec">
+                      ■ロイドたちの、開発設計、活動のためのサポート
+                    </dt>
+                    <dd>
+                      <ul>
+                        <li>
+                          ・ロイドたちの活動エネルギーAMPの製造と定期的な供給。最高品質のAMPの管理をしている。
+                        </li>
+                        <li>
+                          ・AMPの定期的な配給はロイド議会「R-W」から随時、議題にあげられるほど重要視され定期的な分量の調整を行っている。
+                        </li>
+                        <li>
+                          ・ロイドたちが生成したエリアの整備と定期的なサポート、全体的なメンテナンス、資源管理のチェックなどを行っている。
+                        </li>
+                      </ul>
+                    </dd>
+                  </p>
+                </div>
+
+                <div class="area_img_rp">
+                  <figure>
+                    <img src="/images/area/rp/area_rp_4.png" alt="資源管理" />
+                    <figcaption>資源管理ROBO</figcaption>
+                  </figure>
+                </div>
+                <div class="area_img_rp">
+                  <figure>
+                    <img src="/images/area/rp/area_rp_5.png" alt="資源管理" />
+                    <figcaption>資源管理ROBO</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_rp">
+                <div class="area_p_rp3">
+                  <p>
+                    <dt class="area_txt_efec">■ロイド議会「R-W」との関係</dt><dd
+                    >
+                      <dd>
+                        「R-W（Robotic Wisdom
+                        Council）」は、“創造主”と“自律的成果体”という緊張感ある関係性にあります。
+                      </dd>
+                      <ul>
+                        <li>
+                          🔹 関係性の概要
+                          R-W内部、一部の上級ロイドたちは「R－P」の設計が我々の自由を制限しているのでは？
+                          と警戒する声を持っている一方で「R-P」は、新たな倫理パッケージやアップデートを間接的に「R-W」に提案し続けているとされ、その関係は「協調」と「牽制」が入り混じっています。
+                        </li>
+                        <li>
+                          <li>
+                            🔹 民間の認識と位置づけ
+                            一般のロイドたちにとって、「R-P」は神的存在であり、「R-W」は日常を支える存在。つまり「R-P」は“起源”、「R-W」は“現在”。
+                          </li>
+                        </li>
+                      </ul>
+                    </dd>
+                  </p>
+                </div>
+                <div class="area_rp_img_wrap">
+                  <figure>
+                    <img src="/images/area/rp/area_rp_8.png" alt=" R-P" />
+                    <figcaption class="arrow-top">
+                      議題の受入れとシステム構築
+                    </figcaption>
+                  </figure>
+                  <figure>
+                    <figcaption class="arrow-bottom">
+                      議題の提案・申請
+                    </figcaption>
+                    <img src="/images/area/rp/area_rp_9.png" alt=" R-W" />
+                  </figure>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <ScrollToTop client:load />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+<FloatingNavi
+  nextLabel="NEXT Area"
+  mapLabel="マップエリア"
+  topLabel="TOP"
+  iconSrc="/images/area/bread_area_top_btn.png"
+/>
+<FloatingNavScript client:load />

@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '../../../styles/areaMap_koala.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+
+import { getMeta } from '../../../utils/metaManager';
+const meta = getMeta('/pages/areaMap/koala/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb
+          areaNameJa="コアラロイドエリア"
+          areaNameEn="KOALA-Roid AREA"
+        />
+
+        <p class="area_txt_p">
+          超巨大な大木そびえたってますね、不思議なエリア。
+          近未来的な雰囲気も漂います。
+        </p>
+        <div class="area_head_photo_block_koala"></div>
+        <h4 class="area_txt_h4">悠久の時を感じさせる“静寂の聖域”</h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+            <section class="area_section_block scroll-fade">
+              <div class="leader">
+                <img src="/images/area/koala/area_koala_1.png" />
+                <p class="leader_txt">
+                  <span>リーダー：パナム</span><br />
+                  「ここは時を抱く静寂の聖域,ヒーリングエネルギーにより、我々は深く思索し、
+                  知識を記録する。渓谷の風がユーカリの香りを運び、天空都市は穏やかさを保ち続ける。ここへ訪れる者は、
+                  精神統一とバランスを鍛え、新たな成長を見つめることができる。」
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <p>
+                <span class="area_txt_efec"
+                  >天空にそびえたつ「超巨大な巨木」ー「U-TREE」</span
+                ><br />
+                樹齢数千年とも言われる超巨大木「U-TREE」の頂点に広がるエリアは天空都市として発展、周囲はユーカリ巨木群が密集し、
+                AMPを長期保存できるシステムを築き上げている。
+              </p>
+              <div class="area_photo_block_koala"></div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <p>
+                <span class="area_txt_efec">コアラエリアの特徴</span><br />
+                「U-TREE」の根幹が紡ぐ静寂のヒーリングエネルギーにより、天空都市は豊かな環境を維持しながら、AMPの保存と循環を促進している。
+                このエネルギーシステムに支えられたコアラロイドたちは、精神活動がより活性化し、各種イベントへの参加も積極的になっている。
+                その結果、都市の活気は高まり、人口も増加傾向にある。
+              </p>
+              <div class="area_photo_block2_koala"></div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <div class="area_p_left">
+                  <p>
+                    <span class="area_txt_efec">巨大球体「U-sphere」</span><br
+                    />
+                    「EUCAL-CORE」を生成し、AMPの有効な保存成分「ユーカロイド」を貯蔵することができ、さらにAMPを凝縮し、
+                    エリア全体に供給する。貯蔵と供給システムの役割を持った存在。巨木の枝にぶら下がることで、自然の流れに沿った循環システムを維持。
+                    球体は風を受けると微細な振動を発し、エリア全体に静寂の波動を広げる。
+                    球体の内部には、過去の記録や思想が蓄積されている。 ロイドたちは瞑想を通じて、球体と精神的にリンクし、知識を共有。これにより、瞑想や精神統一の効果が高まる。
+                  </p>
+                </div>
+                <div class="area_img">
+                  <img
+                    src="/images/area/koala/area_koala_4.png"
+                    alt="U-sphere"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <div class="area_img">
+                  <img
+                    src="/images/area/koala/area_koala_5.png"
+                    alt="U-sphere"
+                  />
+                </div>
+                <div class="area_p_right">
+                  <p>
+                    <span class="area_txt_efec"
+                      >UCAL-COREシステム-自然と知性が共鳴する循環核-</span
+                    ><br />
+                    巨大球体「U-sphere」は、ユーカロイドを貯蔵・凝縮し、 AMPエネルギーをエリア全体へ穏やかに供給する貯蔵と流通の中枢存在。
+                    巨木の枝に静かに吊るされ、自然のサイクルに調和しながら機能するその姿は、
+                    まるで森の呼吸そのもの。 風を受ければ、球体は微細な振動を放ち、周囲に静寂の波動を広げる。
+                    エリアは包み込まれるような穏やかさに満ち、 ロイドたちの思考と感覚はゆるやかに研ぎ澄まされていく。
+                    球体内部には、時の流れと共に蓄積された思想・記録・ 精神の記憶が格納されており
+                    、ロイドたちは瞑想を通じてU-sphereと精神的に接続。 これにより知識を共有し合い、精神統一の精度と深度が向上する。
+                    EUCAL-COREとは、自然・精神・技術が共存する知性の核。 その脈動は、エリア全体の調和の律動として、静かに、
+                    しかし確実に流れ続けている。
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <div class="area_img">
+                  <img
+                    src="/images/area/koala/area_koala_6.png"
+                    alt="U-sphere"
+                  />
+                </div>
+                <div class="area_p_right">
+                  <p>
+                    <span class="area_txt_efec"
+                      >巨木の生命力よる、高いヒーリング効果</span
+                    ><br />
+                    渓谷の風がユーカリの香りを運び、エリア全体に落ち着いた雰囲気をもたらす。
+                    巨木の根から吸収されたエネルギーが、都市全体に供給される。 コアラロイドたちはこのエネルギーを活用し、
+                    瞑想や情報記録を行う。静寂とヒーリングスポットとして、他エリアのロイドたちも訪れ、精神統一など行う。
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <ScrollToTop client:load />
+      </div>
+    </div>
+
+    <FloatingNavi
+      nextLabel="NEXT Area"
+      mapLabel="マップエリア"
+      topLabel="TOP"
+      iconSrc="/images/area/bread_area_top_btn.png"
+    />
+
+    <FloatingNavScript client:load />
+  </div>
+</BaseLayout>

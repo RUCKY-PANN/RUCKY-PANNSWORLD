@@ -1,0 +1,59 @@
+---
+//  gate/index.astro
+import '../../styles/gate.css';
+---
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>RUCKY-PANN ACCESS GATE</title>
+  </head>
+  <body>
+    <div class="b-smooth-bg"></div>
+
+    <section class="gate-container">
+      <div class="gate-card animate-slidein">
+        <h1 class="gate-title">RUCKY-PANN<br />ACCESS GATE</h1>
+        <form id="access-form">
+          <input type="text" id="user-id" placeholder="User ID" />
+          <input type="password" id="passcode" placeholder="Passcode" />
+          <button type="submit">ENTER</button>
+
+          <button
+            onclick="document.cookie = 'hasPassedGate=; max-age=0; path=/'; location.reload();"
+          >
+            認証をリセットする
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <script is:inline>
+      document.getElementById('access-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const userId = document.getElementById('user-id').value.trim();
+        const passcode = document.getElementById('passcode').value.trim();
+
+        const VALID_USER = 'pann-user';
+        const VALID_PASS = 'planet-pass';
+
+        fetch('/data/credentials.json')
+          .then((res) => res.json())
+          .then((data) => {
+            const isValid = data.users.some(
+              (user) => user.id === userId && user.pass === passcode,
+            );
+
+            if (isValid) {
+              localStorage.setItem('userId', userId);
+              localStorage.setItem('authenticated', 'true');
+              window.location.href = '/intro/';
+            } else {
+              alert('認証失敗：アクセスキーが一致しません。');
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+---
+// pages/index.astro
+
+import NavMenu from '../components/footerMenu.astro';
+import IndexHeader from '../components/HeaderIndex.astro';
+import NewsReleaseClient from '../components/NewsRelease.astro';
+import Planet from '../components/planet/Planet.astro';
+import WelcomeDialog from '../components/WelcomeDialog.jsx';
+import IndexLayout from '../layouts/IndexLayout.astro';
+import '../styles/common.css';
+import '../styles/index.css';
+import '../styles/Planet.css';
+import '../styles/welcome.css';
+import { getMeta } from '../utils/metaManager';
+const meta = getMeta('/pages/');
+---
+
+<IndexLayout {...meta}>
+  <div class="index_wrap">
+    <IndexHeader />
+    <WelcomeDialog client:load />
+    <NewsReleaseClient />
+
+    <Planet />
+    <NavMenu />
+  </div>
+</IndexLayout>

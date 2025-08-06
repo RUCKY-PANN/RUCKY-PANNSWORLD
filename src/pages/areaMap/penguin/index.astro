@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '../../../styles/areaMap_penguin.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+
+import { getMeta } from '../../../utils/metaManager';
+const meta = getMeta('/pages/areaMap/penguin/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb
+          areaNameJa="ペンギンロイドエリア"
+          areaNameEn="PENGUIN-Roid AREA"
+        />
+
+        <p class="area_txt_p">
+          一面は氷の世界。周囲は氷山に囲まれ、殺伐としています。ドームでここでの暮らしはどんなものなんでしょうか？
+        </p>
+        <div class="area_head_photo_block_penguin"></div>
+        <h4 class="area_txt_h4">
+          透き通る氷と幻想的なオーロラが描く、静寂と輝きの世界
+        </h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+            <section class="area_section_block">
+              <div class="leader">
+                <img src="/images/area/penguin/area_penguin_1.png" />
+                <p class="leader_txt">
+                  <span>リーダー：アーク</span><br />
+                  ここは、氷の静寂に包まれ、AQUA COREが息づく空にオーロラヴィジョンが織りなす幻想世界。
+                  光と知識が交差するこの地では、探求の意思が氷を溶かし、深遠なる叡智が静かに育まれていく。
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_penguin">
+                <p>
+                  <span class="area_txt_efec"
+                    >オーロラヴィジョンAuroraVision
+                  </span><br />
+                  氷結した大地が静かに広がる中、天空には淡いAQUA COREの光が織り込まれた幻想的なオーロラが舞う。
+                  色彩はエメラルドグリーンとコバルトブルーが中心で、時折ヴァイオレットの波が流れるように重なる。
+                  その輝きは単なる自然現象ではなく、知識と探求の象徴として空に刻まれている。
+                  遠景にはペンギンロイドの観測塔がシルエットとして浮かび、 冷たい静寂と温かな叡智が共存する瞬間を切り取っている。
+                </p>
+
+                <div class="area_photo_block_penguin"></div>
+                <figurecaption>オーロラヴィジョンAuroraVision</figurecaption>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_penguin">
+                <div class="area_img">
+                  <img
+                    src="/images/area/penguin/area_penguin_3.png"
+                    alt="オーロラに包まれた生活スタイル"
+                  />
+                </div>
+                <div class="area_p_penguin">
+                  <p>
+                    <span class="area_txt_efec"
+                      >ペンギンロイドの暮らす氷の世界</span
+                    ><br />
+
+                    このエリアは果てしなく広がる氷原と、そびえ立つ氷山に囲まれた過酷な環境。しかし、ペンギンロイドたちはここで独自の調和を築きながら生活している。ドーム内部の世界
+                    。ドームの中は氷の寒さから守られた都市型エリア。外界の厳しさとは対照的に、内部は温度調整された快適な空間で、エネルギー効率の高い暖房システムが働いている。
+                    エネルギーステーション:
+                    ペンギンロイドが活動のためにエネルギーを補給する充電エリア。
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <div class="area_p_left_penguin">
+                  <p>
+                    <span class="area_txt_efec"
+                      >オーロラに包まれた生活スタイル
+                    </span><br />
+
+                    ペンギンロイドたちは、極寒に適した体構造を持ち、氷の上でスムーズに移動可能。
+                    <ul>
+                      <li>
+                        水上移動:<br />
+                        氷の裂け目を利用し、スムーズに水中を行き来するシステムあり。
+                      </li>
+
+                      <li>
+                        温度適応:<br />
+                        体の外殻が温度を調整し、内部機能を守る。
+                      </li>
+                      <li>
+                        コミュニティ活動:<br />
+                        ドーム内の広場では定期的な情報共有会が開かれ、 ロイドたちは各自の役割を果たしながら都市の維持管理を行う。
+                      </li>
+                    </ul>
+                    外は厳しい氷の世界、しかしドーム内では高度に発達したロイド社会が存在している。
+                    彼らの生き方は、極限の環境の中でも秩序と安定を保つ技術の証そのものなのかもしれない。
+                  </p>
+                </div>
+                <div class="area_img">
+                  <img
+                    src="/images/area/penguin/area_penguin_4.png"
+                    alt="オーロラに包まれた生活スタイル"
+                  />
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <ScrollToTop client:load />
+      </div>
+    </div>
+
+    <FloatingNavi
+      nextLabel="NEXT Area"
+      mapLabel="マップエリア"
+      topLabel="TOP"
+      iconSrc="/images/area/bread_area_top_btn.png"
+    />
+
+    <FloatingNavScript client:load />
+  </div>
+</BaseLayout>

@@ -1,0 +1,10 @@
+---
+// detail_Breadcrumb.astro
+const { categoryNameJa, categoryNameEn } = Astro.props;
+---
+
+<div class="bread">
+  <a href="/charaList/"> キャラクター一覧TOP </a>
+  <span class="cateName_txt"> / {categoryNameJa}</span>
+  <span class="cateName_txt_font">{categoryNameEn}</span>
+</div>

@@ -1,0 +1,26 @@
+import type { MiddlewareHandler } from 'astro';
+
+export const onRequest: MiddlewareHandler = async ({ request, redirect }) => {
+  const cookieHeader = request.headers.get('cookie') || '';
+  const hasPassedGate = cookieHeader.includes('hasPassedGate=true');
+  const url = new URL(request.url);
+
+  // `/gate/` ページは認証不要 → 処理を通過させる
+  if (url.pathname === '/gate/') {
+    return new Response(null, {
+      status: 200,
+      headers: { 'Content-Type': 'text/html' },
+    });
+  }
+
+  // 認証されていない場合 → ゲートに飛ばす
+  if (!hasPassedGate) {
+    return redirect('/gate/');
+  }
+
+  // 認証済み → 通過させる
+  return new Response(null, {
+    status: 200,
+    headers: { 'Content-Type': 'text/html' },
+  });
+};

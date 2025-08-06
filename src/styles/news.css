@@ -1,0 +1,32 @@
+.news-release {
+  position: fixed;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+  background: rgba(178, 129, 129, 0.85);
+  border-left: 4px solid #1e88e5;
+  padding: 1rem;
+  width: 240px;
+  font-family: 'Noto Sans JP', sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.news-release h3 {
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+  color: #333;
+}
+
+.news-release p {
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+  color: #555;
+}
+
+.news-release img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}

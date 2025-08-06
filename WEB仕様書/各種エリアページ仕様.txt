@@ -1,0 +1,115 @@
+app/pages/Contents.tsx
+でimport About from '@/pages/sections/About'済み
+
+app/pages/sections/Area.tsx
+
+
+------レイアウト------
+共通ヘッダー
+ContentsHeader.tsx
+
+----ここから切り替えの内容-------
+
+見出し
+<div id="about_h3">の背景指定（画像有）
+#about_h3{background-image:url()；
+padding-bottom-10px}
+id="about_h3"の中に
+
+<h3>「マップエリア紹介」 
+display:block
+background-image:url()；
+margin-left:10px
+
+
+その下
+矩形 class="Area_Roidwrapper"
+背景#e5e5f02a
+
+画像の上
+「テキストボックス　16px　color:white」
+
+「見出しの画像」
+100%*310px
+
+その下
+「テキストBOX 16px ,color:white」
+border-left:7px; 
+border-color:#0000ffff
+padding-bottom:10px;padding-top:10px
+width:100%;
+その下
+「角Rの矩形 class="Area_Roid_Contents"」
+width:100%;
+背景：ホワイト、文字：ブラック
+
+「パンくずボックス」
+class="Area_NowRoidpage"
+width:100%;
+（表示）
+左から、
+
+画像A / ｛●●｝ロイドエリア
+
+右端 例）PANDA-ROID ← alighn:right 書体指定：Astronaut II woff2
+
+border-bottom:1px;border-color:white
+
+"Area_Roid_Box"--ここまで
+
+
+----コンテンツ表示領域----
+
+レイアウト：デザイン
+
+角R矩形：width:100％
+
+内側余白：40px
+
+font-size:16px
+
+背景:ホワイト
+
+文字：ブラック
+
+@font-face:Meiryo normal
+
+行間：1.5
+
+
+1段目：
+背景キャラ画像、横にキャラのセリフ
+２段目：
+
+コラム説明文　横写真
+
+3段目：
+
+コラム説明文　横写真
+
+------コンテンツ表示領域ここまで------
+
+
+
+（スクロール追随アイコン　area_roid_navi）
+
+area_roid_naviは常に追随
+
+class="next_view"
+color:white、align:ceter;
+ネクスト＞<br>
+画像A
+
+その下
+class="top_area"
+画像B
+200*155px
+
+画面スクロールしていくと、フェードイン表示でコンテンツ表示。
+
+（ページ一番下）
+class="Area_Roidwrapper"
+から外の区域
+
+ページTOPへ
+画像A

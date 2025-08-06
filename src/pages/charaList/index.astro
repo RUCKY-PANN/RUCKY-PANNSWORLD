@@ -1,0 +1,185 @@
+---
+// pages/charaList/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Accordion from '../../components/Accordion.astro';
+import CharaCard from '../../components/CharaCard.astro';
+import PagetitleH3 from '../../components/PagetitleH3.astro';
+import ScrollToTop from '../../components/ScrollToTop.jsx';
+
+import '../../styles/common.css';
+import '../../styles/charaList.css';
+import { getMeta } from '../../utils/metaManager';
+import { getCharacters } from '../../utils/getCharacters';
+import { getCategoryList } from '../../utils/getCategoryList';
+import { categorizeCharacters } from '../../utils/categorizeCharacters';
+
+import type { Character } from '../../types/character';
+
+const characters: Character[] = await getCharacters();
+const categories = await getCategoryList();
+const categorized = categorizeCharacters(characters, categories);
+console.log(categorized.map((c) => ({ title: c.title, subtitle: c.subtitle })));
+const meta = getMeta('/pages/charaList/'); // ← Astro.url.pathnameではなく明示
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3
+      title="RUCKY-PANNのロイド一覧"
+      subtitle="CharacterList.content"
+    />
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <div class="Content_section">
+          <!-- セクション-->
+          <section class="section_block_characList scroll-fade">
+            <div class="setumei_wrap">
+              <div class="setumeiBtn">
+                キャラ枠について <img src="/images/charaList/btn_setumei.png" />
+              </div>
+            </div>
+          </section>
+          <!-- セクション-->
+
+          <div>
+            {
+              categorized.map((category) => (
+                <Accordion
+                  title={category.title}
+                  subtitle={category.subtitle}
+                  id={category.id}
+                >
+                  {category.characters.map((char) => (
+                    <CharaCard character={char} />
+                  ))}
+                </Accordion>
+              ))
+            }
+          </div>
+          <div class="setumei">
+            <button class="setumeiCloseBtn">× 閉じる</button>
+            <h4>あなたのクリックが「すごい効果」を生み出す！</h4>
+            <div class="setumei_in_wrap">
+              <p>
+                「いいね」「詳細」「お気入り」　クリックでキャラクターの
+                エネルギーを補充させよう！
+                お一定期間を過ぎると0％になってしまいます...............
+              </p>
+              <div class="setumei_img">
+                <img
+                  src="/images/charaList/chara_list_setumei1.png"
+                  alt="エネルギー充填"
+                />
+                <img
+                  src="/images/charaList/chara_list_setumei2.png"
+                  alt="エネルギー残量"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <ScrollToTop client:load />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script type="module">
+  // K表記 → 数値
+  function parseCount(text) {
+    if (text.endsWith('K')) {
+      return parseFloat(text) * 1000;
+    }
+    return parseInt(text);
+  }
+  // 数値 → K表記
+  function formatCount(count) {
+    if (count >= 1000) {
+      return (count / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    }
+    return count.toString();
+  }
+  // like → Like 変換
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+  // ボタンイベント登録
+  function setupCounter(type) {
+    document.querySelectorAll(`.${type}-btn`).forEach((btn) => {
+      const span = btn.querySelector('span');
+      // 初期表示を整える
+      const raw = span.textContent.trim();
+      const formatted = formatCount(parseInt(raw)); // CMS値が100なら → 100 →
+      span.textContent = formatCount(parseCount(formatted)); // 100 → "100" o
+      // クリックイベント
+      btn.addEventListener('click', async () => {
+        const current = parseCount(span.textContent);
+        const updated = current + 1;
+        span.textContent = formatCount(updated);
+        const uid = btn.dataset.charId;
+        await fetch(
+          new URL(
+            `/api/update${capitalize(type)}`,
+            import.meta.env.VITE_MICROCMS,
+          ).href,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: uid, [`${type}_count`]: updated }),
+          },
+        );
+        location.reload(); // CMSと同期
+      });
+    });
+  }
+  // 初期化
+  setupCounter('like');
+  setupCounter('favo');
+
+  //説明
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.setumeiBtn');
+    const infoBox = document.querySelector('.setumei');
+
+    btn.addEventListener('click', () => {
+      infoBox.classList.toggle('fade-visible');
+      infoBox.style.zIndex = '2147483647'; //
+    });
+  });
+
+  //
+  document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.querySelector('.setumeiBtn');
+    const closeBtn = document.querySelector('.setumeiCloseBtn');
+    const infoBox = document.querySelector('.setumei');
+
+    if (openBtn && infoBox) {
+      openBtn.addEventListener('click', () => {
+        infoBox.classList.toggle('fade-visible');
+        infoBox.style.zIndex = '2147483647';
+      });
+    }
+
+    if (closeBtn && infoBox) {
+      closeBtn.addEventListener('click', () => {
+        infoBox.classList.remove('fade-visible');
+      });
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.querySelector('.setumeiBtn');
+    const infoBox = document.querySelector('.setumei');
+
+    if (!openBtn || !infoBox) {
+      console.warn('セットアップ失敗：要素が見つからない');
+      return;
+    }
+
+    openBtn.addEventListener('click', () => {
+      console.log('🟢 説明表示ボタンがクリックされた');
+      infoBox.classList.add('fade-visible');
+      infoBox.style.zIndex = '2147483647';
+    });
+  });
+</script>

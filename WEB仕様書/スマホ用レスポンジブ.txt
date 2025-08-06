@@ -1,0 +1,39 @@
+スマホ用
+レスポンジブデザイン
+
+@media screen and (max-width: 768px) {
+  .menuRow,
+  .menuRowRight,
+  .areaMenuRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .menuItem,
+  .areaMenuItem {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .footerBar {
+    height: 48px;
+  }
+
+  .menuPanel {
+    padding: 12px;
+  }
+
+  .areaMenuRow {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .areaLabel {
+    font-size: 10px;
+  }
+
+  .glowDot {
+    width: 10px;
+    height: 10px;
+  }
+}

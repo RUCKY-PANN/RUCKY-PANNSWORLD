@@ -1,0 +1,15 @@
+display: block; では
+
+
+ justify-content と align-items は 無効。
+
+そのため、背景の中央に img が正しくセンター配置されていない。
+
+------------------
+
+info_wrapの横幅が親のcharaCard_wrap（幅280px）を超えてはみ出す問題は、おそらく以下の原因が考えられます：
+
+info_wrapの幅が width: 100% だが、paddingやborderが加算されているため、実質的に親より大きくなる
+
+親要素にbox-sizingが指定されていないため、width:100%はpaddingやborderを含まない
+

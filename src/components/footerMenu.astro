@@ -1,0 +1,179 @@
+---
+// imports
+import MenuItem from './MenuItem.astro';
+import './footerMenu.css';
+---
+
+<footer id="bottom-footer">
+  <!-- トグルバー -->
+  <div id="menu-bar">
+    <div class="menutxt">The Menu</div>
+    <div id="menu-toggle-indicator"></div>
+  </div>
+
+  <!-- メニュー全体 -->
+  <div id="menu-wrapper" class="menu-hidden">
+    <!-- 上段メニュー -->
+    <div class="menu-row">
+      <MenuItem label="RUCKY-PANNとは" sub="About.contents" href="/about/" />
+      <MenuItem
+        label="世界について"
+        sub="World.contents.contents"
+        href="/world/"
+      />
+      <MenuItem
+        label="PANN's ROIDの紹介"
+        sub="RoidFeature.contents"
+        href="/charaIntro/"
+      />
+      <MenuItem
+        label="PANN's ROID一覧"
+        sub="RoidList.contents"
+        href="/charaList/"
+      />
+
+      <!-- マップエリア紹介：リンク + 展開ボタン -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <MenuItem
+          label="マップエリア紹介"
+          sub="MAP Area.contents"
+          href="/areaMap/"
+        />
+        <div
+          id="expand-trigger"
+          class="expand-button"
+          title="エリアメニューを展開"
+          style="cursor: pointer;"
+        >
+          <div id="expand-indicator"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 展開エリアメニュー -->
+    <div id="expand-content" class="menu-subarea">
+      <div class="menu-subrow">
+        <a href="/areaMap/panda/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_panda.png" /><span
+            >PANDA<br />AREA</span
+          ></a
+        >
+        <a href="/areaMap/koala/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_koala.png" /><span
+            >KOALA<br />AREA</span
+          ></a
+        >
+        <a href="/areaMap/bear/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_bear.png" /><span
+            >BEAR<br />AREA</span
+          ></a
+        >
+        <a href="/areaMap/penguin/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_penguin.png" /><span
+            >PENGUIN<br />AREA</span
+          ></a
+        >
+        <a href="/areaMap/dog/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_dog.png" /><span
+            >DOG<br />AREA</span
+          ></a
+        >
+        <a href="/areaMap/cat/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_cat.png" /><span
+            >CAT<br />AREA</span
+          ></a
+        >
+        <a href="/areaMap/hipo/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_hipo.png" /><span
+            >HIPPO<br />AREA</span
+          ></a
+        >
+        <a href="/areaMap/tanuki/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_tanuki.png" /><span
+            >TANUKI<br />AREA</span
+          ></a
+        >
+        <a
+          href="/areaMap/other/"
+          class="icon-box"
+          style="background:#0000ffff;transition:all 0.3s ease;"
+          title="辺境の地-少数ロイドのエリアがここにいます。"
+        >
+          <img src="/images/menu_icon/meu_icon_other.png" /><span
+            >OTHER<br />AREA</span
+          >
+        </a>
+      </div>
+      <div class="menu-subrow">
+        <a href="/areaMap/dark/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_dark.png" /><span
+            >DARK<br />AREA</span
+          ></a
+        >
+        <a href="/areaMap/rp/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_rp.png" /><span
+            >R-P<br />AREA</span
+          ></a
+        >
+        <a href="/areaMap/event/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_event.png" /><span
+            >EVENT<br />AREA</span
+          ></a
+        >
+        <a href="/areaMap/companion/" class="icon-box"
+          ><img src="/images/menu_icon/meu_icon_companion.png" /><span
+            >COMPANION<br />AREA</span
+          ></a
+        >
+      </div>
+    </div>
+
+    <!-- 下段メニュー -->
+    <div class="menu-row right-align">
+      <MenuItem label="サイトナビ" sub="SiteNavi.contents" href="/navitour/" />
+      <!--<MenuItem label="イベント参加" sub="Join.contnts" href="/join/" />-->
+      <MenuItem
+        label="PROJECTRUCKY-PANN企画管理委員会"
+        sub="Producrion.contents"
+        href="/production/"
+      />
+      <MenuItem label="HOME-Planet" sub="Planet.contents" href="/" />
+    </div>
+  </div>
+
+  <!-- トグル + フェード制御 -->
+  <script is:inline>
+    const menuBar = document.getElementById('menu-bar');
+    const menuWrapper = document.getElementById('menu-wrapper');
+    const toggleDot = document.getElementById('menu-toggle-indicator');
+    const expandBtn = document.getElementById('expand-trigger');
+    const expandArea = document.getElementById('expand-content');
+
+    let open = false;
+    menuBar.addEventListener('click', () => {
+      open = !open;
+      menuWrapper.classList.toggle('menu-visible');
+      menuWrapper.classList.toggle('menu-hidden');
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      toggleDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) scale(0.2)`;
+    });
+
+    expandBtn.addEventListener('click', () => {
+      if (expandArea.classList.contains('expand-active')) {
+        expandArea.classList.remove('expand-active');
+        expandArea.classList.add('fade-out');
+
+        // フェードアウト後に非表示にする
+        setTimeout(() => {
+          expandArea.classList.remove('fade-out');
+          expandArea.style.display = 'none';
+        }, 400);
+      } else {
+        expandArea.style.display = 'flex';
+        expandArea.classList.add('expand-active');
+      }
+    });
+  </script>
+</footer>

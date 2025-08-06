@@ -1,0 +1,23 @@
+---
+import FloatingNavScript from './FloatingNavi.jsx';
+const { nextLabel, mapLabel, topLabel, iconSrc } = Astro.props;
+---
+
+<div class="next-area-nav floating-nav hidden-nav">
+  <div class="nav-content">
+    <span class="nav-label">{nextLabel}</span>
+    <a id="next-area-button" href="#">
+      <div class="nav-circle"></div>
+    </a>
+    <hr class="nav-separator" />
+    <div class="nav-bottom">
+      <a class="nav-top-label" href="/areaMap/"
+        ><img src={iconSrc} alt="area icon" /></a
+      >
+      <span class="nav-map-label">{mapLabel}</span>
+      <a class="nav-top-label" href="/areaMap/">{topLabel}</a>
+    </div>
+  </div>
+</div>
+
+<FloatingNavScript client:load />

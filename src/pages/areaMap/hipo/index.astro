@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '../../../styles/areaMap_hipo.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+
+import { getMeta } from '../../../utils/metaManager';
+const meta = getMeta('/pages/areaMap/hipo/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb
+          areaNameJa="ヒッポロイドエリア"
+          areaNameEn="HIPO-Roid AREA"
+        />
+
+        <p class="area_txt_p">
+          自然豊かな湖と大きながダムのような施設がありますね。なんだか平和感が満載です。
+        </p>
+        <div class="area_head_photo_block_hipo"></div>
+        <h4 class="area_txt_h4">
+          AMP貯蓄量世界最大。もっとも消費の少ない省エネエリア。出稼ぎMODSが多いエリア。
+        </h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+
+            <section class="area_section_block scroll-fade">
+              <div class="leader">
+                <img src="/images/area/hipo/area_hipo_1.png" />
+                <p class="leader_txt">
+                  <span>リーダー：トレバック</span><br />
+                  「ここでは、AMPは大事に扱っています。派手に使うより、じっくり蓄えて、必要なときに分け合う。無駄なく、賢く、これが私たちのやり方です。」
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <p>
+                  <span class="area_txt_efec">カバロイドエリアの特徴</span><br
+                  />
+                  巨大な貯蔵湖とダム型施設 AMPはここで厳重に管理され、枯渇を防ぐためのリサイクルシステムが整備されている。
+                  貯蔵湖はエリアの中心に位置し、安定した供給を維持するための重要な役割を果たす。
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <div class="area_img">
+                  <img
+                    src="/images/area/hipo/area_hipo_2.png"
+                    alt="「THE HIPODAM」"
+                  />
+                </div>
+                <div class="area_p_hipo">
+                  <p>
+                    <span class="area_txt_efec"
+                      >巨大な貯蔵湖施設「THE HIPODAM」</span
+                    ><br />
+                    「R-P」から支給されるAMPを大事に保管管理されている。 ここではほかのエリアと違い活発的なロイドは少ないが、その分消費が抑えられているため多くのAMPが貯蓄されている。
+                    またAMPのリサイクル施設が存在し、枯渇するAMP問題の先駆的存在となっている。
+                    AMPリサイクルも行っており、限りあるAMPの消費を抑える仕組み作りを考案している。
+                    かれらはAMPをあまり消費しないため、あまりイベントには参加することは少ない。
+                    ただここでほかのロイドたちに注目されているAMPの貯蔵機能が話題になり、マーケット化されることになる。
+                    AMPを最大限にリサイクルできるエリアとして人気、落ち着いた空間でAMPの販売も行われているマーケットエリア
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <div class="area_p_hipo">
+                  <p>
+                    <span class="area_txt_efec">カバロイドの施設内部</span><br
+                    />
+                    <ul>
+                      <li>
+                        AMPマーケットとしての発展<br />
+                        AMPの貯蔵機能が話題となり、他のロイドたちが利用できる
+                      </li>
+                      <li>
+                        マーケットエリアとして成長<br />
+                        取引や契約を通じて、エネルギーの流通が活発化している。
+                      </li>
+                      <li>
+                        静かで落ち着いた空間<br />
+                        ここにいるロイドたちはAMPの消費が少なく、イベントへの参加頻度も低い。
+                        そのため、エリア全体が穏やかで安定した雰囲気を持っている。
+                      </li>
+                    </ul>
+                  </p>
+                </div>
+                <div class="area_img">
+                  <img
+                    src="/images/area/hipo/area_hipo_3.png"
+                    alt="AMPの貯蔵機能"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <div class="area_img">
+                  <img
+                    src="/images/area/hipo/area_hipo_4.png"
+                    alt="AMPリサイクル施設の集積地"
+                  />
+                </div>
+                <div class="area_p_hipo">
+                  <p>
+                    <span class="area_txt_efec">AMPリサイクル施設の集積地</span
+                    ><br />
+                    消費を抑えながらAMPを再利用する技術が発展しており、持続可能なエネルギー管理が行われている。
+                    他のエリアに供給するためのマーケット機能も備え、AMPの流通拠点として注目されている。
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <ScrollToTop client:load />
+      </div>
+
+      <FloatingNavi
+        nextLabel="NEXT Area"
+        mapLabel="マップエリア"
+        topLabel="TOP"
+        iconSrc="/images/area/bread_area_top_btn.png"
+      />
+
+      <FloatingNavScript client:load />
+    </div>
+  </div>
+</BaseLayout>

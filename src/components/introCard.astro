@@ -1,0 +1,103 @@
+---
+//charaIntro.astroで使用
+
+import DOMPurify from 'dompurify';
+import { JSDOM } from 'jsdom';
+
+const window = new JSDOM('').window;
+const purify = DOMPurify(window);
+
+import ChartRadar from './ChartRadar.jsx';
+
+type Trait = {
+  label: string;
+  content: string;
+};
+
+type AwardIcon = {
+  src: string;
+  alt: string;
+};
+
+const {
+  nameTop,
+  nameMain,
+  imageSrc,
+  imageAlt,
+  areaIconSrc,
+  areaCaption,
+  traits,
+  awardTitle,
+  awardDetails,
+  awardIcons,
+  categoryId,
+} = Astro.props as {
+  nameTop: string;
+  nameMain: string;
+  imageSrc: string;
+  imageAlt: string;
+  areaIconSrc: string;
+  areaCaption: string;
+  traits: Trait[];
+  awardTitle: string;
+  awardDetails: string;
+  awardIcons: AwardIcon[];
+  categoryId: string;
+};
+// nameMain に HTML が含まれている場合
+const safeHtml = purify.sanitize(nameMain);
+---
+
+<div class="card">
+  <div class="info_section">
+    <div class="card_left">
+      <div class="card_header">
+        <div class="top_txt"><h6>{nameTop}</h6></div>
+      </div>
+      <h5 class="card_headerH5" set:html={nameMain} />
+
+      <div class="thumbnail scroll-fade">
+        <img src={imageSrc} alt={imageAlt} />
+      </div>
+      <div class="bottom_txt">-ROID</div>
+    </div>
+
+    <div class="label_list scroll-fade">
+      <div class="area_icon scroll-fade">
+        <img src={areaIconSrc} class="dome_icon" />
+        <p class="caption" set:html={areaCaption} />
+      </div>
+      <ul>
+        {
+          traits.map((trait: Trait) => (
+            <li class="row">
+              <div class="label">{trait.label}</div>
+              <div class="content">{trait.content}</div>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="award_info">
+        <div class="awards">
+          <h6>受賞歴</h6>
+          <dt>{awardTitle}</dt>
+          <dd>{awardDetails}</dd>
+        </div>
+        <div class="award_icons">
+          {
+            awardIcons.map((icon: { src: string; alt: string }) => (
+              <img src={icon.src} alt={icon.alt} />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="card_right canvas_size scroll-fade">
+      <ChartRadar categoryId={categoryId} client:load />
+    </div>
+    <a href={`/charaList/${categoryId.toLowerCase()}`} class="go-to-list-button"
+      >●　{nameTop}-Roid-LIST　●</a
+    >
+  </div>
+</div>

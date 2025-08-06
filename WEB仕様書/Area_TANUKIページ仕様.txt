@@ -1,0 +1,108 @@
+//apps/web/app/pages/area/Roid_tanuki.tsxの作成
+
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+＞＞ヘッダー、フッター、パンくず、ページトップ、などのナビゲーションが設置された親ページ
+
+import Image from 'next/image'
+import style from  './Roid_tanuki.module.css'が必要
+
+----ここからコンテンツーーーー
+
+エリア共通のページトランジッション
+
+
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>緑豊かな木々に覆われた山の中でしょうか？中心に工場のような施設と生活ドームがありますね。どんな生活空間なんでしょうか？
+「テキストボックス　16px　color:white」
+
+余白1行分あけて
+IMG
+余白2行分あけて]
+
+その下
+/*--見出しマーカー見出しのDIVの左横に配置--*/
+<span class="midashiBox"></span>
+/*--見出し--*/
+<div>ここは隠れ家的な癒しのスポットで人気、AMPを活用したテクノロジーと自然が優しく調和する空間</div>
+
+div{padding-bottom:10px;padding-top:10px;/*left,rightも10pxの余白*/
+width:100%;
+font-siize:16px
+color:white}
+
+.midashiBox{/*「見出しの横の横長矩形」　フェードイン+バウンド　*/
+width:100%; 
+display:flex;
+height:20px;
+bg-color:#0000ffff}
+
+
+その下
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+<section1>
+
+<div class="area_section">
+<div class="leader">リーダーキャラのIMGは背景扱い</div> .leader:width175* height290,backgroung-images:outfit;
+その横
+<div><span>リーダー：シノハ<br>
+/*--セリフ <p>は　一文字づつ出てくるように演出　--*/
+<p>
+隠れ家的空間“Ｔ－ＺＯＯＮ”は、俺たちが誇る修復の聖域。ここじゃ周囲の喧騒を忘れ、精神を整え、ボディを整える…それが俺たち流の“進化”だ。」
+
+/*--area_sectionの左下に ボタン要素.RoidAreaButton border-radius12px bg-color:#000082ff　ボタンの中： 〇の中に->の描画　::beforeを使う ボタンの線無し　obClickで押されたように鏡トランジッション --*/
+
+<button class="RoidAreaButton" onClick="タヌキロイドリストのカテゴリ抽出したページへ">このエリアのロイド達　〇の中に->の描画</button>
+
+<div class="area_section2">
+<h4>タヌキロイドの生活エリア </h4>
+<p><span>自然と技術の調和 <br>
+緑豊かな山の中に広がるドーム型施設の中は実は、地下施設「T-ZOON」がメインで稼働。
+さらに自己製造施設「"セルフクラフト・シェルター"」も設置し、生活ドームがあり、自然環境と高度な技術が融合した空間になっていまる。
+地下施設「T-ZOON」の「"セルフクラフト・シェルター"」は他のエリアのロイドたちも訪れ話題のスポットに。</p>
+/*-- p width:430px  --*/
+その横30ｐｘ余白を取って
+<div>ＩＭＧ　align-left
+
+</div>
+
+余白30px
+
+<div class="area_section3">
+<span>地下シェルター「T-ZOON」は人気のエリア施設  
+余白20px
+<div><IMG1>
+余白20px
+<div><IMG2>
+
+余白30px
+
+<div class="area_section4">
+<div class="textArea1"><span>ボディ自動修復・新規生成システム空間＜ｂｒ＞
+
+/*-- class=textArea1は area_section4の右の縦中央に配置 --*/
+
+<span>〈"セルフクラフト・シェルター"〉
+<p>タヌキロイドたちにとって、単なるメンテナンス空間ではなく「再誕の間」ともいえる特別な場所。AMPエネルギーが静かに循環するこの静寂な空間。
+<ul>プロセス：
+<li>1. 精神統一とエネルギー調律
+<li>2. 自動修復プロセス
+<li>3. 新規生成モード 
+<div>
+<div>
+その説明のIMG配置左へ align-left 
+</div>
+
+テキストとIMGの余白30px
+
+
+------コンテンツ表示領域ここまで------

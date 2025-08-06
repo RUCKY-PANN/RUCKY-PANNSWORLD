@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '../../../styles/areaMap_companion.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+
+import { getMeta } from '../../../utils/metaManager';
+
+const meta = getMeta('/pages/areaMap/companion/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb
+          areaNameJa="コンパニオンロイドエリア"
+          areaNameEn="COMPANION-Roid AREA"
+        />
+
+        <p class="area_txt_p">
+          イベントを盛り上げるコンパニオン達がここにいるんですね～なんだか華やかなところですね。
+          まるで遊園地のようなパークや近未来的な施設もみえます。ここはどんなところでしょうか？
+        </p>
+        <div class="area_head_photo_block_companion"></div>
+        <h4 class="area_txt_h4">
+          「R-P」が新たに設置したエリア、遊園地のようなランドマークシティ、色とりどりの施設が特徴的
+        </h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+            <section class="area_section_block scroll-fade">
+              <div class="leader">
+                <img src="/images/area/companion/area_companion_1.png" />
+                <p class="leader_txt">
+                  <span>今回の代表役：ルミナ・ヴェール</span><br />
+                  毎回行われる代表抽選で選ばれました。 「ここは、ロイドたちのイベントを演出する私たちが多く存在します。ここでロイド専属契約もできます。ただすごい混雑です。」
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_p_companion">
+                <p>
+                  コンパニオンエリアはその華やかさと特別感から、非常に人気のあるエリアになっているようです。
+                  特にエリア専属契約をするため、こぞって他のエリアからロイドたちが集まってきます。
+                  予約制を導入していることで、スムーズな運営が可能になり、訪れるロイドたちもじっくりと楽しめそうですね。
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_companion">
+                <div class="area_p_companion2">
+                  <p>
+                    <span class="area_txt_efec"
+                      >入口ゲートの混雑対策と予約システム</span
+                    ><br />
+
+                    <ul>
+                      <li>
+                        スマート予約システム
+                        入口のゲートには事前に予約が必要です。混雑を回避するために、ゾーンごとの入場管理が行われる。
+                        コンパニオンたちとの交流を最大限に楽しめるように、空間の最適化がされている。
+                        AIがリアルタイムで混雑状況を調整し、快適な体験を提供。
+                      </li>
+                      <li>
+                        限定イベントへのアクセス
+                        一定の枠数のみ参加できるスペシャルショーやVIPコンテンツもあるため、抽選制を導入しています。
+                      </li>
+                    </ul>
+                  </p>
+                </div>
+                <div class="area_img_companion">
+                  <img
+                    src="/images/area/companion/area_companion_2.png"
+                    alt="入口ゲート"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_companion">
+                <div class="area_p_companion2">
+                  <p>
+                    <span class="area_txt_efec">プロダクション施設</span><br />
+
+                    <ul>
+                      <li>
+                        プロモーション契約のが執り行われる。
+                        ここでは契約に必要な条件としてAMPをここでしか使用できない通貨に変換して支払いを行う。
+                      </li>
+
+                      <li>
+                        トレーニング施設
+                        コンパニオンたちがイベントのためのパフォーマンスを高めるためのトレーニングイベントが活発。
+                        VIP、ゲストなどが見学できるエリアも設置。ロイドたちの目がくぎづけになる。
+                      </li>
+                    </ul>
+                  </p>
+                </div>
+
+                <div class="area_img_companion">
+                  <img
+                    src="/images/area/companion/area_companion_3.png"
+                    alt="コンパニオンエリアを彩るランドマーク"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_companion">
+                <div class="area_p_companion2">
+                  <p>
+                    <span class="area_txt_efec"
+                      >コンパニオンエリアを彩るランドマーク</span
+                    ><br />
+
+                    <ul>
+                      <li>光の演出が際立つ優雅な存在</li>
+                      <li>ゲストの快適な滞在設計</li>
+
+                      <li>
+                        施設の外壁には、動的なライトやホログラムが映し出され、まるで生きているかのような輝きを放つ。
+                        色彩の変化<br />
+                        によって、時間帯やイベントに応じて異なる雰囲気を演出。
+                      </li>
+
+                      <li>
+                        美容とスタイルの中心地 最新の美容技術を取り入れた
+                        ビューティーラボや、ファッションの最先端を体験できるエリアが併設。
+                        コンパニオンたちのスタイルを支える施設。
+                      </li>
+
+                      <li>
+                        エンターテイメント性
+                        ゲストが楽しめるような体験型イベントが充実。ロイドたちは美しいコンパニオンロイドとの出会いを体験。
+                      </li>
+                    </ul>
+                  </p>
+                </div>
+
+                <div class="area_img_companion">
+                  <img
+                    src="/images/area/companion/area_companion_4.png"
+                    alt="自コンパニオンエリアを彩るランドマーク"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_companion">
+                <div class="area_p_companion3">
+                  <p>
+                    <span class="area_txt_efec">美容とスタイルのこだわり</span>
+                    コンパニオンたちは、最新の美容技術を取り入れ、洗練されたスタイルを維持。AIアシストの美容ケアや、未来型のファッションラボが併設されている。光るパネルやホログラム演出が施された建築。
+                    流動的な構造 を持ち、エリア全体が変化するような仕掛けも。
+                  </p>
+                </div>
+                <div class="area_img_companion">
+                  <img
+                    src="/images/area/companion/area_companion_5.png"
+                    alt="美容とスタイルのこだわり"
+                  />
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <!-- 最後にTOPボタン -->
+        <ScrollToTop client:load />
+      </div>
+
+      <FloatingNavi
+        nextLabel="NEXT Area"
+        mapLabel="マップエリア"
+        topLabel="TOP"
+        iconSrc="/images/area/bread_area_top_btn.png"
+      />
+      <FloatingNavScript client:load />
+    </div>
+  </div>
+</BaseLayout>

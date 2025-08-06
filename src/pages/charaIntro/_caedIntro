@@ -1,0 +1,85 @@
+           <div class="card">
+             <div class="info_section">
+               <div class="card_left">
+                 <div class="card_header">
+                   <div class="top_txt"><h6>PANDA</h6></div>
+                 </div>
+                 <h5 class="card_headerH5">パンダ<br />ロイド</h5>
+                 <!-- 左カラム：画像 -->
+                 <div class="thumbnail">
+                   <img
+                     src="/images/charaIntro/panda/panda1111_result.webp"
+                     alt="画像説明"
+                   />
+                 </div>
+                 <div class="bottom_txt">-ROID</div>
+               </div>
+               <!-- 中央カラム：リスト -->
+               <div class="label_list">
+                 <div class="area_icon">
+                   <img
+                     src="/images/charaIntro/panda/chara_intro_area_panda.png"
+                     class="dome_icon"
+                   />
+                   <p class="caption">
+                     錦鯉が近くに遊泳する<br />バンブードームに住む
+                   </p>
+                 </div>
+                 <ul>
+                   <li class="row">
+                     <div class="label">性　格</div><div class="content">
+                       平和主義者、活動家、研究タイプ、政治的権威力
+                     </div>
+                   </li>
+                   <li class="row">
+                     <div class="label">体　格</div><div class="content">
+                       2頭身〜3頭身
+                     </div>
+                   </li>
+                   <li class="row">
+                     <div class="label">形　状</div><div class="content">
+                       流線形
+                     </div>
+                   </li>
+                   <li class="row">
+                     <div class="label">交流度</div><div class="content">
+                       100%
+                     </div>
+                   </li>
+                   <li class="row">
+                     <div class="label">主要交流</div><div class="content">
+                       コアラ/ペンギン/ベアー/ヒッポ/キャット/ドッグ/タヌキ/コンパニオン/イベント
+                     </div>
+                   </li>
+                 </ul>
+                 <!-- 下部：アイコンとテキスト -->
+                 <div class="award_info">
+                   <!-- 受賞歴 -->
+                   <div class="awards">
+                     <h6>受賞歴</h6>
+                     <dt>RUCKY-PANN マスターチャンピオンシップ</dt>
+                     <dd>デザイン総合部門最優秀賞</dd>
+                   </div>
+                   <div class="award_icons">
+                     <img
+                       src="/images/charaIntro/icon_trophy.png"
+                       alt="賞アイコン1"
+                     />
+                     <img
+                       src="/images/charaIntro/icon_prize_no2.png"
+                       alt="賞アイコン2"
+                     />
+                   </div>
+                   <!-- 受賞歴END -->
+                 </div>
+                 <!-- 下部：END -->
+               </div>
+               <!-- 右カラム：チャート -->
+               <div class="card_right canvas_size">
+                 <ChartRadar categoryId="PANDA" client:load />
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <!--カードここまで -->

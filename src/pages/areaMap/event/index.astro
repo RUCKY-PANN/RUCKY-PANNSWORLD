@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '../../../styles/areaMap_event.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+
+import { getMeta } from '../../../utils/metaManager';
+
+const meta = getMeta('/pages/areaMap/event/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb areaNameJa="イベントエリア" areaNameEn="EVENT AREA" />
+
+        <p class="area_txt_p">
+          近未来的なパビリオンみたいな施設が見えすね。あそこで、毎回PANN'Sロイドたちのセッションが行われているんですね。どんなところなんでしょうか。
+        </p>
+        <div class="area_head_photo_block_event"></div>
+        <h4 class="area_txt_h4">
+          RUCKY-PANN'WORLDのロイドたちの目的地。国際的イベントの開催、ワールドチャンピオンシップ会場エリア
+        </h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+            <section class="area_section_block scroll-fade">
+              <div class="leader">
+                <img src="/images/area/event/area_event_1.png" />
+                <p class="leader_txt">
+                  <span>イベント主宰兼RW議長：バンダレイ</span><br />
+                  「資源の安定も、環境の保全も、我々の未来に必要だ。 だが忘れてはならない、ロイドたちはただ働くだけの存在ではない！
+                  戦える者には、挑戦する舞台がある。 技術・知能・戦術──すべてを駆使して、ワールドチャンピオンシップを目指せ！
+                  その挑戦の先にこそ、新たなAMPの可能性と進化がある。 我々はそれを信じ、応援する！」
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_event">
+                <div class="area_p_event">
+                  <p>
+                    <dt class="area_txt_efec">イベントエリアの特徴</dt>
+                    <dd>
+                      RUCKY-PANN'WORLDの文化的アイコンとしての役割を果たす。中枢コンテストステージ
+                      ロボテックデザインズ最優秀デザインコンペティションが行われる、
+                      豪華な円形ステージと大画面スクリーン、撮影用ドローンカメラ。内部には
+                      多層構造のホール
+                      があり、ロイドたちのセッションや競技が開催される。
+                    </dd>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_event">
+                <div class="area_img_event">
+                  <img
+                    src="/images/area/event/area_event_2.png"
+                    alt="入口ゲート"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_event">
+                <div class="area_p_event2">
+                  <p>
+                    <dt class="area_txt_efec">イベントの主な内容</dt>
+                    <dd>
+                      ロイドのアイデンティであるファッションを発表し評価を受ける
+                    </dd>
+                    <ul>
+                      発信発表のポイント
+                      <li>・個性の表現</li>
+                      <li>
+                        ・各ロイドが自身の目的や役割を反映したデザインを披露。
+                      </li>
+                      <li>・機能性と美しさを兼ね備えた衣装が特徴。</li>
+                    </ul>
+                    <ul>
+                      評価システム
+                      <li>
+                        ・ロイドのファンや各エリアの専門家、また「R-P」の評価部門による投票
+                        で、最も革新的なデザインが選ばれる。
+                      </li>
+                      <li>
+                        ・技術的な要素（素材、構造、エネルギー効率）も評価対象。
+                      </li>
+                    </ul>
+                  </p>
+                </div>
+
+                <div class="area_img_event">
+                  <figure>
+                    <img
+                      src="/images/area/event/area_event_3.png"
+                      alt="インタラクティブディスプレイ"
+                    />
+                    <figcaption>
+                      インタラクティブディスプレイによる
+                      リアルタイムデータ共有が可能。
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_event">
+                <div class="area_p_event2">
+                  <p>
+                    <dt class="area_txt_efec">国際的な交流ステージ</dt>
+                    <dd>
+                      ロイド同士のコラボレーション<br />
+                      異なる機能を持つロイドたちが共同でデザインを提案し新たなロイド企画を「R-P」へ提案申請を行う。ファッションと技術の融合
+                      を探求する また、ロイドたちの未来へのトレンド創造の場所。 イベントを通じて、次世代のロイドデザインを提案協議。
+                    </dd>
+                  </p>
+                </div>
+
+                <div class="area_img_event">
+                  <figure>
+                    <img
+                      src="/images/area/event/area_event_4.png"
+                      alt="国際的な交流ステージ"
+                    />
+                    <figcaption>国際的な交流ステージ</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_event">
+                <div class="area_p_event3">
+                  <p>
+                    <dt class="area_txt_efec">
+                      最高意思決定議会「R-W」による議案と諸問題への取り組み
+                    </dt><dd>
+                      「R-W」（Robotic Wisdom Council）」、
+                      各ロイドリーダーを中心に各エリアのエネルギー（AMP）枯渇の問題についてや
+                      共通のAMP課題を解決するための会議も行われている。ロイドたちの限りあるAMP
+                      を効率的に管理するプラットフォーム作りやAMPの有効的な維持方法などを協議。
+                      AMPの一定の流通と調整を提案し、その議案を「R-P」
+                      へ申請手続きをおこなう機関でもある。
+                    </dd>
+                  </p>
+                  <div class="area_img_event">
+                    <img
+                      src="/images/area/event/area_event_6.png"
+                      alt=" 国際的な交流ステージ"
+                    />
+                  </div>
+                </div>
+                <div class="area_img_event">
+                  <figure>
+                    <img
+                      src="/images/area/event/area_event_5.png"
+                      alt=" 国際的な交流ステージ"
+                    />
+                    <figcaption>必要な議案作りをする中枢機関</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <ScrollToTop client:load />
+
+        <FloatingNavi
+          nextLabel="NEXT Area"
+          mapLabel="マップエリア"
+          topLabel="TOP"
+          iconSrc="/images/area/bread_area_top_btn.png"
+        />
+        <FloatingNavScript client:load />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

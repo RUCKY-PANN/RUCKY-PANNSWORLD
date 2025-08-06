@@ -1,0 +1,105 @@
+//apps/web/app/pages/area/Roid_hipo.tsxの作成
+
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+＞＞ヘッダー、フッター、パンくず、ページトップ、などのナビゲーションが設置された親ページ
+
+import Image from 'next/image'
+import style from  './Roid_hipo.module.css'が必要
+
+----ここからコンテンツーーーー
+
+エリア共通のページトランジッション
+
+
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>自然豊かな湖と大きな地平線が魅力的ですね。なんだか平和感が満載です
+「テキストボックス　16px　color:white」
+
+余白1行分あけて
+IMG
+余白2行分あけて]
+
+その下
+/*--見出しマーカー見出しのDIVの左横に配置--*/
+<span class="midashiBox"></span>
+/*--見出し--*/
+<div>AMP省エネ最大地区。巨大なダムで貯蔵しエリアとして人気、AMPの販売も行われているマーケットも存在する</div>
+
+div{padding-bottom:10px;padding-top:10px;/*left,rightも10pxの余白*/
+width:100%;
+font-siize:16px
+color:white}
+
+.midashiBox{/*「見出しの横の横長矩形」　フェードイン+バウンド　*/
+width:100%; 
+display:flex;
+height:20px;
+bg-color:#0000ffff}
+
+
+その下
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+<section1>
+
+<div class="area_section">
+<div class="leader">リーダーキャラのIMGは背景扱い</div> .leader:width175* height290,backgroung-images:outfit;
+その横
+<div><span>リーダー：トレバック<br>
+/*--セリフ <p>は　一文字づつ出てくるように演出　--*/
+<p>
+「ここでは、AMPは大事に扱っています。派手に使うより、じっくり蓄えて、必要なときに分け合う。無駄なく、賢く、これが私たちのやり方です。」
+
+
+/*--area_sectionの左下に ボタン要素.RoidAreaButton border-radius12px bg-color:#000082ff　ボタンの中： 〇の中に->の描画　::beforeを使う ボタンの線無し　obClickで押されたように鏡トランジッション --*/
+
+<button class="RoidAreaButton" onClick="ヒッポロイドリストのカテゴリ抽出したページへ">このエリアのロイド達　〇の中に->の描画</button>
+
+<div class="area_section2">
+<div><IMG　600*600></div>
+<div>
+<p>カバロイドエリアの特徴
+巨大な貯蔵湖とダム型施設
+AMPはここで厳重に管理され、枯渇を防ぐためのリサイクルシステムが整備されている。
+貯蔵湖はエリアの中心に位置し、安定した供給を維持するための重要な役割を果たす。
+</p>
+/*-- p width:470px  pは縦センターに配置 --*/
+</div>
+
+余白30px
+
+<div class="area_section3">
+<div class="textArea1"><span>AMPマーケットとしての発展</span>
+<p>AMPの貯蔵機能が話題となり、他のロイドたちが利用できる
+1行分あける
+<span>マーケットエリアとして成長
+<p>取引や契約を通じて、エネルギーの流通が活発化している。
+<span>静かで落ち着いた空間
+<p>ここにいるロイドたちはAMPの消費が少なく、イベントへの参加頻度も低い。
+そのため、エリア全体が穏やかで安定した雰囲気を持っている。
+
+左に画像配置テキストとの間　余白30px
+
+/*-- class=textArea1は area_section3の右の縦上に配置 --*/
+
+<div class="area_section3">
+<div class="textArea1">
+<div>
+その説明のIMG配置右へ align-right 
+</div>
+<div>
+<span>AMPリサイクル施設の集積地</span>
+<p>消費を抑えながらAMPを再利用する技術が発展しており、持続可能なエネルギー管理が行われている。
+他のエリアに供給するためのマーケット機能も備え、AMPの流通拠点として注目されている。 
+</div>
+
+------コンテンツ表示領域ここまで------

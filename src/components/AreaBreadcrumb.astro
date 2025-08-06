@@ -1,0 +1,12 @@
+---
+// AreaBreadcrumb.astro
+const { areaNameJa, areaNameEn } = Astro.props;
+---
+
+<div class="bread">
+  <a href="/areaMap/">
+    <img src="/images/area/bread_area_top_btn.png" alt="エリアマップへ" />
+  </a>
+  <span class="areaName_txt"> / {areaNameJa}</span>
+  <span class="areaName_txt_font">{areaNameEn}</span>
+</div>

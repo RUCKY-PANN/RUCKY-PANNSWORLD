@@ -1,0 +1,126 @@
+//apps/web/app/pages/area/Roid_bear.tsxの作成
+
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+＞＞ヘッダー、フッター、パンくず、ページトップ、などのナビゲーションが設置された親ページ
+
+import Image from 'next/image'
+import style from  './Roid_bear.module.css'が必要
+
+----ここからコンテンツーーーー
+
+エリア共通のページトランジッション
+「
+ページトランジッションフェードイン
+背景は薄いブルーで透けている
+文字（文字指定したい）大き目で、クリア感あり、
+＞＞＞＞BEAR-ROID Area＜＜＜＜
+文字点滅で消える、
+ページトランジッション、フェードアウト
+
+ANDA-ROID Areaは差し換え可能に。
+
+」これは以下のように設定済み
+👉
+import { areaOpeningLines } from '@/constants/areaOpeningLines
+const meta = areaOpeningLines['bear']
+export default function bearRoidArea() {
+  return ( 
+<div>
+<AreaTransition areaName={meta.headingText} />
+<AreaLayout
+  code={meta.code}
+  label={meta.label}
+  icon={meta.icon}
+  headingImage={meta.headingImage}
+  leadText={meta.leadText} // ← 追加 ✅
+  breadcrumbIcon={meta.breadcrumbIcon}// ← 追加
+>
+も追加すること
+
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>激しい滝が流れ込んでいますね、この液体は？BlueeSeaの液体ですかね。ここはどんなエリアですか。
+「テキストボックス　16px　color:white」
+
+余白1行分あけて
+IMG
+余白2行分あけて]
+
+その下
+「見出しテキストBOX」
+<div>錦鯉が吐き出す「AquaCore」が「B-Smooth」に降り注ぎ、吸収された豊かなミネラルが溶け込んだ「R-P」指定保護エリア</div>
+border-left:7px; 
+border-color:#0000ffff
+padding-bottom:10px;padding-top:10px
+width:100%;
+font-siize:16px
+color:white
+
+その下
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+<section1>
+
+<div class="area_section">
+<div class="leader">リーダーキャラのIMGは背景扱い</div> .leader:width175* height290,backgroung-images:outfit;
+その横
+<div><span>リーダー：グラハム<br>
+<p>
+「「ここは、資源豊富なエリアだが、我々にAMP変換技術はない。しかし保護指定区域として「R-P」の恩恵は受けているが、この恩恵を世界の貧しいエリアにもいきわたるようなシステムはないものか。「議会へ提案中だ」」
+area_sectionの左下に
+<div onClick="ベアーロイドリストのカテゴリ抽出したページへ">このエリアのロイド達　〇の中に->の描画</div>
+
+<div class="area_section2">
+
+<h4>「B-Smooth」が激しく流れ込むエリア
+<p>球体RUCKY-PANNのB-Smoothの源流の付近、錦鯉の吐き出す「AquaCore」の一部が溶けだしそのミネラル成分を多く含んだ世界でも唯一の資源エリア。「R-P」の「AquaCore」指定回収地域になっている。流動的な資源があるものの、ロイドたちにAMP生成技術は一切ない。</p>
+
+IMG
+
+余白30px
+
+<div class="area_section3">
+<p>ベアーロイドの生活圏では、独自の環境を維持する河川ろ過システム「SMF-Sercle」が稼働している。AquaCoreの抽出を担うライン施設は、浄化されたSmoothをR-Pへと送る役割も持つため、R-Pの重要なエネルギー循環システムをの一躍を担っている。
+この区域では、オリジナルボディーの設計・リペア・製造が集中しており、AMPの消費効率は高まっているが、R-Pからの供給恩恵により消費は安定的に管理されている。
+さらに、休憩エリアや公共施設の美観整備も進められ、ロイドたちは静かで快適な生活を享受している。<br>
+IMG センターに。<br>
+<span>AMP吸収・保管施設<br>
+配給AMPを維持する設備はあるが、AMP生成能力機能はない
+</p>
+※<p>テキストエリアはwidth500px
+
+左に
+<div>
+その説明のIMG配置 align-left 
+テキストとの余白30px
+
+<div class="area_section4">
+<p>ベアーエリアへの「R-P」介入の影響</p>
+余白1行分
+<p>RUCKY-PANNの資源回収地域として指定されたベアーロイドエリアでは、「R-P」回収マシンによるAquaCore成分の採取と成分調査が日夜続いている。しかし、ベアーロイドたち自身もこの回収作業に関与しているため、彼らの生活に直接的な支障はなく、むしろ保護指定区域としての恩恵を受けている。
+<div>
+その説明のIMG配置 align-left
+テキストとの余白30px
+
+余白30px
+
+<div class="area_section5">
+<p><span>保護指定エリアとしての恩恵</span><br>
+
+<p>資源管理のために都市機構が整備され、安定した住環境が確保。ベアーロイドは作業の一部を担い、資源維持に貢献していたため、すでに保護指定区域としての認定され、エリア維持の優先措置として都市施設の機能が強化と美観化、スマート化、資源管理の最適化を受けている。
+また、AMP循環技術の開発が進み、エネルギーの利用効率が向上、ベアーロイド自身の知識と技術も進発達傾向にあり、新たなシステムの構築へ<br> 
+
+<div>
+その説明のIMG配置 align-left
+テキストとの余白30px
+
+------コンテンツ表示領域ここまで------
+

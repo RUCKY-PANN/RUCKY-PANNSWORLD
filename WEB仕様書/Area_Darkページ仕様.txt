@@ -1,0 +1,139 @@
+//apps/web/app/pages/area/Roid_dark.tsxの作成
+
+'use client'
+import Image from 'next/image'
+import styles from './Roid_dark.tsx.module.css'
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+import AreaTransition from '@/components/PageTransitions/AreaTransition'
+import { areaOpeningLines } from '@/constants/areaOpeningLines'
+
+
+const meta = areaOpeningLines['dark']
+
+export default function darkRoidArea() {
+  return ( 
+<div>
+<AreaTransition areaName={meta.headingText} />
+<AreaLayout
+  code={meta.code}
+  label={meta.label}
+  icon={meta.icon}
+  headingImage={meta.headingImage}
+  leadText={meta.leadText} // ← 追加 ✅
+  breadcrumbIcon={meta.breadcrumbIcon}// ← 追加 ✅
+
+もあわせて記述
+
+----ここからコンテンツーーーー
+
+
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>巨大な目つきをしたモニュメントが怖いです。迷路のような壁が幾重にもそびえたっていて不気味なイメージですね
+「テキストボックス　16px　color:white」
+
+余白1行分あけて
+IMG
+余白2行分あけて]
+
+その下
+/*--見出しマーカー見出しのDIVの左横に配置--*/
+<span class="midashiBox"></span>
+/*--見出し--*/
+<div>中枢組織「R-P」直属の-セキュリティ-エリア</div>
+
+div{padding-bottom:10px;padding-top:10px;/*left,rightも10pxの余白*/
+width:100%;
+font-siize:16px
+color:white}
+
+.midashiBox{/*「見出しの横の横長矩形」　フェードイン+バウンド　*/
+width:100%; 
+display:flex;
+height:20px;
+bg-color:#0000ffff}
+
+
+その下
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+<section1>
+
+<div class="area_section1">
+<div ここは右寄せのエリアに>
+<h4>セキュリティータワー「THE EYE」</h4>
+<p><span>高い塀と監視システム:<br>
+外部からの侵入を防ぐため、強化された防壁 が設置されている。
+
+<span>監視タワーの特徴:
+<p>高密度合金で構成され、外部からの侵入を完全に防ぐ。
+内部には衝撃吸収層があり、爆発や衝撃にも耐えられる設計。監視アイとドローンネットワーク 。頂部には 楕円形の監視アイが設置され、360度の視野を確保。全天候型監視ドローン が巡回し、リアルタイムで異常を検知。
+
+<ul>監視タワーの役割
+<li>エリア全体のセキュリティ管理 
+<li>AI制御の監視システムが、侵入者や異常を即座に検知。
+<li>レーザービーム監視 により、外部からのアクセスを制限。
+<li>ロイドたちのエネルギーAMP管理
+
+<p>監視タワーは ロイドたちのエネルギー供給を統括し、最適な稼働状態を維持。
+AMPの流通を管理 し、不正アクセスやエネルギーの損失を防ぐ。
+
+<span>ロイドたちの管理とガードロイドの生成。
+<p><span>ガードロイドの配置と統制
+監視タワー周辺にはガードロイドが常駐し、侵入者を排除。各ロイドの動作ログを分析し、最適な配置を決定。ロイドたちはメンテナンスとアップグレードで定期的に監視タワーで システムチェックを受ける。必要に応じてアップグレード が施され、性能を維持。
+
+右側、IMG配置
+余白を30pxとって
+<div　IMGのエリア >
+＜IMG＞＜ｂｒ＞
+余白20px
+＜IMG＞
+</div>
+
+余白30px
+
+<div class="area_section2">
+<div>
+<h4>不気味な監視ドローン 「THE SEEKER」はあらゆる侵入も検知
+<p><span>監視ドローンを操る巨大なカメラ。そこから発せられる不気味なレーザーによって、侵入物を即座に感知し、それに従いガードロイドたちは即座に行動、強力な捕獲力で瞬時侵入者、侵入物を捕獲する。  
+
+20ｐｘ余白を取り
+<div>ＩＭＧセンター揃え
+ＩＭＧ<br>
+<span>「The SEEKER」を束ねるリーダー」
+ＩＭＧ<br>
+<span>「The EYE」により、統率された、ダークガードロイドたち
+
+<div>
+その説明のIMGを左へ配置 align-left 　※テキストとIMGの余白30px
+</div>
+
+余白30px
+
+<div class="area_section3">
+<div>
+<span>内部の施設中央管理センター
+<p>ここでは、AIによるセキュリティ監視 が行われ、エリア全体の安全が確保されている。
+データ分析システム により、異常が検知されると即座に対応。
+1行分あけて
+<span>研究・開発エリア 
+<p>最新技術の開発 が進められており、セキュリティシステムのアップグレードが定期的に行われる。
+ドローンの自律制御技術や防衛AIの研究が行われている可能性も。
+
+20ｐｘ余白を取り
+<div>
+その説明のIMGを左へ配置 align-left 　※テキストとIMGの余白30px
+</div>
+
+
+
+------コンテンツ表示領域ここまで------
+

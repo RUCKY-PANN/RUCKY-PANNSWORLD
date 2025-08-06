@@ -1,0 +1,397 @@
+[
+  {
+    "nameTop": "PANDA",
+    "nameMain": "パンダ<br />ロイド",
+    "imageSrc": "/images/charaIntro/panda/panda1111_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/panda/chara_intro_area_panda.png",
+    "areaCaption": "錦鯉が近くに遊泳する<br />バンブードームに住む",
+    "traits": [
+      {
+        "label": "性　格",
+        "content": "平和主義、活動家、社交的、研究タイプ、政治的権威力"
+      },
+      { "label": "体　格", "content": "2頭身〜3頭身" },
+      { "label": "形　状", "content": "流線形" },
+      { "label": "交流度", "content": "100%" },
+      {
+        "label": "主要交流",
+        "content": "コアラ/ペンギン/ベアー/ヒッポ/キャット/ドッグ/タヌキ/コンパニオン/イベントのR-w議会"
+      }
+    ],
+    "awardTitle": "RUCKY-PANN マスターチャンピオンシップ",
+    "awardDetails": "デザイン総合部門最優秀賞,機能部門最優秀賞,エリア交流活動部門最優秀賞",
+    "awardIcons": [
+      {
+        "src": "/images/charaIntro/icon_trophy.png",
+        "alt": "マスターチャンピオン"
+      },
+      {
+        "src": "/images/charaIntro/icon_prize_no1_design.png",
+        "alt": "デザイン総合部門最優秀賞"
+      },
+      {
+        "src": "/images/charaIntro/icon_prize_no2_kinou.png",
+        "alt": "機能部門最優秀賞"
+      },
+      {
+        "src": "/images/charaIntro/icon_prize_no2_area.png",
+        "alt": "エリア交流活動部門最優秀賞"
+      }
+    ],
+    "categoryId": "PANDA"
+  },
+
+  {
+    "nameTop": "KOALA",
+    "nameMain": "コアラ<br />ロイド",
+    "imageSrc": "/images/charaIntro/koala/chara_img_koala1_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/koala/chara_intro_area_koala.png",
+    "areaCaption": "最古の歴史、悠久の記憶を持つ<br />U-Treeに住む",
+    "traits": [
+      {
+        "label": "性　格",
+        "content": "平和主義、穏健派、研究心、穏やか、寛大"
+      },
+      { "label": "体　格", "content": "2頭身〜3頭身" },
+      { "label": "形　状", "content": "流線形" },
+      { "label": "交流度", "content": "60%" },
+      {
+        "label": "主要交流",
+        "content": "パンダ/タヌキ/ベアー/ペンギン/ヒッポ/イベント"
+      }
+    ],
+    "awardTitle": "RUCKY-PANN マスターチャンピオンシップ",
+    "awardDetails": "機能部門最優秀賞,エリア交流活動部門最優秀賞,リサイクル技術部門最優秀賞",
+    "awardIcons": [
+      {
+        "src": "/images/charaIntro/icon_prize_no2_kinou.png",
+        "alt": "機能部門最優秀賞"
+      },
+      {
+        "src": "/images/charaIntro/icon_prize_no2_area.png",
+        "alt": "エリア交流活動部門最優秀賞"
+      },
+      {
+        "src": "/images/charaIntro/icon_prize_no3_recycle.png",
+        "alt": "リサイクル技術部門最優秀賞"
+      }
+    ],
+    "categoryId": "KOALA"
+  },
+
+  {
+    "nameTop": "CAT",
+    "nameMain": "キャット<br />ロイド",
+    "imageSrc": "/images/charaIntro/cat/chara_img_cat4_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/cat/chara_intro_area_cat.png",
+    "areaCaption": "世界最高峰<br />ハイテク高層THEタワーに住む",
+    "traits": [
+      {
+        "label": "性　格",
+        "content": "高級志向、社交的、活動的、浪費、好奇心、優雅、温厚"
+      },
+      { "label": "体　格", "content": "2頭身〜3頭身" },
+      { "label": "形　状", "content": "流線形" },
+      { "label": "交流度", "content": "100%" },
+      {
+        "label": "主要交流",
+        "content": "パンダ/コアラ/ペンギン/ベアー/ヒッポ/ドッグ/タヌキ/コンパニオン/イベント"
+      }
+    ],
+    "awardTitle": "RUCKY-PANN マスターチャンピオンシップ",
+    "awardDetails": "デザイン総合部門最優秀賞,機能部門最優秀賞,エリア交流活動部門最優秀賞",
+    "awardIcons": [
+      {
+        "src": "/images/charaIntro/icon_trophy.png",
+        "alt": "マスターチャンピオン"
+      },
+      {
+        "src": "/images/charaIntro/icon_prize_no1_design.png",
+        "alt": "デザイン総合部門最優秀賞"
+      },
+      {
+        "src": "/images/charaIntro/icon_prize_no2_kinou.png",
+        "alt": "機能部門最優秀賞"
+      },
+      {
+        "src": "/images/charaIntro/icon_prize_no2_area.png",
+        "alt": "エリア交流活動部門最優秀賞"
+      }
+    ],
+    "categoryId": "CAT"
+  },
+
+  {
+    "nameTop": "PENGUIN",
+    "nameMain": "ペンギン<br />ロイド",
+    "imageSrc": "/images/charaIntro/penguin/chara_img_peng11_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/penguin/chara_intro_area_penguin.png",
+    "areaCaption": "美しいオーロラに包まれた<br />氷の世界に住む",
+    "traits": [
+      {
+        "label": "性　格",
+        "content": "活動的、好奇心タイプ、研究タイプ、伝統的、寛大、温和"
+      },
+      { "label": "体　格", "content": "2頭身〜3頭身" },
+      { "label": "形　状", "content": "流線形" },
+      { "label": "交流度", "content": "80%" },
+      {
+        "label": "主要交流",
+        "content": "パンダ/コアラ/キャット/ドッグ/タヌキ/コンパニオン/イベント"
+      }
+    ],
+    "awardTitle": "RUCKY-PANN マスターチャンピオンシップ",
+    "awardDetails": "機能部門最優秀賞",
+    "awardIcons": [
+      {
+        "src": "/images/charaIntro/icon_prize_no2_kinou.png",
+        "alt": "機能部門最優秀賞"
+      }
+    ],
+    "categoryId": "PENGUIN"
+  },
+
+  {
+    "nameTop": "DOG",
+    "nameMain": "ドッグ<br />ロイド",
+    "imageSrc": "/images/charaIntro/dog/chara_img_dog27_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/dog/chara_intro_area_dog.png",
+    "areaCaption": "サッカーの祭典<br />THEアリーナを囲んで住む",
+    "traits": [
+      { "label": "性　格", "content": "活動家、平和主義、努力家、社交的" },
+      { "label": "体　格", "content": "2頭身〜3頭身" },
+      { "label": "形　状", "content": "流線形" },
+      { "label": "交流度", "content": "90%" },
+      {
+        "label": "主要交流",
+        "content": "コアラ/パンダ/ペンギン/ベアー/ヒッポ/キャット/タヌキ/アザー/コンパニオン/イベント"
+      }
+    ],
+    "awardTitle": "RUCKY-PANN マスターチャンピオンシップ",
+    "awardDetails": "機能部門最優秀賞,エリア交流活動部門最優秀賞",
+    "awardIcons": [
+      {
+        "src": "/images/charaIntro/icon_prize_no2_kinou.png",
+        "alt": "機能部門最優秀賞"
+      },
+      {
+        "src": "/images/charaIntro/icon_prize_no2_area.png",
+        "alt": "エリア交流活動部門最優秀賞"
+      }
+    ],
+    "categoryId": "DOG"
+  },
+
+  {
+    "nameTop": "BEAR",
+    "nameMain": "ベアー<br />ロイド",
+    "imageSrc": "/images/charaIntro/bear/chara_img_bear1_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/bear/chara_intro_area_bear.png",
+    "areaCaption": "AquaCoreの恩恵<br />資源保護区域に住む",
+    "traits": [
+      {
+        "label": "性　格",
+        "content": "平和主義、温和、寛大、忠誠心、協力的、社交的"
+      },
+      { "label": "体　格", "content": "2頭身〜3頭身" },
+      { "label": "形　状", "content": "流線形" },
+      { "label": "交流度", "content": "50%" },
+      {
+        "label": "主要交流",
+        "content": "コアラ/パンダ/ヒッポ/タヌキ/アザー/イベントのR-w議会"
+      }
+    ],
+    "awardTitle": "RUCKY-PANN マスターチャンピオンシップ",
+    "awardDetails": "リサイクル技術部門最優秀賞",
+    "awardIcons": [
+      {
+        "src": "/images/charaIntro/icon_prize_no3_recycle.png",
+        "alt": "リサイクル技術部門最優秀賞"
+      }
+    ],
+    "categoryId": "BEAR"
+  },
+
+  {
+    "nameTop": "HIPO",
+    "nameMain": "ヒッポ<br />ロイド",
+    "imageSrc": "/images/charaIntro/hipo/chara_img_hipo10_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/hipo/chara_intro_area_hipo.png",
+    "areaCaption": "巨大貯蓄ダム<br />出稼ぎ労働者受入れ区域",
+    "traits": [
+      {
+        "label": "性　格",
+        "content": "平和主義、研究タイプ、温和、寛大、伝統、節約、協力的、団結心"
+      },
+      { "label": "体　格", "content": "2頭身〜3頭身" },
+      { "label": "形　状", "content": "流線形" },
+      { "label": "交流度", "content": "45%" },
+      {
+        "label": "主要交流",
+        "content": "アザー/パンダ/ベアー/イベントのR-w議会"
+      }
+    ],
+    "awardTitle": "RUCKY-PANN マスターチャンピオンシップ",
+
+    "awardDetails": "リサイクル技術部門最優秀賞",
+    "awardIcons": [
+      {
+        "src": "/images/charaIntro/icon_prize_no3_recycle.png",
+        "alt": "リサイクル技術部門最優秀賞"
+      }
+    ],
+    "categoryId": "HIPO"
+  },
+
+  {
+    "nameTop": "TANUKI",
+    "nameMain": "タヌキ<br />ロイド",
+    "imageSrc": "/images/charaIntro/tanuki/chara_img_tanu6_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/tanuki/chara_intro_area_tanuki.png",
+    "areaCaption": "地下の癒し空間<br />TheZOONに住む",
+    "traits": [
+      {
+        "label": "性　格",
+        "content": "平和主義、活動家、研究タイプ、政治的野心、社交的、温和、節約"
+      },
+      { "label": "体　格", "content": "2頭身〜3頭身" },
+      { "label": "形　状", "content": "流線形" },
+      { "label": "交流度", "content": "90%" },
+      {
+        "label": "主要交流",
+        "content": "コアラ/パンダ/キャット/ドッグ/コンパニオン/ペンギン/イベント"
+      }
+    ],
+    "awardTitle": "RUCKY-PANN マスターチャンピオンシップ",
+    "awardDetails": "デザイン総合部門最優秀賞",
+    "awardIcons": [
+      { "src": "/images/charaIntro/icon_trophy.png", "alt": "賞アイコン1" },
+      { "src": "/images/charaIntro/icon_prize_no2.png", "alt": "賞アイコン2" }
+    ],
+    "categoryId": "TANUKI"
+  },
+
+  {
+    "nameTop": "OTHER",
+    "nameMain": "アザー<br />ロイド",
+    "imageSrc": "/images/charaIntro/other/chara_img_oth9_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/other/chara_intro_area_other.png",
+    "areaCaption": "多種多様な形態ロイド<br />出稼ぎ地区、AMP消費大の荒廃したエリア",
+    "traits": [
+      {
+        "label": "性　格",
+        "content": "野心的、活動的、活発、浪費家、攻撃的、固執的、悲観的"
+      },
+      { "label": "体　格", "content": "2頭身〜3頭身" },
+      { "label": "形　状", "content": "流線形" },
+      { "label": "交流度", "content": "30%" },
+      {
+        "label": "主要交流",
+        "content": "ヒッポ/ベアー/イベント/地下マーケット"
+      }
+    ],
+    "awardTitle": "RUCKY-PANN マスターチャンピオンシップ",
+    "awardDetails": "エリア交流活動部門最優秀賞",
+    "awardIcons": [
+      {
+        "src": "/images/charaIntro/icon_prize_no2_area.png",
+        "alt": "エリア交流活動部門最優秀賞"
+      }
+    ],
+    "categoryId": "OTHER"
+  },
+
+  {
+    "nameTop": "DARKGUARD",
+    "nameMain": "ダークガード<br />ロイド",
+    "imageSrc": "/images/charaIntro/dark/chara_img_dark12_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/dark/chara_intro_area_dark.png",
+    "areaCaption": "R-Pを守る<br />セキュリティエリア",
+    "traits": [
+      { "label": "性　格", "content": "忠実、質実剛健、忍耐、非寛容、攻撃的" },
+      { "label": "体　格", "content": "2頭身〜3頭身" },
+      { "label": "形　状", "content": "流線形、飛行タイプ" },
+      { "label": "交流度", "content": "10%" },
+      { "label": "主要交流", "content": "P-R/イベントのR-w議会" }
+    ],
+    "awardTitle": "サイバーフレーム・エキスポ",
+    "awardDetails": "CYBER FRAME",
+    "awardIcons": [
+      {
+        "src": "/images/charaIntro/icon_prize_no5_expo.png",
+        "alt": "CYBER FRAME"
+      }
+    ],
+    "categoryId": "DARK"
+  },
+  {
+    "nameTop": "COMPANION",
+    "nameMain": "コンパニオン<br />ロイド",
+    "imageSrc": "/images/charaIntro/companion/chara_img_compa18_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/companion/chara_intro_area_companion.png",
+    "areaCaption": "イベントを盛り上げる<br />繁華エリア",
+    "traits": [
+      {
+        "label": "性　格",
+        "content": "温和、社交的、寛大、平和主義、好奇心、知的、美的、高級志向、浪費"
+      },
+      { "label": "体　格", "content": "3頭身〜4頭身" },
+      { "label": "形　状", "content": "流線形" },
+      { "label": "交流度", "content": "100%" },
+      {
+        "label": "主要交流",
+        "content": "コアラ/ペンギン/ベアー/ヒッポ/キャット/アザー/ドッグ/タヌキ/パンダ/ダークガード/イベントのR-w議会"
+      }
+    ],
+    "awardTitle": "NEO MACHINA SUMMIT（ネオ・マキナ・サミット）未来的ロイド技術の集約",
+    "awardDetails": "ネオ・マキナ賞",
+    "awardIcons": [
+      {
+        "src": "/images/charaIntro/icon_prize_no5_eco.png",
+        "alt": "ネオ・マキナ賞"
+      }
+    ],
+    "categoryId": "COMPANION"
+  },
+  {
+    "nameTop": "R-W",
+    "nameMain": "イベント主宰R-W議会<br />ロイド",
+    "imageSrc": "/images/charaIntro/event/chara_img_rw2_result.webp",
+    "imageAlt": "画像説明",
+    "areaIconSrc": "/images/charaIntro/event/chara_intro_area_event.png",
+    "areaCaption": "ワールドイベント<br />開催エリア、意思決定評議会エリア",
+    "traits": [
+      {
+        "label": "性　格",
+        "content": "温和、研究、寛大、平和主義、公平、知的"
+      },
+      { "label": "体　格", "content": "1頭身" },
+      { "label": "形　状", "content": "流線形" },
+      { "label": "交流度", "content": "100%" },
+      {
+        "label": "主要交流",
+        "content": "パンダ/コアラ/ペンギン/ベアー/ヒッポ/キャット/ドッグ/タヌキ/アザー/パンダ/ダークガード/イベントのR-w議会"
+      }
+    ],
+    "awardTitle": "R-P特別認可　RUCKY-PANN評議会「R-W」機関　最高顧問任命賞",
+    "awardDetails": "特別認可：秩序均衡機能評議会認定機関",
+    "awardIcons": [
+      {
+        "src": "/images/charaIntro/icon_rw.png",
+        "alt": "秩序均衡機能評議会認定機関"
+      }
+    ],
+    "categoryId": "R-W"
+  }
+]

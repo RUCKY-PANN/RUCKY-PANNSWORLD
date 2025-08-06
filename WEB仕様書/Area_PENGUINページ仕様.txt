@@ -1,0 +1,86 @@
+//apps/web/app/pages/area/Roid_penguin.tsxの作成
+
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+＞＞ヘッダー、フッター、パンくず、ページトップ、などのナビゲーションが設置された親ページ
+
+import Image from 'next/image'
+import style from  './Roid_penguin.module.css'が必要
+
+----ここからコンテンツーーーー
+
+エリア共通のページトランジッション
+
+
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>一面は氷の世界。周囲は氷山に囲まれ、殺伐としています。ドームでここでの暮らしはどんなものなんでしょうか？
+「テキストボックス　16px　color:white」
+
+余白1行分あけて
+IMG
+余白2行分あけて]
+
+その下
+「見出しテキストBOX」
+<div>透き通る氷と幻想的なオーロラが描く、静寂と輝きの世界</div>
+border-left:7px; 
+border-color:#0000ffff
+padding-bottom:10px;padding-top:10px
+width:100%;
+font-siize:16px
+color:white
+
+その下
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+<section1>
+
+<div class="area_section">
+<div class="leader">リーダーキャラのIMGは背景扱い</div> .leader:width175* height290,backgroung-images:outfit;
+その横
+<div><span>リーダー：アーク<br>
+<p>
+「ここは、氷の静寂に包まれ、オーロラが語る未来。ここは、知識と探求が響き合う場所。」
+area_sectionの左下に
+<div onClick="ペンギンロイドリストのカテゴリ抽出したページへ">このエリアのロイド達　〇の中に->の描画</div>
+
+<div class="area_section2">
+
+<h4>「The Vision」光の屈折とオーロラヴィジョンの融合観光スポット
+<p>球体RUCKY-PANNのB-Smoothのが放つ光の現象とB-Smoothの放つ冷気が混ざって発生した光のカーテン、AMPを含む光線が含めれており、AMP浴するために訪問するロイドも少なくない。光を浴びることによって体内のAMPの活性化にも有効だと言われている</p>
+
+オーロラIMG
+
+余白30px
+
+<div class="area_section3">
+<p><span>ペンギンロイドの暮らす氷の世界 
+このエリアは果てしなく広がる氷原と、そびえ立つ氷山に囲まれた過酷な環境。しかし、ペンギンロイドたちはここで独自の調和を築きながら生活している。ドーム内部の世界 。ドームの中は氷の寒さから守られた都市型エリア。外界の厳しさとは対照的に、内部は温度調整された快適な空間で、エネルギー効率の高い暖房システムが働いている。
+光の柱:天井には特殊な発光装置が設置され、昼夜のサイクルを再現。
+氷洞市場: 氷の中に埋め込まれた透明な市場では、ロイドたちが資源を交換。
+ エネルギーステーション: ペンギンロイドが活動のためにエネルギーを補給する充電エリア。</p>
+ 
+余白30px
+CITY IMG
+余白30px
+
+<div class="area_section4">
+<p><span>生活スタイル 
+ペンギンロイドたちは、極寒に適した体構造を持ち、氷の上でスムーズに移動可能。水上移動: 氷の裂け目を利用し、スムーズに水中を行き来するシステムあり。
+温度適応: 体の外殻が温度を調整し、内部機能を守る。
+コミュニティ活動: ドーム内の広場では定期的な情報共有会が開かれ、ロイドたちは各自の役割を果たしながら都市の維持管理を行う。外は厳しい氷の世界、しかしドーム内では高度に発達したロイド社会が存在している。彼らの生き方は、極限の環境の中でも秩序と安定を保つ技術の証そのものなのかもしれない。
+<div>
+その説明のIMG配置 align-left 
+テキストとの余白30px
+
+
+------コンテンツ表示領域ここまで------
+

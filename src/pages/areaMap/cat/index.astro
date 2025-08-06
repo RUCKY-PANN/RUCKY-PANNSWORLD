@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '../../../styles/areaMap_cat.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+
+import { getMeta } from '../../../utils/metaManager';
+
+const meta = getMeta('/pages/areaMap/cat/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb
+          areaNameJa="キャットロイドエリア"
+          areaNameEn="CAT-Roid AREA"
+        />
+
+        <p class="area_txt_p">
+          近未来的なおしゃれな都市空間にそびえたつ、キャットタワー。
+          ここではどんな生活環境なんでしょうか？
+        </p>
+        <div class="area_head_photo_block_cat"></div>
+        <h4 class="area_txt_h4">
+          優雅をと美観をもつ、超巨大で世界でも最高レベルのテクノロジーをもつ「The
+          Tower」が象徴的。
+        </h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+            <section class="area_section_block scroll-fade">
+              <div class="leader">
+                <img src="/images/area/cat/area_cat_1.png" />
+                <p class="leader_txt">
+                  <span>リーダー：フェリス</span><br />
+                  「このエリアは、自由と創造の交差点。 ロイドたちが自らの可能性を広げ、未来を形作る場所だ」
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_cat">
+                <div class="area_img_cat">
+                  <img
+                    src="/images/area/cat/area_cat_3.png"
+                    alt="世界最高峰のタワー型エリア"
+                  />
+                </div>
+
+                <div class="area_p_left_cat1">
+                  <p>
+                    <span class="area_txt_efec">世界最高峰のタワー型エリア</span
+                    ><br />
+                    流線形のデザイン美学空気力学を意識した滑らかなフォルムが、 すべての建築に貫かれており、
+                    角のない未来都市を象徴します 。建物・モニター・家具・交通手段に至るまで「曲線」が支配するエリアです。
+                    <br /><br />
+                    超高度なインフラとインターフェースすべての施設がインタラクティブで、
+                    巨大なクリアホログラムや共有モニターが情報の中枢を担っています。
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_cat">
+                <div class="area_p_right_cat2">
+                  <p>
+                    <span class="area_txt_efec">自律調整型スマート環境</span><br
+                    />
+                    日照量や気温、空間音響まで完全制御。 人工光も自然のように変化し、快適性と集中力を保てるよう最適化されています。
+                    最大限の意匠性緑地は必要最低限に抑えられ、すべてが“計算された美”として存在します。
+                    噴水、ガーデン、照明も、すべてが空間演出の一部であり、無機的な世界の中にある美意識の結晶です。
+                  </p>
+                </div>
+                <div class="area_img_cat2">
+                  <img
+                    src="/images/area/cat/area_cat_4.png"
+                    alt="自律調整型スマート"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_cat2">
+                <div class="area_img_cat3">
+                  <img
+                    src="/images/area/cat/area_cat_5.png"
+                    alt="高速な巨大飛行船"
+                  />
+                </div>
+                <div class="area_p_right_cat3">
+                  <p>
+                    <span class="area_txt_efec">高速な巨大飛行船</span><br />
+
+                    超巨大な流線形飛行船と専用のハイエンドなエアポートが浮かび、
+                    ここが他エリア圏への接続拠点となっています。
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_cat">
+                <div class="area_p_right_cat4">
+                  <p>
+                    <span class="area_txt_efec">プレイゾーンと休憩エリア</span
+                    ><br />
+                    キャットロイドたちが自在に動き回れるエリア。重力制御技術により、
+                    ロイドたちは軽やかに跳び回りながらエリアを移動。隠れ家のようなクッションスペースや、
+                    光を調整できる個室が用意され、リラックスできる環境が整えられている。各ユニットにはプライバシーを確保しつつも、
+                    他のロイドたちとのインタラクションを促すスマートインフラが組み込まれている。
+                  </p>
+                </div>
+                <div class="area_img_cat4">
+                  <img
+                    src="/images/area/cat/area_cat_6.png"
+                    alt="プレイゾーンと休憩エリア"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_cat">
+                <div class="area_img_cat3">
+                  <img
+                    src="/images/area/cat/area_cat_7.png"
+                    alt="情報ネットワークと活用と他のエリアの情報共有"
+                  />
+                </div>
+                <div class="area_p_right_cat3">
+                  <p>
+                    <span class="area_txt_efec"
+                      >情報ネットワークと活用と他のエリアの情報共有</span
+                    ><br />
+                    特別な任務を持つキャットロイドは社会の意思決定、世界のデータ分析、
+                    このエリアのAI調整などを行い、独自のデータネットワークを通じて、
+                    各エリアの都市の情報をリアルタイムで共有し、最適な交流スタイルを選択できる。
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <ScrollToTop client:load />
+      </div>
+    </div>
+
+    <FloatingNavi
+      nextLabel="NEXT Area"
+      mapLabel="マップエリア"
+      topLabel="TOP"
+      iconSrc="/images/area/bread_area_top_btn.png"
+    />
+    <FloatingNavScript client:load />
+  </div>
+</BaseLayout>

@@ -1,0 +1,166 @@
+//apps/web/app/pages/area/Roid_companion.tsxの作成
+
+'use client'
+import Image from 'next/image'
+import styles from './Roid_companion.module.css'
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+import AreaTransition from '@/components/PageTransitions/AreaTransition'
+import { areaOpeningLines } from '@/constants/areaOpeningLines'
+
+
+const meta = areaOpeningLines['companion']
+
+export default function companionRoidArea() {
+  return ( 
+<div>
+<AreaTransition areaName={meta.headingText} />
+<AreaLayout
+  code={meta.code}
+  label={meta.label}
+  icon={meta.icon}
+  headingImage={meta.headingImage}
+  leadText={meta.leadText} // ← 追加 ✅
+  breadcrumbIcon={meta.breadcrumbIcon}// ← 追加 ✅
+
+もあわせて記述
+----ここからコンテンツーーーー
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>イベントを盛り上げるコンパニオン達がここにいるんですね～なんだか華やかなところですね。まるで遊園地のようなパークや近未来的な施設もみえます。ここはどんなところでしょうか？
+「テキストボックス　18px　color:white text-align:left」
+
+余白1行分あけて
+IMG
+余白2行分あけて]
+
+その下
+「見出しテキストBOX」
+<div>「R-P」が新たに設置したエリア、遊園地のようなランドマークシティ、色とりどりの施設が特徴的</div>
+border-left:7px; 
+border-color:#0000ffff
+padding-bottom:10px;padding-top:10px
+width:100%;
+font-siize:18px
+color:white
+
+その下
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+<div class="area_section">
+<div>左側
+<span>今回の代表役：ルミナ・ヴェール<br>
+<p>
+毎回行われる代表抽選で選ばれました。
+「ここは、ロイドたちのイベントを演出する私たちが多く存在します。ここでロイド専属契約もできます。ただすごい混雑です。」
+右側
+<div class="leader">リーダーキャラのIMGは背景扱い</div> .leader:width175* height290,backgroung-images:outfit;
+
+
+/*--area_sectionの左下に ボタン要素.RoidAreaButton border-radius12px bg-color:#000082ff　ボタンの中： 〇の中に->の描画　::beforeを使う ボタンの線無し　obClickで押されたように鏡トランジッション --*/
+
+<button class="RoidAreaButton" onClick="">
+クリック先はCharaList.tsxのcompanion_roidカテゴリ一覧ページを表示
+
+余白30px
+
+-----セクション1終わり-----
+
+<div class="area_section2">
+
+<p>コンパニオンエリアはその華やかさと特別感から、非常に人気のあるエリアになっているようです。
+特にエリア専属契約をするため、こぞって他のエリアからロイドたちが集まってきます。
+予約制を導入していることで、スムーズな運営が可能になり、訪れるロイドたちもじっくりと楽しめそうですね。
+
+
+下余白30px
+
+-----セクション2終わり-----
+
+<div class="area_section3">
+<div>左側
+<h4>入口ゲートの混雑対策と予約システム
+
+<span>スマート予約システム
+<p>入口のゲートには事前に予約が必要です。混雑を回避するために、ゾーンごとの入場管理が行われる。
+コンパニオンたちとの交流を最大限に楽しめるように、空間の最適化がされている。
+AIがリアルタイムで混雑状況を調整し、快適な体験を提供。
+1行分あけて
+<span>限定イベントへのアクセス
+<p>一定の枠数のみ参加できるスペシャルショーやVIPコンテンツもあるため、抽選制を導入しています。
+
+<div＞右側
+IMG配置
+
+下余白30px
+
+-----セクション3終わり-----
+
+<div class="area_section4">
+<div>左側
+<h4>プロダクション施設
+<p>プロモーション契約のが執り行われる。
+ここでは契約に必要な条件としてAMPをここでしか使用できない通貨に変換して支払いを行う。
+
+<h4>トレーニング施設
+<p>コンパニオンたちがイベントのためのパフォーマンスを高めるためのトレーニングイベントが活発。
+VIP、ゲストなどが見学できるエリアも設置。ロイドたちの目がくぎづけになる。
+
+margin-right:30px
+
+<div>右側
+IMG</div>
+
+下余白30px
+-----セクション4終わり-----
+
+<div class="area_section5">
+<div>左側
+<div>横にIMG</div>
+margin-right:30px
+<div>右側
+<h4>コンパニオンエリアを彩るランドマーク
+<ul>
+<li>光の演出が際立つ優雅な存在
+<li>ゲストの快適な滞在設計
+<span>施設の外壁には、動的なライトやホログラムが映し出され、まるで生きているかのような輝きを放つ。
+色彩の変化 によって、時間帯やイベントに応じて異なる雰囲気を演出。
+
+<h4>美容とスタイルの中心地
+<p>最新の美容技術を取り入れた ビューティーラボや、ファッションの最先端を体験できるエリアが併設。
+コンパニオンたちのスタイルを支える施設。
+
+<h4>エンターテイメント性
+<p>ゲストが楽しめるような体験型イベントが充実。ロイドたちは美しいコンパニオンロイドとの出会いを体験。
+
+margin-right:30px
+
+<div>右側
+<div>
+イメージ
+
+下余白30px
+-----セクション5終わり-----
+
+<div class="area_section6">
+<div>LEFT
+<h4>美容とスタイルのこだわり
+<p width:720*height:auto>コンパニオンたちは、最新の美容技術を取り入れ、洗練されたスタイルを維持。AIアシストの美容ケアや、未来型のファッションラボが併設されている。光るパネルやホログラム演出が施された建築。
+流動的な構造 を持ち、エリア全体が変化するような仕掛けも。
+
+margin-right:30px
+
+<div>RIGHT
+IMG
+
+-----セクション6終わり-----
+
+------コンテンツ表示領域ここまで------
+

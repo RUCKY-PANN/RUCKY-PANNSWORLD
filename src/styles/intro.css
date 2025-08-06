@@ -1,0 +1,126 @@
+.intro-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url('/images/bg-intro.png');
+  background-size: cover;         /* 全体表示 */
+  background-position: center;    /* 中央寄せ */
+  background-repeat: no-repeat;
+  background-attachment: fixed;   /* スクロールしても背景が固定 */
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  position: relative;
+}
+
+
+
+.status-text {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+.scroll-container {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  width: 30%;
+  height: 300px;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, skyblue 20%, skyblue 80%, transparent);
+}
+
+.scroll-text {
+  animation: scrollUp 20s linear;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+.skip-button {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  padding: 0.6rem 1rem;
+  font-weight: bold;
+  background: rgba(0,170,255,0.7);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #0af;
+  opacity: 0;
+  animation: fadeIn 4s ease 2s forwards;
+}
+
+.skip-button:hover {
+  padding: 0.6rem 1rem;
+  font-weight: bold;
+  background: rgba(0, 170, 255, 0.906);
+  color: white;
+  box-shadow: 0 0 15px rgb(90, 184, 232);
+  transform:scale(1.05);
+  transition: all 0.1s ease;
+  opacity: 8;
+  cursor: pointer;
+}
+
+
+.loading-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 8px;
+  width: 100%;
+  background: rgba(255,255,255,0.2);
+}
+
+.loading-bar .progress {
+  height: 100%;
+  background: #0af;
+  animation: loadBar 20s linear forwards;
+}
+
+@keyframes loadBar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes scrollUp {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(-100%); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+
+
+.fullscreen-wipe.wipe-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #000;
+  animation: circleWipe 1.5s ease-in forwards;
+}
+@keyframes circleWipe {
+  0% {
+    clip-path: circle(0% at center);
+  }
+  100% {
+    clip-path: circle(150% at center);
+  }
+}
+
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  visibility: hidden; /* ←これで完全消える */
+}

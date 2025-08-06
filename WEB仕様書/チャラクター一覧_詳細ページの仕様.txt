@@ -1,0 +1,142 @@
+キャラ詳細　charaDetail
+
+固有キャラの詳細ページ
+
+表示方法
+
+
+------レイアウト------
+共通ヘッダー
+ContentsHeader.tsx
+
+----ここから切り替えの内容-------
+
+見出し
+<div id="charaDetail_h3">
+背景指定（画像有）
+#charaDetail_h3{background-image:url()；
+padding-bottom-10px}
+id="charaDetail_h3"の中に
+
+*charaDetail_h3 もabout_h3もデザインスタイル一緒だからそこを調整、ほかのコンテンツページの見出しデザインも統一
+
+<h3>RUCKY-PANNキャラクター紹介
+<span>CharaDetail.contents 小さく
+
+display:block
+background-image:url()；
+margin-left:10px
+
+-----ここから　CharaDetail_wrapper　ーー
+背景：#e5e5f02a
+
+「パンくずBOXエリア」これもAreaのページと同じ
+
+左寄せ、ロイド一覧TOP＞パンダロイド一覧/　　
+
+しかし、書体指定の●●-ROID、ここだけはalighn:right
+
+」
+
+CharaDetail_wrapperの中に
+
+CharaDetail_contents
+
+border-radius:ほかのエリアページと共通
+背景ホワイト、文字色、ブラック
+
+
+CharaDetail_contentsの背景左上に
+書体指定　テラノを配置　パンダなら　PANDAと表示。
+背景扱いにできるか。
+
+
+<h4>ロイドカテゴリ名　/　固有名
+
+その横に[★総合評価]Chara_hyoukaを表示
+
+Chara_hyouka
+
+角R矩形の中
+
+背景ブラック
+★：イエロー
+
+
+表示方法
+総合評価：★★　最大５つまで
+
+クリック and ドラッグ　で星５つまで黄色表示
+
+評価アクション後：TOOLチップで「評価ありがとうございます！」と表示
+
+
+その下
+<div class="Chara_detail_area">
+"Chara_detail_area" display:inline;で横並びに
+
+
+
+<div class="detail_img">写真エリア(background:url(''))
+"detail_img":width:350px;height:auto;
+ 
+
+"detail_img"の横　
+
+div="Chara_colmun" 説明文
+
+<span>キャッチフレーズ
+<p>説明文
+<ul><li>受賞歴アイコン：受賞テキスト
+
+----"Chara_detail_area"--ここまで
+
+その下、閉じるボタン、
+
+下半円形DetailCloseに
+背景：ホワイト
+width:90px,height:70px
+radius:
+
+DetailCloseの中に「-」型の細い矩形
+
+-：color:#55586ff
+width:90px
+height:8px
+border-dadius:10px
+
+
+
+
+------（表示の演出）------
+・画面が一瞬薄い膜に覆われて縦横中央から開く
+・ローディング
+・CharaDetail_contents　右からフェードイン
+・<h4>ロイドカテゴリ名　/　固有名　右からフェードイン
+・Chara_hyouka　　右からフェードイン
+・説明文なども　　右からフェードイン
+
+
+------（閉じるボタン「DetailClose」OnClick 時の画面演出）------
+
+・DetailCloseが押された動き：スケールが少し広がり、また元サイズに戻るバウンドの動き
+でDetailClose自体も閉じる。
+さらに
+・CharaDetail_wrapperが下に折りたためられ、
+画面に　＜＜＜BACK LIST　
+
+表示する。２秒間ぐらい。かなり早い
+
+そして、Listページへもどる。
+
+------------------------------
+
+※次へというボタンはなし。ここでページの流れは完結。
+
+このページから、いろんなページに行きたい場合は
+一番右のVertiacalNaviがあるのでそちらを使用して、ページ遷移させる
+
+あるいは、フッターナビからもいけるのでそちらを使用させる。
+
+ブラウザのバックボタンクリックの処理問題だが、これは？
+

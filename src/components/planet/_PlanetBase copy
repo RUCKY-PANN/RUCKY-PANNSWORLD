@@ -1,0 +1,77 @@
+// src/components/planet/PlanetBase.jsx
+import { usePlanetContext } from '@/planetData/PlanetContext';
+import { areaData } from '@/planetData/areaData';
+console.log(areaData.filter((area) => !Array.isArray(area.position)));
+
+import { useTexture } from '@react-three/drei';
+import * as THREE from 'three';
+
+import AreaTrigger from './AreaTrigger';
+
+export default function PlanetBase({ activeSector = null, setActiveSector }) {
+  const { planetState, setActiveArea } = usePlanetContext();
+  const sectionTexture = useTexture('/images/planet/planet_cross_section.webp');
+
+  // ⛓️ 位置補正関数（汎用化）
+  const applyOffset = (position, offset = [-0.1, -1.9, 0]) => {
+    if (!Array.isArray(position)) return [0, 0, 0]; // ← 安全な初期値
+    return position.map((v, i) => v + offset[i]);
+  };
+
+  // ⚠️ context未取得時の早期終了
+  if (!planetState) return null;
+
+  // ✅ fallback構造（map内で参照）
+  const fallbackState = {
+    theme: 'light',
+    glowEnabled: false,
+  };
+
+  return (
+    <group>
+      {/* 🔆 空間光源 */}
+      <ambientLight intensity={0.6} />
+      <pointLight intensity={1.0} position={[4, 4, 4]} />
+
+      {/* 🪐 Planet断面図 */}
+      <mesh rotation={[-Math.PI / 2, 0, Math.PI]} scale={[5.2, 5.2, 1]}>
+        <planeGeometry args={[3, 3]} />
+        <meshBasicMaterial
+          transparent={true}
+          color="white"
+          map={sectionTexture}
+          opacity={1.0}
+          side={THREE.DoubleSide}
+        />
+      </mesh>
+
+      {/* 🧭 トリガー表示 */}
+      {areaData.map(({ id, name, position, sector }) => {
+        if (!Array.isArray(position)) return null; // ← ここで不正データをスキップ！
+
+        // ✅ fallback適用（必ず描画構造に値が入る）
+        const visual = planetState[id] ?? fallbackState;
+
+        // 💡 セクター制御
+        if (activeSector !== null && sector !== activeSector) return null;
+
+        const finalPosition = applyOffset(position);
+
+        return (
+          <AreaTrigger
+            key={id}
+            id={id}
+            label={name}
+            position={finalPosition}
+            theme={visual.theme}
+            glowEnabled={visual.glowEnabled}
+            onClick={() => {
+              setActiveArea(id); // Context更新
+              setActiveSector?.(id); // ← これを追加！ダイアログ表示用のトリガー
+            }}
+          />
+        );
+      })}
+    </group>
+  );
+}

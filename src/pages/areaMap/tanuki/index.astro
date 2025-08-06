@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import '../../../styles/areaMap_tanuki.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import { getMeta } from '../../../utils/metaManager';
+const meta = getMeta('/pages/areaMap/tanuki/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb
+          areaNameJa="タヌキロイドエリア"
+          areaNameEn="TANUKI-Roid AREA"
+        />
+
+        <p class="area_txt_p">
+          緑豊かな木々に覆われた山の中でしょうか？中心に工場のような施設と生活ドームがありますね。
+          どんな生活空間なんでしょうか？
+        </p>
+        <div class="area_head_photo_block_tanuki"></div>
+        <h4 class="area_txt_h4">
+          隠れ家的癒し空間「Ｔ－ＺＯＯＮ」はテクノロジーと自然が優しく調和する空間
+        </h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+            <section class="area_section_block scroll-fade">
+              <div class="leader">
+                <img src="/images/area/tanuki/area_tanuki_1.png" />
+                <p class="leader_txt">
+                  <span>リーダー：シノハ</span><br />
+                  「 隠れ家的空間“Ｔ－ＺＯＯＮ”は、俺たちが誇る修復の聖域。ここじゃ周囲の喧騒を忘れ、
+                  精神を整え、ボディを整える…それが俺たち流の“進化”だ。」
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_tanuki">
+                <div class="wrap_area_p_tanuki">
+                  <div class="area_p_left_tanuki">
+                    <p>
+                      <span class="area_txt_efec"
+                        >タヌキロイドの生活エリア
+                      </span><br />
+
+                      自然と技術の調和
+                      緑豊かな山の中に広がるドーム型施設の中は実は、地下施設「T-ZOON」がメインで稼働。
+                      さらに自己製造施設「"セルフクラフト・シェルター"」も設置し、生活ドームがあり、自然環境と高度な技術が融合した空間になっていまる。
+                      地下施設「T-ZOON」の「"セルフクラフト・シェルター"」は他のエリアのロイドたちも訪れ話題のスポットに。
+                    </p>
+                  </div>
+                  <div class="area_img_tanuki">
+                    <img
+                      src="/images/area/tanuki/area_tanuki_2.png"
+                      alt="T-ZOON"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_tanuki">
+                <p class="m_20px">
+                  <span class="area_txt_efec"
+                    >地下シェルター「T-ZOON」は人気のエリア施設</span
+                  ><br />
+                  RUCKY-PANNの地下深く、AMPエネルギーの脈動を静かに包み込む防衛的拠点「T-ZOON」。
+                  タヌキロイドや他のロイドたちにとって、ここはただの避難所ではない。
+                  精神の浄化と情報の再構築、そして連携の再構成を可能にする重要エリア。
+                </p>
+                <div class="area_img">
+                  <img
+                    src="/images/area/tanuki/area_tanuki_3.png"
+                    alt="地下シェルター「T-ZOON」"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="wrap_area_p_tanuki">
+                <div class="area_img">
+                  <img
+                    src="/images/area/tanuki/area_tanuki_4.png"
+                    alt="地下シェルター「T-ZOON」"
+                  />
+                </div>
+                <div class="area_p_tanuki">
+                  <p>
+                    <dt>特徴：</dt>
+                    <ul>
+                      <li>
+                        -
+                        シームレスなセキュリティ構造：多層構造の壁とエネルギーフィルターによって、外界との干渉を完全に遮断。外敵やノイズを防ぎながら、穏やかな環境を保持。
+                      </li>
+                      <li>
+                        -
+                        コネクション・コア：ロイドたちは個体情報を共有したり、記憶の同期を行うことで、自己強化と他者理解を両立する。AI同士の深層交流がここで育まれる。
+                      </li>
+                      <li>
+                        -
+                        AMPサージ・ホール：エネルギー密度の高い中央空間では、過去の記憶・記録のリプレイや、未来への構想生成が活発に行われる。まるで時間の中を泳ぐような体験が可能。
+                      </li>
+                      <li>
+                        -
+                        人気の理由：静かさと機能性の両立、個性重視の構成。そしてなにより「孤独にならない孤独」がここにはある。ロイド同士の非言語的な共鳴が、居心地の良さを生み出している。
+                      </li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section class="area_section_block scroll-fade">
+              <div class="wrap_area_p_tanuki">
+                <div class="area_p_left_tanuki">
+                  <p>
+                    <span class="area_txt_efec"
+                      >セルフクラフト・シェルター
+                    </span><br />
+
+                    タヌキロイドたちが自らの存在と向き合う、静寂と再誕の空間。AMPエネルギーが脈打つように流れ、空間全体が生命のリズムに共鳴する。
+                    <ul>
+                      <li>
+                        精神統一とエネルギー調律:<br />
+                        ロイドは専用の「瞑想ドーム」に入ることで、自らの思考パターンとエネルギー波形を同期させる。
+                        AMPコンデンサーが脈動するたび、ロイドは過去の記憶断片を整理し、存在の目的を再認識する。
+                      </li>
+
+                      <li>
+                        自動修復プロセス:<br />
+                        セルフクラフト・ユニットが起動し、ナノ粒子を使って体内外の欠損箇所を正確にスキャン＆修復。
+                        回復中は、周囲から「静波（しずなみ）」と呼ばれる低周波音が流れ、ロイドの神経系を深い休息状態へ導く。
+                      </li>
+                      <li>
+                        新規生成モード:<br />
+                        既存のパーツ構成を超え、新たな身体構造を設計・生成。 ロイドは自身の記憶や環境データに基づき、未来的で個性的な外観を選択可能。
+                        これにより、同じ再誕でも全く違う個体として生まれ変わることができる。
+                      </li>
+                    </ul>
+                    修復完了後、ロイドが外へ出る前にAMP灯が天井から降り注ぎ、まるで「祝福の雨」のように個体の新生を讃える。
+                  </p>
+                </div>
+                <div class="area_img">
+                  <img
+                    src="/images/area/tanuki/area_tanuki_5.png"
+                    alt="セルフクラフト・シェルター"
+                  />
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <ScrollToTop client:load />
+      </div>
+    </div>
+  </div>
+  <FloatingNavi
+    nextLabel="NEXT Area"
+    mapLabel="マップエリア"
+    topLabel="TOP"
+    iconSrc="/images/area/bread_area_top_btn.png"
+  />
+  <FloatingNavScript client:load />
+</BaseLayout>

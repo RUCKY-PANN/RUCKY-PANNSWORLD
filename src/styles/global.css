@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+}
+
+* {
+  /*- すべての要素の余白をゼロに。
+- box-sizing: border-box でサイズ計算を直感的に。
+ */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+/*- ブラウザ依存のスタイルを排除。
+*/
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* CSS変数の定義*/
+:root {
+  --color-primary: #0077ff;
+  --font-base: 'Helvetica Neue', sans-serif;
+}

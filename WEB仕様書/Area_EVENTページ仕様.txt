@@ -1,0 +1,165 @@
+//apps/web/app/pages/area/event.tsxの作成
+
+'use client'
+import Image from 'next/image'
+import styles from './Roid_panda.module.css'
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+import AreaTransition from '@/components/PageTransitions/AreaTransition'
+import { areaOpeningLines } from '@/constants/areaOpeningLines'
+
+
+const meta = areaOpeningLines['event']
+
+export default function eventArea() {
+  return ( 
+<div>
+<AreaTransition areaName={meta.headingText} />
+<AreaLayout
+  code={meta.code}
+  label={meta.label}
+  icon={meta.icon}
+  headingImage={meta.headingImage}
+  leadText={meta.leadText} // ← 追加 ✅
+  breadcrumbIcon={meta.breadcrumbIcon}// ← 追加 ✅
+
+もあわせて記述
+
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+＞＞ヘッダー、フッター、パンくず、ページトップ、などのナビゲーションが設置された親ページ
+
+import Image from 'next/image'
+import style from  './event.module.css'が必要
+
+----ここからコンテンツーーーー
+
+エリア共通のページトランジッション
+
+
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>近未来的なパビリオンみたいな施設が見えすね。あそこで、毎回PANN'Sロイドたちのセッションが行われているんですね。どんなところなんでしょうか。
+「テキストボックス　16px　color:white」
+
+余白1行分あけて
+IMG
+余白2行分あけて]
+
+その下
+/*--見出しマーカー見出しのDIVの左横に配置--*/
+<span class="midashiBox"></span>
+/*--見出し--*/
+<div>RUCKY-PANN'WORLDのロイドたちの目的地。国際的イベントの開催、ワールドチャンピオンシップ会場エリア</div>
+
+div{padding-bottom:10px;padding-top:10px;/*left,rightも10pxの余白*/
+width:100%;
+font-siize:16px
+color:white}
+
+.midashiBox{/*「見出しの横の横長矩形」　フェードイン+バウンド　*/
+width:100%; 
+display:flex;
+height:20px;
+bg-color:#0000ffff}
+
+
+その下
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+<section1>
+
+<div class="area_section">
+<div class="leader">リーダーキャラのIMGは背景扱い</div> .leader:width175* height290,backgroung-images:outfit;
+その横
+<div><span>イベント主宰兼RW12代目最高顧問：ギレニウム・アース<br>
+/*--セリフ <p>は　一文字づつ出てくるように演出　--*/
+<p>
+「集え！ロイド達よ！そして己の信念をつらぬき、精一杯その成果を魅せてみよ！」
+
+余白30ｐｘあけて
+
+<div class="area_section2">
+<div>
+<span>イベントエリアの特徴<br>
+<p>RUCKY-PANN'WORLDの文化的アイコンとしての役割を果たす。
+<span>中枢コンテストステージ
+<p>ロボテックデザインズ最優秀デザインコンペティションが行われる、豪華な円形ステージと大画面スクリーン、撮影用ドローンカメラ。内部には 多層構造のホール があり、ロイドたちのセッションや競技が開催される。
+/*-- p width:100% --*/
+</div>
+
+余白30px
+<div>
+<IMG  /*-- width:1080px imageはセンターへ --*/ >
+</div>
+
+
+<div class="area_section3">
+<div class="textArea1">
+<div>左側要素
+<span>イベントの主な内容
+
+<ul>ワールドチャンピオンシップRUCKY-PANN MASTER CHAMPIONSHIP"　世界最高Roidの名誉ある大会
+<li>デザイン総合部門最優秀賞 ： U-SHAPE GRAND PRIZE　
+<li>機能部門最優秀賞 ：TECH PIONEER AWARD
+<li>エリア交流活動部門最優秀賞 ：HARMONY CONNECT AWARD
+<li>AMPリサイクル技術部門最優秀賞：AMP RENEWAL INNOVATION TROPHY
+
+余白30px
+/*--下にボタン要素.RoidAreaButton border-radius12px bg-color:#000082ff　ボタンの中： 〇の中に->の描画　::beforeを使う ボタンの線無し　obClickで押されたように鏡トランジッション --*/
+
+<button class="RoidAreaButton" onClickでNavitour.tsxの指定したセクションを表示>このエリアのロイド達　〇の中に->の描画</button>
+余白30px
+
+<span>ロイドのアイデンティであるボディ構成を評価を受ける。
+<ul>発信発表のポイント
+<li>・個性の表現
+<li>・各ロイドが自身の目的や役割を反映したデザインを披露。
+<li>・機能性と美しさを兼ね備えた衣装が特徴。
+
+<span>評価システム
+<ul>
+<li>・ロイドのファンや各エリアの専門家、また「R-P」の評価部門による投票 で、最も革新的なデザインが選ばれる。
+<li>・技術的な要素（素材、構造、エネルギー効率）も評価対象。
+
+右側の要素、間は余白30px
+<div><IMG><br>インタラクティブディスプレイ によるリアルタイムデータ共有が可能。</div>
+
+--セクション終わり--
+余白30px
+
+<div class="area_section4">
+<div class="textArea1">
+<div>左側
+<span>国際的な交流ステージ</span>
+<p　width:500px　　>ロイド同士のコラボレーション
+異なる機能を持つロイドたちが共同でデザインを提案し新たなロイド企画を「R-P」へ提案申請を行う。ファッションと技術の融合 を探求する場。
+また、ロイドたちの未来へのトレンド創造の場所。
+イベントを通じて、次世代のロイドデザインを提案協議。 
+</div>
+
+<div>右側の要素、間は余白30px
+<IMG width:560px>
+
+余白30px
+
+<div class="area_section5">
+<div class="textArea1">
+<div>左側
+<span>最高意思決定議会「R-W」による議案と諸問題への取り組み 
+<p>各ロイドリーダーを中心に各エリアのエネルギー（AMP）枯渇の問題についてや共通のAMP課題を解決するための会議も行われている。ロイドたちの限りあるAMPを効率的に管理するプラットフォーム作りやAMPの有効的な維持方法などを協議。
+AMPの一定の流通と調整を提案し、その議案を「R-P」へ申請手続きをおこなう機関でもある。
+<img center>
+<p　width:500px　　> 
+</div>
+間は余白30px
+<div>右側の要素、
+<IMG width:560px>
+
+------コンテンツ表示領域ここまで------

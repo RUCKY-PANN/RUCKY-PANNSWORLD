@@ -1,0 +1,51 @@
+RUCKY-PANN.Astro/
+├── src/
+│   ├── pages/index.astro   ←　ホーム画面 RUCKY-PANN　PlanetUI（半球体）13エリアクリックで各エリアへ
+│ 		  ├── gete/index.astro　←　認証ページ　マイページを持っている場合や関係者専用のために設置
+│	 		  ├── intro/index.astro　←　世界観を一枚の絵で表現し、テキストスクロール
+│ 			     
+│ 			  　├── about/index.astro ← RUCKY-PANNについて
+│			　　├── world/index.astro　← 世界の紹介　
+│ 		  　　　├── areaMap/index.astro　← エリアの紹介
+│ 		  			├── area-panda-roid/index.astro　--パンダ
+│		 			├── area-koala-roid/index.astro　--パンダ
+│ 		  			├── area-cat-roid/index.astro　--パンダ
+│ 		  			├── area-dog-roid/index.astro　--パンダ
+│ 		  			├── area-bear-roid/index.astro　--パンダ
+│ 		  			├── area-tanuki-roid/index.astro　
+│ 		  			├── area-penguin-roid/index.astro
+│ 		  			├── area-penguin-roid/index.astro
+│ 		  			├── area-hipo-roid/index.astro
+│ 		  			├── area-other-roid/index.astro　　--辺境の地　さまざまなロイドたちがいる
+│ 		  			├── area-companion-roid/index.astro
+│ 		  			├── area-dark-roid/index.astro　--RPのセキュリティロイド
+│ 		  			├── area-RP/index.astro　--RoiDを生み出した神聖なる中枢機関、ロイドの活動エナジー　AMP（オートモナスマネージパワーコンポネント）
+│ 		  			├── area-event/index.astro　--ロイド目的の場所、ワールドチャンピオンへの参加　
+│ 		  ├── charaIntro/index.astro　--キャラ紹介どんなロイドがいるの？各ロイドの特徴
+│ 		  ├── charaList/index.astro　--キャラ一覧
+│ 					  ├── charaDetail/index.astro　--キャラ詳細		
+│ 		  ├── navitour/index.astro　--キャラ紹介どんなロイドがいるの？
+│ 		  ├── join/index.astro　--　この世界へ参加する。（工事中）CMSとの連携、マイページの設置
+│ 		  ├── production/index.astro　--　創造主である俺の紹介
+│ 		  ├── 
+│
+
+
+	├── components/　← UI部品・SVG・ロゴ・ボタンなど
+	│   └── BottomMenu.astro　フッターメニュー　
+	│   └── MenuToggle.jsx（React Island for animation）
+	├── layouts/
+	│   └── WithBottomMenu.astro
+
+│   ├── layouts/           ← 全体レイアウト（ナビ・ヘッダー・背景層など）
+│   ├── styles/            ← グローバルCSS・,各ページのCSSスタイル、アニメーション
+│   └── utils/             ← DatoCMSとの接続・ヘルパー関数
+├── public/                ← 画像・SVG・動画などの静的アセット
+│
+│
+│
+│
+│
+├── astro.config.mjs       ← Astro本体設定ファイル
+├── package.json           ← npm依存とスクリプト
+└── .env                   ← DatoCMSのAPIキーなど

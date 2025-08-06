@@ -1,0 +1,26 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "html.cssClassCompletion.enable": true,
+  "css.validate": true,
+  "scss.validate": true,
+  "less.validate": true,
+  "files.encoding": "utf8",
+  "files.autoGuessEncoding": true,
+  "path-intellisense.mappings": {
+    "@": "${workspaceRoot}/src"
+  },
+  "path-intellisense.autoSlashAfterDirectory": "true",
+  "path-intellisense.extensionOnImport": "true",
+  "path-intellisense.excludedExtensions": [],
+  "path-intellisense.showHiddenFiles": true,
+  "glsl-linter.enable": true, // GLSL用の構文チェック
+  "editor.renderWhitespace": "all",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  }
+}

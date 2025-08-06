@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../components/PagetitleH3.astro';
+import ScrollToTop from '../../components/ScrollToTop.tsx';
+import '../../styles/common.css';
+import '../../styles/join.css';
+
+import { getMeta } from '../../utils/metaManager';
+const meta = getMeta('/pages/join/'); // ← Astro.url.pathnameではなく明示
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="この世界への参加" subtitle="Join.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <div class="Content_section">
+          <section class="section_block_join">
+            <h5 class="txt_H5_join">参加の仕方</h5>
+
+            <div class="join_content">
+              <p>Under Construnction</p>
+            </div>
+          </section>
+        </div>
+        <div class="Content_section">
+          <section class="section_block_join">
+            <h5 class="txt_H5_join">ログイン</h5>
+
+            <div class="join_content">
+              <div class="join_column">
+                <p class="join_column_right_p">Under Construction</p>
+                <p class="join_column_right_p">メンバー新規登録</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <ScrollToTop client:load />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

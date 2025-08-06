@@ -1,0 +1,162 @@
+//apps/web/app/pages/area/Roid_other.tsxの作成
+
+'use client'
+import Image from 'next/image'
+import styles from './Roid_other.module.css'
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+import AreaTransition from '@/components/PageTransitions/AreaTransition'
+import { areaOpeningLines } from '@/constants/areaOpeningLines'
+
+
+const meta = areaOpeningLines['other']
+
+export default function OtherRoidArea() {
+  return ( 
+<div>
+<AreaTransition areaName={meta.headingText} />
+<AreaLayout
+  code={meta.code}
+  label={meta.label}
+  icon={meta.icon}
+  headingImage={meta.headingImage}
+  leadText={meta.leadText} // ← 追加 ✅
+  breadcrumbIcon={meta.breadcrumbIcon}// ← 追加 ✅
+
+もあわせて記述
+
+
+----ここからコンテンツーーーー
+
+エリア共通のページトランジッション
+
+
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>なんだか荒廃したエリアですね。ここはどんなところなんでしょう。
+「テキストボックス　16px　color:white」
+
+余白1行分あけて
+IMG
+余白2行分あけて]
+
+その下
+/*--見出しマーカー見出しのDIVの左横に配置--*/
+<span class="midashiBox"></span>
+/*--見出し--*/
+<div>様々な種類のロイドが共存している、エリアで最もAMP消費率が高く、貧困率の高いエリア。出稼ぎ労働者が多い。</div>
+
+div{padding-bottom:10px;padding-top:10px;/*left,rightも10pxの余白*/
+width:100%;
+font-siize:16px
+color:white}
+
+.midashiBox{/*「見出しの横の横長矩形」　フェードイン+バウンド　*/
+width:100%; 
+display:flex;
+height:20px;
+bg-color:#0000ffff}
+
+
+その下
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+<section1>
+
+<div class="area_section">
+<div class="leader_Other1">リーダーキャラのIMGは背景扱い</div>
+leader_Other1
+ position:relative:left50px :width175* height290,backgroung-images:outfit;
+leader_Other2
+ position:relative:left500px :width175* height290,backgroung-images:outfit;
+ leader_Other3
+ position:relative:right50px :width175* height290,backgroung-images:outfit;
+
+leader_Other1-3はZ-indexで自由にレイアウトする。
+その横
+<div><span>出稼ぎMODS※leader_Other1の右配置
+<br>
+/*--セリフ <p>は　一文字づつ出てくるように演出　--*/
+<p>
+「地下マーケットは必要悪。
+ここがなければ生きていけない。」
+
+
+<div><span>出稼ぎMODS2※<div><span><p width:300>の要素は　leader_Other2の左下に配置
+<br>
+/*--セリフ <p>は　一文字づつ出てくるように演出　--*/
+<p>「このエリアは荒廃しているが、俺たちはまだ希望を捨てていない。」
+
+
+<div><span>出稼ぎMODS3※<div><span><p width:300>の要素は　leader_Other3の左に配置
+<br>
+/*--セリフ <p>は　一文字づつ出てくるように演出　--*/
+<p width:200>「AMPの消費は激しいが、それが俺たちの生き方だ」
+
+
+/*--area_sectionの左下に ボタン要素.RoidAreaButton border-radius12px bg-color:#000082ff　ボタンの中： 〇の中に->の描画　::beforeを使う ボタンの線無し　obClickで押されたように鏡トランジッション --*/
+
+<button class="RoidAreaButton" onClick="アザーロイドリストのカテゴリ抽出したページへ">このエリアのロイド達　〇の中に->の描画</button>
+
+<div class="area_section2">
+<div>
+<h5>アザーロイドエリアの特徴
+<ul>多様なロイドたちが共存するエリア
+<li>ここに住むロイドたちは、縛られず、自由に活動できる反面、そのAMPの消費も高い。それぞれのロイドたちが各自のエリア拡大を目指し、独自の手段（出稼ぎ、闇マーケット）などでAMPを稼ぐ。AMP消費率が最も高いエリア
+移動や活動などで高い消費率を補うため、その活動範囲は限られているが、独自のAMP流通マーケットが裏で存在し、ダークエリアから監視を強化されている。
+
+<li>暗躍する地下マーケットと取引拠点
+他のエリアと異なり、固定されたルールが少なく、自由な取引が可能だが多くの危険も伴う。
+ロイドたちが独自のアイデアを持ち寄り、新たな流通を生み出す。
+
+<li>AMPの売買や契約が頻繁に行われ、現在進行でマーケット活動が成長中。
+エリア拡大への意欲が強いが統率力を持つリーダーの欠如によって依然停滞している。
+ロイドたちは常に新しい技術や戦略を模索。他のエリアとの交渉や提携を通じて、影響力を広げようとする。
+
+余白30px
+
+<div><IMG　1036*auto><br>独自のAMPの地下取引エリア。このマーケットの拡大がどう影響するのか。</div>
+
+</div>
+
+余白30px
+
+<div class="area_section3">
+<div class="textArea1">
+<div>右側
+<span>ドーム内で稼働するAMP管理システム
+<p>定期的に供給される「R-P」からのAMPも加速的に消費。
+活動が活発だが、エリア自体の管理がずさんになり、荒廃した姿に。需要と供給のバランスがすでに崩れ始め、AMPの供給と管理が重要な課題となっている。AMPの供給施設はメンテンスなしで常にフル稼働している。活動が活発だが、エリア自体の管理がずさんになり、AMP管理システムは荒廃した姿になりつつある。
+</div>
+
+<div>左側　左と30px余白
+IMG
+</div>
+
+余白30px
+
+<div class="area_section4">
+<div class="textArea1">
+<div>左側
+<span>荒廃した出稼ぎ用輸送パイプライン。
+<p>出稼ぎロイド（通称MODS）たちは、AMPを稼ぐために他のエリアへ出向く。しかしその移動費用や労働エネルギーにも常にAMPが使われるため、成長が停滞している。
+1行あけて
+アザーロイドエリアは、全エリアの中でも最もAMP消費率が高いため、外部からの収入が不可欠。出稼ぎによって得たAMPで何とかエリアの維持をしているがそれが追いついていないのが現状である。
+1行あけて
+<span>エリア拡大への意欲
+<p>他エリアでの活動を通じて、新たな技術や資源を獲得し、アザーロイドエリアが発展し、独自エリアとしての独立をめざす。競争意識を高め、各自より多くのAMPを稼ぐために、ロイドたちは常に新しい機会を探している。</div>
+
+<div>右側　左と30px余白
+IMG<br>
+<span>荒廃した移動パイプラインが彼らの唯一の希望のライフラインだ。
+</div>
+
+
+------コンテンツ表示領域ここまで------

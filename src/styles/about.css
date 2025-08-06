@@ -1,0 +1,245 @@
+.contents_wrapper {
+  background: #000021ff;
+  padding: 5rem;
+}
+
+.pagetitle {
+  color: white;
+  padding-bottom: 30px;
+  background-image: url('/images/bg/contents_common_title_bg.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+.pagetitle h3 {
+  font-size: 2rem;
+  background-image: url('/images/bg/contents_title_bg1.png');
+  background-position: left top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px; /* 上下の間隔を調整 */
+  padding-left: 35px;
+}
+.pagetitleSpan {
+  font-size: 1rem;
+  color: #666;
+  padding-left: 35px; /* 左マージン */
+}
+
+.out_wrapper {
+  padding: 2rem;
+  background-color: #e5e5f02a;
+}
+
+.in_wrapper_about {
+  color: white;
+  font-size: 16px;
+  animation: fadeIn 1s ease-in;
+}
+
+.in_wrapper_about h5 {
+  font-size: 24px;
+  color: white;
+}
+
+.about_span {
+  font-size: 16px;
+  color: white;
+}
+
+.aboutContent_section {
+  margin-top: 30px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.section_block {
+  display: flex;
+  border-top: 2px #6ff solid;
+  width: 100%;
+  margin: 30px 0;
+}
+
+.ex_1 {
+  width: 280px;
+  height: auto;
+  justify-content: center; /* ← 横方向中央寄せ */
+  align-items: center; /* ← 縦方向中央寄せ（縦並び時） */
+  flex-direction: column; /* ← 中身を縦積みにしたい場合は追加 */
+  flex-shrink: 0; /* section_block内で縮まないように */
+}
+
+.ex_1 img {
+  width: auto;
+  height: auto;
+  max-width: none;
+}
+
+.emphasis {
+  font-size: 2.2rem; /* 通常より大きく */
+  font-weight: bold; /* 太字で強調 */
+}
+
+.section_block h2 {
+  margin: 20px 0px;
+}
+
+/*   球体説明部分    */
+.SphereWap {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10rem; /* 球体とコラムの間隔 */
+  max-width: 1000px;
+}
+.SphereWap_in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px; /* ラベル同士の重なり解消 */
+}
+.SphereWap_in span {
+  font-size: 1rem;
+}
+.SphereWap_in h6 {
+  font-size: 1rem;
+}
+/* 中央に背景画像を配置 */
+.planet-img {
+  width: 520px;
+  height: 520px;
+  background-image: url('/images/about/about_con0.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+/* 共通ラベルスタイル */
+.label {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 6px 12px;
+  border-radius: 15px;
+  max-width: 400px;
+  text-align: left;
+}
+
+/* 右ラベル：右上 */
+.label-right-top {
+  background-color: rgba(0, 0, 64, 0.6);
+  border-top: 1px solid #6ff;
+}
+
+/* 右ラベル：右中 */
+.label-right-middle {
+  background-color: rgba(0, 32, 96, 0.6);
+  border-top: 1px solid #6ff;
+  padding: 14px;
+}
+.label-right-middle p {
+  margin-bottom: 10px;
+}
+
+/* ラベル内画像 */
+.bs-img {
+  margin-left: 40px;
+  background-image: url('/images/about/about_con01.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+/* 右ラベル：右下 */
+.label-right-bottom {
+  background-color: rgba(0, 64, 128, 0.6);
+  border-top: 1px solid #6ff;
+  padding: 14px;
+}
+
+/* ◯---------のスタイル */
+.circleLine {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* ○と線の間隔 */
+}
+
+/* ◯の部分 */
+.circleMark {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid white;
+  flex-shrink: 0;
+}
+
+/* 横線部分 */
+.horizontalLine {
+  height: 1px;
+  background-color: white;
+  flex-grow: 1; /* 自動で横幅を埋める */
+}
+
+.about_txt {
+  margin-top: 30px;
+  font-size: 2rem;
+}
+
+/* トランジション用例 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim_txt h2 {
+  font-size: 32px; /* サイズアップで視認性向上 */
+  font-weight: 600; /* 太めで存在感を出す */
+  letter-spacing: 1px; /* 少し文字間隔を広げて未来感 */
+  background: linear-gradient(90deg, #6ff, #fff, #6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowText 3s infinite ease-in-out;
+  text-align: left; /* センター配置（任意） */
+}
+
+/* 光るような演出 */
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 4px #6ff;
+  }
+  50% {
+    text-shadow: 0 0 12px #6ff;
+  }
+  100% {
+    text-shadow: 0 0 4px #6ff;
+  }
+}
+
+.arrow-mark {
+  animation: bounceY 2.5s infinite ease-in-out;
+}
+@keyframes bounceY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

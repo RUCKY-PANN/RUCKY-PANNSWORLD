@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import ListBreadcrumb from '../../../components/detail_Breadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+
+import '../../../styles/detail.css';
+import '../../../styles/common.css';
+
+import { getMeta } from '../../../utils/metaManager';
+const meta = getMeta('/pages/charaList/detail/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3
+      title="キャラクター一覧｜プロフィール詳細"
+      subtitle="charaDetail.content"
+    />
+
+    <div class="out_wrapper">
+      <ListBreadcrumb categoryNameJa="パンダ" categoryNameEn="PANDA" />
+      <div class="in_wrapper">
+        <div class="detail_section_colum">
+          <div class="detail_wrap">
+            <div class="detailHead">
+              <div class="TxtTop">PANDA</div>
+              <h4>パンダロイド　／　ラキライ</h4>
+              <div class="ratingWrap">
+                <div class="rating" id="ratingContainer">
+                  <h6>世界評価：</h6>
+                  ：限界突破*
+                </div>
+              </div>
+            </div>
+            <div class="column_wrap">
+              <div class="detailLeft">
+                <div class="charaImg">
+                  <img src="/images/charaList/chara_img_panda40.png" />
+                </div>
+              </div>
+              <div class="detailRight">
+                <h5>パンダロイドの筆頭リーダー：RUCKYPANN世界５大英雄の1人</h5>
+                <p class="prof_txt">
+                  世界創始期にパンダエリアの立ち上げを担った中心人物であり、穏やかなカリスマ性と高い戦略眼を兼ね備えている。
+                  「R-W」で発言権を持ち、AMPエネルギーの政策や資源活用に尽力。パンダロイド党を創設し、持続可能な社会の構築を推進。
+                  竹林のような柔軟さと芯の強さで人々に信頼され、10大陸の「５大英雄」として世界的に尊敬される象徴的な存在でもある。
+                </p>
+                <div class="rightfooter">
+                  <div class="like">
+                    <img src="/images/charaList/likeDetail.png" />
+                  </div><san>3000K</san>
+                  <div class="favo">
+                    <img src="/images/charaList/favoDetail.png" />
+                  </div><san>3000K</san>
+                </div>
+              </div>
+            </div>
+            <button class="BackButton">BACK</button>
+            <!-- CHAT BOX -->
+            <div class="buttonWrapper">
+              <button class="openButton">CHATを始める</button>
+              <div class="chatbox">来たね？待っていたよ。</div>
+            </div>
+            <div class="TxtBottom">PANDA</div>
+          </div>
+          <div class="axplanation">
+            *限界突破：★５over下場合にのみ与えられる表示
+          </div>
+        </div>
+        <ScrollToTop client:load />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+<script type="module">
+  const button = document.querySelector('.openButton');
+  const wrapper = document.querySelector('.buttonWrapper');
+  const chatbox = document.querySelector('.chatbox');
+
+  let isOpen = false;
+
+  button.addEventListener('click', () => {
+    isOpen = !isOpen;
+    wrapper.classList.toggle('raised', isOpen);
+    chatbox.classList.toggle('active', isOpen);
+    button.textContent = isOpen ? 'CHATを閉じる' : 'CHATを始める';
+  });
+
+  const rating = { character, rating };
+  const ratingContainer = document.getElementById('ratingContainer');
+  if (ratingContainer) {
+    for (let i = 0; i < 10; i++) {
+      const star = document.createElement('span');
+      star.className = 'star';
+      star.textContent = '★';
+      if (i < rating) star.classList.add('active');
+      ratingContainer.appendChild(star);
+    }
+  }
+</script>

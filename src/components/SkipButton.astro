@@ -1,0 +1,59 @@
+---
+// src/components/SkipButton.astro
+---
+<button id="skip" class="skip-button">SKIP</button>
+<div id="wipe" class="fullscreen-wipe"></div>
+
+<style>
+  .fullscreen-wipe {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: #000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s ease;
+  }
+
+  .fullscreen-wipe.wipe-transition {
+    opacity: 1;
+    pointer-events: all;
+    animation: circleWipe 1.5s ease-in forwards;
+  }
+
+  @keyframes circleWipe {
+    0% {
+      clip-path: circle(0% at center);
+    }
+    100% {
+      clip-path: circle(150% at center);
+    }
+  }
+
+  .fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    visibility: hidden;
+  }
+</style>
+
+<script is:inline type="module">
+  const skipBtn = document.getElementById('skip');
+  const wipeElem = document.getElementById('wipe');
+
+  skipBtn?.addEventListener('click', () => {
+    // コンテンツをフェードアウト
+    document.querySelector('.scroll-container')?.classList.add('fade-out');
+    document.querySelector('.status-text')?.classList.add('fade-out');
+    document.querySelector('.loading-bar')?.classList.add('fade-out');
+    skipBtn.classList.add('fade-out');
+
+    // Wipe演出トリガー
+    wipeElem.classList.add('wipe-transition');
+
+    // ページ遷移をアニメ後に実行
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 1500);
+  });
+</script>

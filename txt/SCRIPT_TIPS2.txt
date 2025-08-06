@@ -1,0 +1,63 @@
+export interface Props {
+  name: string;
+  image?: { url?: string };
+  thumbnail?: { url?: string };
+  description: string;
+  energyIcon?: string;
+  likes?: string;
+  energy: number;//ロジック追加
+}
+
+const {
+  name,
+  thumbnail,
+  description,
+  energyIcon = '/images/charaList/energy_icon_full.png',
+  likes = '200K',
+  energy,//オブジェクト
+} = Astro.props;
+
+
+//let とは
+let energyClass = '';
+
+if (energy >= 100) {
+  let energyIcon = '/images/charaList/energy_icon_100.png';//letがないとTypeScriptエラーになる
+  energyClass = 'energy-full';
+} else if (energy >= 75) {
+  let energyIcon = '/images/charaList/energy_icon_75.png';
+  energyClass = 'energy-high';
+} else if (energy >= 50) {
+  let energyIcon = '/images/charaList/energy_icon_50.png';
+  energyClass = 'energy-mid';
+} else if (energy >= 35) {
+  let energyIcon = '/images/charaList/energy_icon_35.png';
+  energyClass = 'energy-low';
+} else {
+  let energyIcon = '/images/charaList/energy_icon_15.png';
+  energyClass = 'energy-critical';
+}
+
+
+
+-----------------------------------------------
+
+const energyIcon = energy >= 100
+  ? '/images/charaList/energy_icon_100.png'
+  : energy >= 75
+  ? '/images/charaList/energy_icon_75.png'
+  : energy >= 50
+  ? '/images/charaList/energy_icon_50.png'
+  : energy >= 35
+  ? '/images/charaList/energy_icon_35.png'
+  : '/images/charaList/energy_icon_15.png';
+
+const energyClass = energy >= 100
+  ? 'energy-full'
+  : energy >= 75
+  ? 'energy-high'
+  : energy >= 50
+  ? 'energy-mid'
+  : energy >= 35
+  ? 'energy-low'
+  : 'energy-critical';

@@ -1,0 +1,201 @@
+AStroでページ作成している。
+ナビメニューの作成。
+
+intro/
+gete/
+以外のページ
+
+は共通ナビメニューを設置
+
+パージの下段に必ず配置する。
+
+（仕様）
+動き：下へフェードイン+イーズイン展開するメニュー
+
+
+・バー自体がボタン中心には●　color:white が上下ゆらゆらに動いている。
+
+・バーボタンを●がマウスへ動き出し、クリックすると下へイーズインの動きで展開して全メニュー表示。
+
+・バー：デフォルト状態：濃いブルー。グラデーションの動き付き。
+
+・クリックで下に伸び、同時にページも下に伸びる感じ。
+
+・閉じるときは
+フェードアウト+イーズアウトで閉じる
+
+（スタイル）
+・メニュー背景色：色background-color:#143a8eff
+・テキスト：ホワイト
+・テキストリンク下線はすべて消す
+・テキストサイズ：16px　サブ文字：12px
+・メニューはすべて横並び、上段と下段あり、
+	
+・各メニューの形状
+　＞角Rの矩形 矩形のボーダー色なし、background-color:#143a8eff
+
+　＞矩形領域ホバーでハイライト background-color:#0000ff63
+
+（構成）
+----上段　横並び-------
+
+「RUCKY-PANNとは
+下にサブ文字
+About.contents」
+矩形 honer ハイライト background-color:#0000ff63 *以下同様
+
+矩形 クリックで/pages/about/ページへ遷移
+
+
+「世界について
+
+下にサブ文字
+World.contents.contents」
+矩形honer でハイライト
+矩形クリックで/pages/world/ページへ遷移
+
+
+「PANN's ROIDの紹介
+下にサブ文字
+RoidFeature.contents」
+
+矩形honer でハイライト
+矩形クリックで/pages/charaIntro/ページへ遷移
+
+
+「PANN's ROID一覧
+下にサブ文字
+RoidList.contents」
+矩形honer でハイライト
+矩形クリックで/pages/charaList/ページへ遷移
+
+
+「マップエリア紹介
+　下にサブ文字
+MAP Area.contents」
+下に●ホワイトを既に表示：
+●クリック内包されている子要素のメニューが下に展開。
+
+内容を下に展開
+フェードイン＋イーズイン動きを持たせて広がる。
+全体の横並びのレイアウト崩さない。
+
+子要素のメニュースタイル
+
+背景: #0000ff63
+
+
+重要　>>　他の親メニュー群の矩形の並びを崩さない。<<重要
+
+横長角Rの矩形で表示　フェードイン
+
+その中のメニュー　すべて　横並びに表示 display:flex;　
+
+（内容）
+（上段）
+パンダアイコン'public/images/menu_icon/meu_icon_panda.png'改行 AREA　中央ぞろえ←これでワンセット　
+
+矩形honer でハイライト background-color: #0000ffff 以下同様
+/pages/areaMap/area-panda-roid/ページへ遷移
+
+
+
+コアラアイコン'public/images/menu_icon/meu_icon_panda.png'改行 AREA　中央ぞろえ　←これでワンセット
+
+矩形honer でハイライト background-color: #0000ffff 以下同様
+
+/pages/areaMap/area-koala-roid/ページへ遷移
+
+　
+ベアーアイコン'public/images/menu_icon/meu_icon_bear.png'改行AREA　中央ぞろえ　←これでワンセット
+矩形honer でハイライト
+/pages/areaMap/area-bear-roid/ページへ遷移
+
+
+ペンギンアイコン'public/images/menu_icon/meu_icon_penguin.png'改行 AREA　中央ぞろえ　←これでワンセット
+矩形honer でハイライト
+C/pages/areaMap/area-penguin-roid/ページへ遷移
+　
+ドッグアイコン'public/images/menu_icon/meu_icon_dog.png'改行 AREA　中央ぞろえ　←これでワンセット
+矩形honer でハイライト
+/pages/areaMap/area-dog-roid/ページへ遷移
+
+
+キャットアイコン'public/images/menu_icon/meu_icon_cat.png'改行 AREA　中央ぞろえ　←これでワンセット
+矩形honer でハイライト
+/pages/areaMap/area-cat-roid/ページへ遷移
+
+ヒッポアイコン'public/images/menu_icon/meu_icon_hipo.png' 改行 AREA　中央ぞろえ　←これでワンセット
+矩形honer でハイライト
+/pages/areaMap/area-hipo-roid/ページへ遷移
+
+タヌキアイコン'public/images/menu_icon/meu_icon_tanuki.png' 改行 AREA　中央ぞろえ　←これでワンセット
+矩形honer でハイライト
+/pages/areaMap/area-tanuki-roid/ページへ遷移
+
+？'アイコン　public/images/menu_icon/meu_icon_other.png'改行AREA 中央ぞろえ
+ホバーでハイライト、　and　TIPs「希少エリア、数がまだ少ないロイドたちがここにいます。」Tooltiopの背景　#0000ffff
+　←これでワンセット 
+矩形honer でハイライト
+クリックで
+/pages/areaMap/area-other-roid/ページへ遷移
+
+（下段）
+ダークガードアイコン 'public/images/menu_icon/meu_icon_dark.png'改行AREA　中央ぞろえ　←これでワンセット　矩形honer でハイライト
+クリックで/pages/areaMap/area-dark-roid/ページへ遷移
+　
+R-Pアイコン 'public/images/menu_icon/meu_icon_rp.png'改行AREA　中央ぞろえ　←これでワンセット
+矩形honer でハイライト
+クリックで/pages/areaMap/area-rp/ページへ遷移
+
+イベントアイコン 'public/images/menu_icon/meu_icon_event.png' 改行AREA　中央ぞろえ　←これでワンセット
+矩形honer でハイライト
+
+クリックで/pages/areaMap/area-eventページへ遷移
+
+*コンパニオンアイコン 'public/images/menu_icon/meu_icon_companion.png' %}改行AREA　中央ぞろえ　←これでワンセット
+矩形honer でハイライト
+クリックで/pages/areaMap/area-companion-roid/ページへ遷移
+
+矩形終わり、ホバー、
+
+イーズアウトで閉じる。
+
+
+----下段----
+
+↓ここのメニューグループは下段に配置して　右寄せ 
+
+
+*サイトナビ　下にサブ文字　SiteNavi.contents　
+矩形honer でハイライト
+クリックで/pages/navitour/ページへ遷移
+
+
+*イベント参加　下にサブ文字　Join.contnts　
+矩形honer でハイライト
+クリックで/pages/join/ページへ遷移
+
+
+
+企画制作　下にサブ文字　Producrion.contents
+矩形honer でハイライト
+クリックで/pages/production.tsxページへ遷移
+
+
+HOME-Planet　下にサブ文字　Planet.contents
+矩形honer でハイライト
+クリックで/pages/ページへ遷移
+
+
+
+-------↑メニュー終わり-------
+
+
+const { label, sub, href } = Astro.props;
+を使うこと
+
+完全作成する。
+
+メニューは
+初期表示はフェードイン表示

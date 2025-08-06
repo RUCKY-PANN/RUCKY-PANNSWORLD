@@ -1,0 +1,61 @@
+---
+// src/pages/intro/index.astro
+import '../../styles/intro.css';
+import SkipButton from '../../components/SkipButton.astro';
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <script type="module" src="/scripts/SkipScript.js"></script>
+
+    <title>RUCKY-PANN Setup</title></head
+  >
+  <body class="intro-body">
+    <div class="fullscreen-wipe">
+      <div class="status-text">この世界をセットアップ中.....</div>
+      <div class="scroll-container">
+        <div class="scroll-text" id="storyText"></div>
+      </div>
+
+      <div id="wipe" class="fullscreen-wipe"><SkipButton client:load /></div>
+      <div class="loading-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+
+    <script>
+      fetch('/story/story.txt')
+        .then((res) => res.text())
+        .then((text) => {
+          const storyElem = document.getElementById('storyText');
+          if (storyElem) {
+            storyElem.innerText = text;
+          }
+        });
+
+      // フルスクリーントランジッション要素を取得
+      const wipeElem = document.querySelector('.fullscreen-wipe');
+
+      // 演出トリガー時に追加
+      // 20秒後に遷移演出＋画面切り替え
+      setTimeout(() => {
+        if (wipeElem) {
+          wipeElem.classList.add('wipe-transition');
+          document
+            .querySelector('.scroll-container')
+            ?.classList.add('fade-out');
+          document.querySelector('.status-text')?.classList.add('fade-out');
+          document.querySelector('.skip-button')?.classList.add('fade-out');
+          document.querySelector('.loading-bar')?.classList.add('fade-out');
+        }
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 2000);
+      }, 20000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,335 @@
+/* src/styles/charaIntro.css */
+
+/* コンテンツ全体の外枠 */
+.intro_contens_wrapper {
+  background-color: white;
+  width: 100%;
+  border-radius: 12px;
+  padding: 24px;
+  color: black;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* 見出し */
+.intro_txt_H5 {
+  font-size: 1.2rem;
+  color: #faf2f2;
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* セクション単位（上下余白なし） */
+.section_block_charaIntro {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 30px 0;
+  box-sizing: border-box;
+}
+
+/* ▼▼ カードグリッド全体 ▼▼ */
+
+.card_grid_wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  gap: 2rem;
+  padding: 0px;
+}
+
+/* ▼▼ カード本体 ▼▼ */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #2974fffe;
+}
+
+/*  左　card  の内容要素  */
+.card_left {
+  flex: 0 0 22%;
+  position: relative;
+}
+
+/* ▼▼ サムネイル画像 ▼▼ */
+.thumbnail {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+.card_left img {
+  width: 140px;
+  max-width: 140px;
+  margin: 0 auto;
+}
+
+.card_header {
+  position: relative;
+  width: 260px;
+  height: fit-content;
+}
+
+/* ▼▼ ロゴテキスト共通 ▼▼ */
+.top_txt,
+.bottom_txt {
+  font-family: Astronau, sans-serif;
+  color: #5353533e;
+  pointer-events: none; /* クリック無効化 */
+}
+
+/* ▼▼ 上部ロゴテキスト（h6） ▼▼ */
+.top_txt {
+  position: absolute; /* ← 位置調整のため */
+  top: 5%;
+  left: 0%;
+  font-size: 5rem;
+  text-align: left;
+  line-height: 0.7;
+  width: 100%; /* 親に合わせる */
+  white-space: normal; /* 折り返しを許可 */
+  word-break: break-word; /* 単語の途中でも折り返す（必要に応じて） */
+}
+.card_headerH5 {
+  font-size: 1.6rem;
+  line-height: 1;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* ▼▼ 下部ロゴテキスト「ROID」▼▼ */
+.bottom_txt {
+  position: absolute;
+  font-size: 4rem;
+  bottom: 0%; /* ← カードの下部 */
+  left: 0%;
+  right: 2%;
+  margin: 0;
+  line-height: 0;
+}
+
+.card_heade {
+  text-align: left;
+}
+
+.card_center {
+  overflow: hidden;
+  word-break: break-word;
+  display: flex;
+  min-width: 0; /* 落ち防止 */
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.area_icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+  margin-left: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.dome_icon {
+  width: 60px;
+  height: auto;
+}
+.caption {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* info_section */
+
+/* info_section 左部分に固定幅 */
+.info_section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  flex-wrap: wrap; /* モバイル対応 */
+  position: relative;
+}
+
+.info_section > ul {
+  flex: 1 1 60%;
+  min-width: 0;
+}
+
+/* カテゴリごとの一覧ボタン*/
+.info_section a {
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.4rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  color: #ffffff;
+  background: linear-gradient(120deg, #5ea3aa, #89c2d9);
+  background-size: 200% 200%;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(137, 194, 217, 0.5);
+  cursor: pointer;
+  transition:
+    background-position 2s ease,
+    transform 0.3s ease;
+  animation: flowGradient 6s ease infinite;
+}
+
+@keyframes flowGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.info_section a:hover {
+  transform: scale(1.06);
+  background: linear-gradient(120deg, #34676d, #a1d6ea);
+  box-shadow: 0 0 20px rgba(160, 210, 232, 0.7);
+}
+
+.info_section a:active {
+  transform: scale(0.95);
+  background: linear-gradient(120deg, #76bdd6, #5fa8d6);
+  box-shadow: 0 0 25px rgba(95, 168, 214, 0.9);
+}
+
+.label_list {
+  flex: 1 1 36%;
+}
+
+.label_list ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 8px; /* 項目間の余白 */
+}
+
+/* 各項目行 */
+.label_list li.row {
+  display: flex;
+
+  flex-wrap: nowrap; /* ★ここが重要！ラベルを折り返させない */
+
+  align-items: flex-start;
+  gap: 0.5em; /* ラベルとテキストの間に余白追加 */
+}
+
+.row {
+  margin-bottom: 8px;
+  align-items: start; /* 高さが違ってもラベルは上揃え */
+}
+
+/* ラベル統一＋見た目調整 */
+.label {
+  flex: 0 0 6em; /* 最大4文字相当の固定幅（調整可能） */
+  background-color: #e0e4fa;
+  white-space: nowrap; /* ラベル内で折り返させない */
+
+  border-radius: 8px;
+  padding: 4px 6px;
+  text-align: center;
+  font-weight: bold;
+}
+.content {
+  flex: 1 1 auto;
+  line-height: 1.2;
+  min-width: 0;
+  word-break: break-word; /* 長い語もきれいに折り返し */
+}
+
+/*info_section   END*/
+
+/* chart_section 右部分に固定幅と中央配置 */
+.card_right {
+  flex: 1 1 20%;
+  min-width: 240px;
+  align-items: center; /* 横方向に子要素を中央揃え */
+}
+
+.card_right canvas {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+.canvas_size {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.chart_title {
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 20px auto 0 auto; /*  autoで左右中央寄せ */
+  max-width: max-content; /* コンテンツサイズに応じた幅を設定 */
+}
+
+/* info_awards 受賞 */
+.awards h6 {
+  margin-top: 5px;
+  margin-left: 0px;
+  font-weight: bold;
+  color: rgb(23, 23, 94);
+  font-size: 1rem;
+  font-family: 'Meiryo', sans-serif;
+  line-height: 1;
+  text-align: left;
+}
+
+.award_info {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  display: flex;
+  gap: 1rem;
+  font-size: 14px;
+  color: #333;
+}
+.awards dt {
+  font-size: 1rem;
+  color: #18065f;
+}
+.award_icons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 5%;
+}
+.award_icons img {
+  width: 100%;
+  height: 50px;
+}
+
+.guard-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 400px; /* 表示領域 */
+}
+
+.guard {
+  position: absolute;
+  bottom: -100%; /* 初期位置は下に隠す */
+  width: 100%;
+  height: 100px;
+  background-color: #444;
+  transition: bottom 0.6s ease;
+}
+
+/* 下からせり上げるクラス */
+.guard.active {
+  bottom: 0; /* 出現位置 */
+}

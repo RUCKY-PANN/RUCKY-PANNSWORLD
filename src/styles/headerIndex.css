@@ -1,0 +1,45 @@
+.headerIndex {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  z-index: 999999;
+}
+
+.titleIndex {
+  font-family: 'terano', sans-serif;
+  font-size: 1.8rem;
+  color: rgb(189, 189, 216);
+  text-align: left;
+  padding: 15px;
+}
+
+.headerSpan {
+  height: 20px;
+  display: flex;
+  padding: 10px;
+  margin: auto 0;
+  padding-left: 20px;
+  color: rgb(112, 176, 232);
+}
+
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*    タイトル反射    */
+.reflecth {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  z-index: 0;
+}

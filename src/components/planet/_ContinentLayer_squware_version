@@ -1,0 +1,138 @@
+import { areaData } from '@/planetData/areaData';
+import { continentShapeMap } from '@/planetData/continentShapeMap';
+import { useTexture } from '@react-three/drei';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import * as THREE from 'three';
+import SectorDialog from './SectorDialog';
+
+export default function ContinentLayer({
+  setActiveSector,
+  setDialogPosition,
+  onReady,
+}) {
+  const [activeId, setActiveId] = useState(null);
+  const particleRef = useRef();
+
+  const handleClick = (id, position, rp) => {
+    setActiveSector(id);
+    setDialogPosition(position);
+    setActiveId('rp');
+  };
+
+  useEffect(() => {
+    if (onReady && particleRef.current) {
+      requestAnimationFrame(() => onReady(particleRef));
+    }
+  }, [onReady]);
+
+  return (
+    <>
+      <group name="ContinentLayer">
+        {areaData.map(({ id }) => {
+          const shapeData = continentShapeMap[id];
+          if (!shapeData) return null;
+
+          const texture = useTexture(shapeData.textureUrl);
+          texture.center.set(1, 1);
+          texture.needsUpdate = true;
+
+          texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+
+          const materials = useMemo(
+            () => [
+              new THREE.MeshStandardMaterial({
+                map: texture,
+                metalness: shapeData.reflection || 0.3,
+                roughness: 1.0 - (shapeData.reflection || 0.3),
+                flatShading: true,
+              }),
+              new THREE.MeshStandardMaterial({
+                color: shapeData.borderColor,
+                metalness: shapeData.reflection,
+                roughness: 1.0 - shapeData.reflection,
+                flatShading: true,
+              }),
+            ],
+            [texture, shapeData.borderColor, shapeData.reflection],
+          );
+          const geometry = useMemo(() => {
+            const shape = new THREE.Shape();
+            shapeData.outline.forEach(([x, z], i) => {
+              i === 0 ? shape.moveTo(x, z) : shape.lineTo(x, z);
+            });
+
+            const geo = new THREE.ExtrudeGeometry(shape, {
+              depth: shapeData.height,
+              bevelEnabled: false,
+              steps: 1,
+            });
+
+            // 各 face に materialIndex を割り当てる
+            geo.groups.forEach((group, i) => {
+              group.materialIndex = i === 0 ? 0 : 1;
+            });
+
+            return geo;
+          }, [shapeData.outline, shapeData.height]);
+
+          return (
+            <group key={id}>
+              <mesh
+                geometry={geometry}
+                material={materials}
+                position={shapeData.position}
+                rotation={[-Math.PI / 2, 0, 0]}
+                name={`continent-${id}`}
+                onClick={() => {
+                  setActiveSector(id);
+                  setDialogPosition(shapeData.position);
+                }}
+              />
+
+              {id === 'rp' && (
+                <mesh
+                  ref={particleRef}
+                  position={[
+                    shapeData.position[0],
+                    shapeData.height + 0.03,
+                    shapeData.position[2],
+                  ]}
+                >
+                  <sphereGeometry args={[0.12, 10, 50]} />
+                  <meshStandardMaterial color="yellow" emissive="orange" />
+                  {[...Array(80)].map((_, i) => {
+                    const angle = (i / 100) * Math.PI * 5;
+                    const radius = 0.6 + Math.random() * 0.1;
+                    const px = Math.cos(angle) * radius;
+                    const pz = Math.sin(angle) * radius;
+                    const height = 0.1 + Math.random() * 0.2;
+
+                    return (
+                      <mesh key={i} position={[px, 0.1 / 2, pz]}>
+                        <boxGeometry args={[0.02, height, 0.02]} />
+                        <meshStandardMaterial
+                          color="#48f04c"
+                          metalness={0.6}
+                          roughness={0.3}
+                          emissive="#22e127"
+                        />
+                      </mesh>
+                    );
+                  })}
+                </mesh>
+              )}
+            </group>
+          );
+        })}
+      </group>
+
+      {activeId && (
+        <SectorDialog
+          sectorId={activeId}
+          position={dialogPosition}
+          onClose={() => setActiveId(null)}
+        />
+      )}
+    </>
+  );
+}

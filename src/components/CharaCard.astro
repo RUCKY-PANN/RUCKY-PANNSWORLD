@@ -1,0 +1,84 @@
+---
+// src/components/CharaCard.astro
+//charaList/index.astroで使用する
+
+import type { Character } from '../types/character';
+
+interface Props {
+  character: Character;
+}
+
+const { character } = Astro.props;
+
+const name = character.name;
+const thumbnail = character.thumbnail;
+const description = character.description;
+const likes = character.like_count ?? 0;
+const favo_count = character.favo_count ?? 0;
+const uid = character.slug; // または slug
+
+const energy = character.energy ?? 0;
+
+const energyIcon =
+  energy >= 100
+    ? '/images/charaList/energy_icon_100.png'
+    : energy >= 75
+      ? '/images/charaList/energy_icon_75.png'
+      : energy >= 50
+        ? '/images/charaList/energy_icon_50.png'
+        : energy >= 35
+          ? '/images/charaList/energy_icon_35.png'
+          : energy >= 15
+            ? '/images/charaList/energy_icon_15.png'
+            : '/images/charaList/energy_icon_0.png';
+
+const energyClass =
+  energy >= 100
+    ? 'energy-full'
+    : energy >= 75
+      ? 'energy-high'
+      : energy >= 50
+        ? 'energy-mid'
+        : energy >= 30
+          ? 'energy-low'
+          : energy > 15
+            ? 'energy-critical'
+            : 'energy-void';
+---
+
+<div class="character-card">
+  <div class="card-header">
+    <div class="char-tag"></div>
+    <h2 class="char-name">{name}</h2>
+  </div>
+
+  <div class="card-main">
+    <div class="thumbnail-wrapper">
+      <div class="thumbnail">
+        <img
+          src={thumbnail?.url || '/images/noimage.png'}
+          alt={`${name || '名前未設定'}のイメージ`}
+        />
+      </div>
+      <div class="energy-status {energyClass}">
+        <img class="icon energy" src={energyIcon} alt="AMPエネルギー" />
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="like like-btn" data-char-id={uid}>
+      <img src="/images/charaList/likes_icon.png" alt="お気に入り" />
+      <span>{likes}</span>
+    </div>
+    <div class="favorite favo-btn" data-char-id={uid}>
+      <img src="/images/charaList/favo_icon.png" alt="お気に入り" />
+      <span>{favo_count}</span>
+    </div>
+    <div class="detail-button">
+      <a href={`/charaList/detail/${character.slug}`}>
+        <img src="/images/charaList/btn_detail.png" alt="詳細ページ" /></a
+      >
+    </div>
+  </div>
+</div>

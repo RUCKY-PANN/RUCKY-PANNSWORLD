@@ -1,0 +1,22 @@
+Object.entries(continentShapeMap).forEach(([id, config]) => {
+  const shape = new THREE.Shape();
+  config.outline.forEach(([x, z], i) => {
+    i === 0 ? shape.moveTo(x, z) : shape.lineTo(x, z);
+  });
+
+  const geometry = new THREE.ShapeGeometry(shape);
+  const material = new THREE.ShaderMaterial({
+    vertexShader: ContinentVertexShader,
+    fragmentShader: ContinentFragmentShader,
+    uniforms: {
+      colorCenter: { value: new THREE.Color(config.borderColor) },
+      colorEdge: { value: new THREE.Color(config.borderColor).offsetHSL(0, -0.2, -0.2) },
+    },
+    transparent: true,
+    side: THREE.DoubleSide,
+  });
+
+  const mesh = new THREE.Mesh(geometry, material);
+  mesh.position.set(...config.position);
+  scene.add(mesh);
+});

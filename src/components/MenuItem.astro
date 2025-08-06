@@ -1,0 +1,8 @@
+---
+const { label, sub, href } = Astro.props;
+---
+
+<a href={href} class="menu-box">
+  <span class="menu-main">{label}</span>
+  <span class="menu-sub">{sub}</span>
+</a>

@@ -1,0 +1,41 @@
+---
+// src/components/Pagetitle.astro
+const { title, subtitle } = Astro.props;
+---
+
+<style>
+
+.pagetitle{
+     color: white;
+     padding-bottom: 30px;
+     background-image: url('/images/bg/contents_common_title_bg.png');
+     background-repeat: no-repeat;
+     background-position: left top;
+}
+
+.pagetitle h3{
+    font-size: 2rem;
+    background-image: url('/images/bg/contents_title_bg1.png');
+    background-position: left top;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px; /* 上下の間隔を調整 */
+    padding-left: 35px;
+
+
+}
+.pagetitleSpan{
+    font-size: 1rem;
+    color: #666;
+    padding-left: 35px; /* 左マージン */
+
+}
+
+</style>
+
+<div class="pagetitle">
+  <h3>{title}</h3>
+  <span class="pagetitleSpan">{subtitle}</span>
+</div>

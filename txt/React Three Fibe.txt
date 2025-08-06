@@ -1,0 +1,212 @@
+ <mesh
+   key={id}
+   position={[0, 0, -0.01]}
+   name={`continent-${id}`}
+   rotation={[Math.PI / 2, 0, 0]}
+ >
+React Three Fiber（React上でThree.jsを使うライブラリ）で
+3Dオブジェクト（<mesh>）を定義している部分です。各属性の意味をざっくり説明しますね：
+
+🧱 <mesh>タグ
+- 役割: Three.jsの基本的なオブジェクト。ジオメトリ（形状）とマテリアル（見た目）を持つ3D物体を表現します。
+
+🔑 key={id}
+- 意味: Reactが各コンポーネントを一意に識別するためのキー。idによって複数のメッシュを効率的にレンダリング・更新できます。
+
+📍 position={[0, 0, -0.01]}
+- 意味: オブジェクトの位置。x軸 = 0、y軸 = 0、z軸 = -0.01。
+- 用途: 少し奥に配置することで、他のオブジェクトより背景に見えるようにする効果があります。
+
+🏷️ name={continent-${id}}
+- 意味: メッシュに名前をつけることで、後で識別や参照が可能になります。
+- 使用例: scene.getObjectByName('continent-5')などで取得可能。
+
+🔄 rotation={[Math.PI / 2, 0, 0]}
+- 意味: オブジェクトの回転。ここではx軸に90度（π/2）回転しています。
+- 効果: 通常の平面を縦向きから横向き（または上下向き）に変更する感じです。
+
+---------------+
+
+もちろん！これは Three.js を React Three Fiber 経由で使っているコードで、
+2Dの形（shape）から薄い立体（輪郭）を作り出し、
+それにシンプルなマテリアルを貼って表示する部分です。各要素の意味をわかりやすく解説しますね：
+
+✏️ <extrudeGeometry args={[shape, geometryArgs]} />
+- 役割: 2Dの輪郭 shape を元に、押し出して厚みのある3D形状を作るジオメトリ。
+- shape: SVGのような形状（Path）情報。これがベースになります。
+- geometryArgs: 押し出しの詳細設定。例えば：
+{
+  depth: 0.01,            // 厚み
+  bevelEnabled: false     // 角の丸みを無効
+}
+- 効果: 単なる平面の線を「ちょっと厚みのある輪郭表示」にするのにピッタリ。
+
+<extrudeGeometry
+  args={[
+    shape,
+    {
+      depth: 0.01,
+      bevelEnabled: true,
+      bevelThickness: 0.001,
+      bevelSize: 0.001,
+      bevelSegments: 1,
+    },
+  ]}
+/>
+
+<extrudeGeometry
+  args={[
+    shape,
+    {
+      depth: 0.01,
+      bevelEnabled: true,
+      bevelThickness: 0.001,
+      bevelSize: 0.001,
+      bevelSegments: 1,
+    },
+  ]}
+/>
+
+
+🎨 <meshBasicMaterial ... />
+これは物体の見た目（色、透明度など）を指定するマテリアルです。
+🟡 color={borderColor}
+- 意味: 境界線に使う色（変数 borderColor に格納）。
+- 使用目的: 例えば暗めのグレーや薄い青など、輪郭に相応しい色指定ができます。
+🫥 transparent
+- 意味: 透明度を使うかどうか。trueなら opacity が有効になります。
+🌫️ opacity={0.1}
+- 意味: 不透明度の値。0に近いほど透明。
+- この場合: かなり薄く表示される輪郭。主張しすぎず、下層のコンテンツと自然に重なる感じ。
+🔁 side={THREE.DoubleSide}
+- 意味: 表面と裏面の両方を描画するかどうか。
+- この場合: 薄いジオメトリなので、片面描画だと見えないこともあり、両面表示が有効。
+-----------------------------------------------------------]
+
+🌟解説いきますね！
+
+🧩 .wrapS や .wrapT って何者？
+これは プロパティ（変数）名で、テクスチャーの横（S）と縦（T）の繰り返し方法を指定するために存在します。
+関数ではなく プロパティに値を代入してるってイメージです。
+- texture.wrapS = THREE.RepeatWrapping; → 横方向（S軸）の繰り返し設定
+- texture.wrapT = THREE.RepeatWrapping; → 縦方向（T軸）の繰り返し設定
+
+🎛 THREE.RepeatWrappingって何？
+これは **Three.jsが提供する「定数」**です。意味は：
+| 定数名 | 効果 | 
+| THREE.ClampToEdgeWrapping | 端でピクセルをそのまま繰り返さず保持する | 
+| THREE.RepeatWrapping | テクスチャーを繰り返す | 
+| THREE.MirroredRepeatWrapping | 鏡映しで繰り返す | 
+
+
+値としては内部的に THREE.RepeatWrapping = 1000 みたいになってるけど、使う時は 
+名前で指定するのがベスト！
+
+🤔 .wrapX とかないの？
+ないんです…！Three.jsでは UVマッピングを使ってテクスチャーを貼るので、X/Y軸じゃなくて
+ S/T軸で表現するんです。これはOpenGL由来の慣習ですね。
+| 軸名 | 対応方向 | 備考 | 
+| S | 横方向 | X軸に近い | 
+| T | 縦方向 | Y軸に近い | 
+
+
+もし .wrapX が使いたいなら、wrapS に意識を向ければそれに該当します！
+
+🌌余談：RUCKY-PANN的な応用ヒント
+地形に貼るマスクテクスチャで wrapT = MirroredRepeatWrapping を使うと、エネルギーラインが波打つように繰り返されて、まるで AquaCoreが息づいているみたいな演出が可能です。そういう“映える繰り返し”の設定、好きそう…🫧
+
+また「この定数たちはどこで定義されてるの？」とか気になったら、Three.jsの 
+src/constants.js の中身も探検してみるとおもしろいですよ！
+もっとマニアックな繰り返し表現したくなったら言ってくださいね🚀
+
+
+
+----------------------
+
+
+🪂 1. 矩形群をもっと下に移動するには？
+現在の position は [0, 0, -0.01] ですが、Y軸が上下方向なので、position[1] をマイナスにすれば下に動きます。例えば：
+<mesh
+  key={id}
+  position={[0, -0.5, -0.01]} // ← Y方向に下へ0.5ユニット移動
+  name={`continent-${id}`}
+  rotation={[Math.PI / 2, 0, 0]}
+>
+
+
+調整する値は、他の要素との重なりを見ながら微調整できます。-0.2〜-1.0あたりで試してみるといいかも。
+
+🧼 2. 断面図にある色付き矩形を除去するには？
+これはおそらく extrudeGeometry の depth や bevel パラメータが影響して縁や断面に色が見えている状態だと思われます。除去方法は以下のいずれか：
+✂️ 方法A：断面自体を描画しない
+Three.jsでは extrudeGeometry によりサイド面＋底面が生成されるため、「断面だけ色付きになる」現象が起きます。断面を消したい場合はマテリアルを分けてフェイスごとに表示をコントロールできますが、もっとシンプルにいくなら次の方法も。
+🎨 方法B：colorとopacityを調整する
+meshStandardMaterial の color を断面と同系色にして、目立たなくする方法もあります：
+<meshStandardMaterial
+  map={texture}
+  color={'#ffffff'} // ← 白系にして断面と自然に馴染ませる
+  transparent
+  opacity={0.8}
+  side={THREE.DoubleSide}
+/>
+
+
+また、もし断面が「上に浮いて見える」なら、それは**depthが高すぎる**可能性もあるので、以下のように浅くするのもあり：
+const geometryArgs = {
+  depth: 0.02, // ← 高さをぐっと浅くする
+  bevelEnabled: true,
+  bevelThickness: 0.001,
+  bevelSize: 0.001,
+  bevelSegments: 3,
+};
+
+
+
+🎁 おまけ：色付き矩形が別レイヤーか確認したい場合
+もしその矩形が別コンポーネント（例：UpperHighlightLayerなど）として追加されてるなら、親 <Planet> 内の構成を確認して、該当レイヤーごと削除 or 描画条件を除外しましょう。
+
+
+---------------------------------------
+
+
+🧭 問題の根本：rotation がずれてる
+✅ PlanetBase の断面図：
+<mesh rotation={[-Math.PI / 2, 0, Math.PI]} />
+
+
+- X軸に -90°（-Math.PI / 2）
+- Z軸に 180°（Math.PI）
+🚨 ContinentLayer のオブジェクト：
+<mesh rotation={[Math.PI / 2, 0, 0]} />
+
+
+- X軸に +90°
+- Z軸回転が未適用
+このズレによって、**同じ位置に配置しても奥行きや向きが一致せずに「浮いて見える」**ということが起きます。
+
+✅ 修正方法：rotation の整合性を合わせる
+以下のように ContinentLayer 側の rotation を断面図に合わせてください：
+<mesh
+  key={id}
+  position={[0, 0, 0]} // ← 一旦中央原点に配置
+  rotation={[-Math.PI / 2, 0, Math.PI]} // ← 断面図と完全一致に
+  name={`continent-${id}`}
+>
+
+
+💡 Z軸方向の -0.01 や Y軸方向の -1 は、断面と回転が一致していないと逆にズレる要因になります。一度クリアな原点配置＆同回転で確認しましょう。
+
+
+🎨 さらに密着調整するなら？
+断面図の geometry はこれ：
+<planeGeometry args={[3, 3]} />
+
+
+→ このサイズに合わせて ContinentLayer の配置も scale や position を微調整することで、本当にピッタリ重ねることができます。
+例えば：
+<mesh
+  position={[0, 0.02, 0]} // ← わずかに浮かせることで視認性を確保
+  rotation={[-Math.PI / 2, 0, Math.PI]}
+>
+
+

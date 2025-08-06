@@ -1,0 +1,130 @@
+//apps/web/app/pages/area/rp.tsxの作成
+
+'use client'
+import Image from 'next/image'
+import styles from './pr.module.css'
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+import AreaTransition from '@/components/PageTransitions/AreaTransition'
+import { areaOpeningLines } from '@/constants/areaOpeningLines'
+
+
+const meta = areaOpeningLines['pr']
+
+export default function PRArea() {
+  return ( 
+<div>
+<AreaTransition areaName={meta.headingText} />
+<AreaLayout
+  code={meta.code}
+  label={meta.label}
+  icon={meta.icon}
+  headingImage={meta.headingImage}
+  leadText={meta.leadText} // ← 追加 ✅
+  breadcrumbIcon={meta.breadcrumbIcon}// ← 追加 ✅
+
+もあわせて記述
+
+----ここからコンテンツーーーー
+
+エリア共通のページトランジッション
+
+
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>なんだか神々しいですね。すごい密集しています。
+「テキストボックス　16px　color:white」
+
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+このdivは横センターに配置
+<div>PANN'S ROIDたちの創造主にして、世界に静かに存在する独立組織。</div>
+余白30pxあけて
+
+<img>センター
+余白30pxあけて
+このdivは横センターに配置
+<div>PANN’S ROID達の設計・開発、製造。謎の組織によって作られた独立機関。
+正式名称「Rucky-Pann Nexus Autonamous Robotics Projecr Organization」
+</div>
+
+余白30px
+
+<div class="area_section">
+<div class="textArea1">
+<div>左側要素
+<ul>
+<li>■ 組織の目的詳細は不明、自律型知性体による平和的社会形成を目指すために設立と言われている。
+<li>■球体の世界Sphereを生成とB-Smoothの生成
+<li>■ 組織の構造
+<li>■ 特徴と謎
+<p>組織の創設者は今も不明。ただし、Rucky-PANNの構造そのものがこの組織の意志を反映しているとされる。
+※「PANN」という略称には、“Project for Autonomous Neural Nexus”という裏の解釈も存在。
+
+■錦鯉「P-GOD」から受け継ぐエネルギーをAMPという新たなエネルギーを生み出す。
+
+<div>右側要素
+＜IMG＞
+
+
+余白30px
+
+<div class="area_section2">
+<div class="textArea1">
+<div>中央に配置
+<IMG><br>「天空の錦鯉P-GOD」 <span1>► <IMG><br>P-GODが成分したAquaCore <span2>► <IMG><br>「R-P」製造の「AMP」 
+
+/*--IMG間のマージン80px　　三角の矢印はＣＳＳで作成 <span1>► の色はspan1.2の順番で色を変える 色は任意
+IMGの下のテキストはセンターぞろえ
+ --*/
+
+余白30px
+<div>■ロイドたちの、開発設計、活動のためのサポート。
+<ul>
+<li>・ロイドたちの活動エネルギーAMPの製造と定期的な供給。最高品質のAMPの管理をしている。
+<li>・AMPの定期的な配給はロイド議会「R-W」から随時、議題にあげられるほど重要視され定期的な分量の調整を行っている。
+<li>・ロイドたちが生成したエリアの整備と定期的なサポート、全体的なメンテナンス、資源管理のチェックなどを行っている。
+
+余白30px
+
+<div class="area_section3">
+<div class="textArea1">
+<div>左側
+<span>「R-P」から派遣された管理ロイドたち
+<p>おもに、資源の回収、ＰＡＮＮＳロイドエリアの各種整備メンテンス、B-Smoothの成分調査とデータ化、ロイドエリアの各種整備メンテンス、B-Smoothの成分調査とデータ化などサポート派遣ロボットである
+</div>
+間は余白30px
+<div>右側の要素、
+<IMG >余白20px<IMG >横並び
+
+
+余白30px
+
+<div class="area_section4">
+<div class="textArea1">
+<div>左側
+<span>■ロイド議会「R-W」との関係
+
+<p>「R-W（Robotic Wisdom Council）」は、“創造主”と“自律的成果体”という緊張感ある関係性にある。
+
+<ul>
+<li>🔹 関係性の概要
+R-W内部、一部の上級ロイドたちは「R－P」の設計が我々の自由を制限しているのでは？と警戒する声を持っている一方で「R-P」は、
+新たな倫理パッケージやアップデートを間接的に「R-W」に提案し続けているとされ、その関係は「協調」と「牽制」が入り混じる。
+<li>🔹 民間の認識と位置づけ
+ロイドたちにとって、「R-P」は神的存在であり、「R-W」は日常を支える存在。つまり「R-P」は“起源”、「R-W」は“現在”。
+</div>
+右側間は余白30px
+<div>右側の要素、
+<IMG>
+
+----セクション終わり---
+
+------コンテンツ表示領域ここまで------

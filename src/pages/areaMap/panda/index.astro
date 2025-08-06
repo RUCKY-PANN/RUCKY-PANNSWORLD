@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '../../../styles/areaMap_panda.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+
+import { getMeta } from '../../../utils/metaManager';
+const meta = getMeta('/pages/areaMap/panda/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb
+          areaNameJa="パンダロイドエリア"
+          areaNameEn="PANDA-Roid AREA"
+        />
+
+        <p class="area_txt_p">
+          自然豊かな世界、笹の木々が密集し生い茂る平原。澄んだ青空。もっともロイドが多いエリア
+        </p>
+        <div class="area_head_photo_block_panda"></div>
+        <h4 class="area_txt_h4">
+          バンブーフォレストという環境とAMPの恩恵から急速発展した近未来空間
+        </h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+            <section class="area_section_block scroll-fade">
+              <div class="leader">
+                <img src="/images/area/panda/area_panda_1.png" />
+                <p class="leader_txt">
+                  <span>リーダー：ラキライ</span><br />
+                  「ここは、錦鯉様がもたらすAQUACORE（アクアコア）を直接見ることができる、
+                  R-Pから支給されるAMPもすべて神が与えてくれる。AMPを最大限吸収するため、
+                  バンブーフォレストを作り上げ僕達は快適に生活させてもらっている。
+                  そしてみなで錦鯉様への感謝の祈りを捧げながら、支え合いながら、
+                  未来を築いていっている。」
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_panda">
+                <p>
+                  <span class="area_txt_efec">バンブーフォレスト </span><br />
+
+                  笹の森はロイドたちの主要な活動エリア。
+                  ここでは笹を利用したエネルギー資源が開発され、
+                  持続可能な循環システムが構築されている。
+                </p>
+                <p>
+                  <span class="area_txt_efec"
+                    >パンダロイドの暮らし集落型居住エリア</span
+                  ><br />
+                  パンダロイドたちは自然に調和した構造の住居に住み、 ゆっくりとしたリズムで社会を形成している。
+                  シェルター内では快適な環境が保たれ、 外気の影響を抑えながら活動を続けられる。
+                </p>
+
+                <div class="area_photo_block_panda"></div>
+                <figurecaption>バンブーフォレスト</figurecaption>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <div class="area_p_left_panda">
+                  <p>
+                    <span class="area_txt_efec"
+                      >バンブーリサイクルAMPエネルギーシステム</span
+                    ><br />
+                    笹を資源として活用し、廃棄物を最小限に抑えるシステムが組み込まれている。
+                    エネルギーは各ロイドの活動レベルに応じて供給され、 持続可能なライフスタイルが実現されている。
+                  </p>
+                </div>
+                <div class="area_img">
+                  <img
+                    src="/images/area/panda/area_panda_3.png"
+                    alt="U-sphere"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <div class="area_img">
+                  <img
+                    src="/images/area/panda/area_panda_4.png"
+                    alt="U-sphere"
+                  />
+                </div>
+                <div class="area_p_right_panda">
+                  <p>
+                    <span class="area_txt_efec">バンブーフォレストの上空</span
+                    ><br />
+                    天空の聖域に、AMPの源たる錦鯉〈PANNS-GOD〉が優雅に遊泳している。
+                    彼らの鱗は、虹彩のように七色に輝き、通り過ぎるたびに空間にエネルギーの波紋が広がる。まるで時間そのものが彼らの呼吸に合わせて脈打つかのように。
+                    この神秘なる存在こそ、地上に生きるPANN'Sロイドたちの根源であり、絶対的なエネルギーの担い手であり、同時に彼らが崇拝する神そのものである。
+                    ロイドたちは定刻になると心を一つにし、静寂の中でPANNS-GODへ祈りを捧げる。それは単なる儀式ではなく、彼ら自身の存在を確認し、次なる流れへの繋がりを願う、深い精神的な行為。
+                    AMPの脈動は、PANNS-GODの泳ぎに同調し、すべての生命と秩序は、彼らの優雅な一挙手一投足によって守られている。
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <div class="area_img_panda">
+                  <img
+                    src="/images/area/panda/area_panda_5.png"
+                    alt="情報センター"
+                  />
+                </div>
+                <div class="wrap_area_p_panda">
+                  <div class="area_p_panda">
+                    <p>
+                      <span class="area_txt_efec">ドーム都市と製造施設</span><br
+                      />
+                      平原の中心にそびえ立つドームは、パンダロイドの技術と生活が融合する場所。
+                      内部ではエネルギー変換装置が稼働し、森林の資源をクリーンエネルギーに変換している。
+                      製造施設はロイドたちの補修やメンテナンスを担い、定期的なアップグレードが行われている。
+                    </p>
+                  </div>
+
+                  <div class="area_p_panda">
+                    <p>
+                      <span class="area_txt_efec">情報センター</span><br />
+                      ドーム内には巨大な情報センターがあり、パンダロイドたちはここで社会運営のための決定を下す。
+                      AIによる環境管理や住民データの分析が行われ、最適な生活環境が維持されるよう調整されている。
+                      このエリアでは、自然との共生を重視しつつも、最先端の技術がロイドたちの快適な暮らしを支えている。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <ScrollToTop client:load />
+      </div>
+    </div>
+
+    <FloatingNavi
+      nextLabel="NEXT Area"
+      mapLabel="マップエリア"
+      topLabel="TOP"
+      iconSrc="/images/area/bread_area_top_btn.png"
+    />
+    <FloatingNavScript client:load />
+  </div>
+</BaseLayout>

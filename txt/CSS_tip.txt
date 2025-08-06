@@ -1,0 +1,53 @@
+「justify-items: center;」は
+ Grid 用のプロパティなので、
+ 
+ Flexboxの場合は使いません
+
+
+.leader {
+  width: 100%;
+  display: flex;
+  justify-items: center; ✖
+}
+
+
+.leader {
+  display: flex;
+  justify-content: center;   /* 左右（水平）センター揃え */
+  align-items: center;       /* 上下（垂直）センター揃え */
+  flex-direction: column;    /* 必要に応じて縦並びにする */
+  text-align: center;        /* テキストの中央揃え（オプション） */
+}
+
+
+親要素　子要素をセンター配置にする
+.area_section_colum {
+  width: 90%;
+  display: flex;
+  justify-content: center; /* 左右（水平）センター揃え */
+  gap: 3rem;
+}
+子要素
+.area_p,
+.area_img {
+  width: auto;              /* 内容に合わせた幅に変更 */
+  max-width: 100%;          /* はみ出さないように制限 */
+}
+
+
+a img {
+  transition: transform 0.15s ease, filter 0.15s ease;
+  display: block;
+}
+
+/* ホバー時：明るくハイライト */
+a:hover img {
+  filter: brightness(1.2);
+  transform: scale(1.02);
+}
+
+/* クリック時：小さく押された感 */
+a:active img {
+  transform: scale(0.95);
+  filter: brightness(0.9);
+}

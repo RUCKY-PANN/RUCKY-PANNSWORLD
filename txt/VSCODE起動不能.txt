@@ -1,0 +1,82 @@
+「Electronアプリクラッシュ→VS Code起動不能」
+
+🧩 技術全体の流れ
+- GLSLファイル（.vert, .frag）の読み込み
+- Viteの構成と vite-plugin-glsl による処理
+- ElectronベースのアプリにおけるJavaScriptパース
+- VS Codeが文字コードや構文エラーで起動不能に陥る可能性
+
+📚 用語・技術まとめ
+🟦 GLSL関連（OpenGL Shading Language）
+| 用語 | 説明 | 
+| .vert | 頂点シェーダー。オブジェクトの形状や動きに関わる処理を書く | 
+| .frag | フラグメントシェーダー。画面上の色や光の計算をする | 
+| ?raw | ファイルの中身を文字列として読み込むViteの特殊構文 | 
+
+
+
+🧰 Vite・開発環境系
+| 用語 | 説明 | 
+| vite-plugin-glsl | .vert, .frag をそのまま読み込むためのVite拡張 | 
+| defineConfig() | Vite構成ファイルで使う設定関数 | 
+| alias | ファイルパスのショートカットを定義（例：@/components/Button.jsx） | 
+| optimizeDeps | Viteが依存関係を事前バンドルする対象を指定する | 
+
+
+
+⚡ エラー・文字コード系
+| 用語 | 説明 | 
+| UTF-8 (BOMなし) | GLSLやJSファイルの保存形式で最も安全な文字コード | 
+| 制御文字 | 非表示文字。混入するとVite・Electronがクラッシュする可能性あり | 
+| 構文エラー | JavaScript/GLSLの文法違反。VS CodeやViteが解釈できずエラーに | 
+
+
+
+🖥️ Electron・JS連携系
+| 用語 | 説明 | 
+| Electron | Web技術でデスクトップアプリを作るフレームワーク | 
+| TransformPluginContext | ViteがJS/GLSLのソースコードをパースする際の内部処理。
+ここでGLSLが変な形で解釈されるとクラッシュ要因に | 
+
+
+
+🛠️ デバッグ・安全対策
+| テクニック | 説明 | 
+| ダミーGLSLファイル作成 | 最小限の記述だけにして、起動確認をする方法（例：gl_Position = vec4(...)） | 
+| GLSL読み込み部分をコメントアウト | 一時的に該当コードを除外して起動確認する手法 | 
+| 文字化け検証ツールの使用 | hidden characters や BOM を検出するための VS Code 拡張など | 
+
+
+
+----------------------------
+
+ BOM（Byte Order Mark） は、
+ 
+ 文字コードの世界でかなり重要な存在です。
+ 
+ GLSLファイルの読み込みでクラッシュを引き起こす原因にもなり得るので、しっかり理解しておくと安心です 💡
+
+🧠 BOM（Byte Order Mark）とは？
+- 文字コードの先頭に付く特殊な目印
+- 主に UTF-16 や UTF-8（BOM付き） で使われる
+- ファイルの先頭に「このファイルはこの文字順で書かれてるよ」と教えるための不可視なバイト列
+
+⚠️ なぜBOMが問題になるのか？
+| 状況 | 問題点 | 
+| GLSLファイルにBOM付きUTF-8で保存 | gl_Position の前に不可視文字が入り、構文エラーになる | 
+| JavaScriptやJSONファイルにBOM付き | パーサーが先頭でクラッシュ、ElectronやViteが起動不能になる | 
+| VS CodeでBOM付きファイルを開く | 表示はされないが、挙動が不安定になることも | 
+
+
+
+✅ BOMなしで保存する方法（VS Code）
+- ファイルを開く
+- 右下の「UTF-8 with BOM」などの表示をクリック
+- 「UTF-8」を選択（BOMなし）
+- 上書き保存
+
+🔍 参考：BOMのバイト列
+| 文字コード | BOMのバイト列 | 
+| UTF-8 | EF BB BF | 
+| UTF-16 (LE) | FF FE | 
+| UTF-16 (BE) | FE FF | 

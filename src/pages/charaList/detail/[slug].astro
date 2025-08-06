@@ -1,0 +1,266 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import ListBreadcrumb from '../../../components/detail_Breadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '/src/styles/detail.css';
+import '/src/styles/common.css';
+
+import { client } from '../../../lib/microcms';
+import type { Character } from '../../../types/character';
+import { getMeta } from '../../../utils/metaManager';
+
+// 動的ルートに必要なこれが無ければエラーになる！
+export async function getStaticPaths() {
+  const data = await client.get({
+    endpoint: 'character',
+    queries: { limit: 100 },
+  });
+
+  return data.contents
+    .filter((item: Character) => !!item.slug)
+    .map((item: Character) => ({
+      params: { slug: item.slug },
+    }));
+}
+
+export const prerender = true;
+
+// slug からキャラを取得
+const { slug } = Astro.params;
+const data = await client.get({
+  endpoint: 'character',
+  queries: { filters: `slug[equals]${slug}`, depth: 1 },
+});
+
+const character = data.contents?.[0] ?? null;
+const meta = getMeta(`/pages/charaList/detail/${character?.slug ?? slug}`);
+
+const ratingMap: Record<number, string> = {
+  0: '未評価',
+  1: 'D',
+  2: 'D+',
+  3: 'C',
+  4: 'C+',
+  5: 'B',
+  6: 'B+',
+  7: 'A',
+  8: 'A+',
+  9: 'S',
+  10: 'S+',
+};
+const ratingLabel: number = character.rating_label ?? 0;
+const rating = ratingMap[ratingLabel];
+
+const rankColor: Record<
+  'normal' | 'hero' | 'UR' | 'ultra' | 'leader' | 'legend',
+  string
+> = {
+  normal: '#66ccff',
+  hero: '#33cc33',
+  UR: '#ff66ff',
+  ultra: 'linear-gradient(to right, #ffcc00, #ff6600)',
+  leader: '#ff9900',
+  legend: '#cc00cc',
+};
+
+const rawRank: keyof typeof rankColor = Array.isArray(character.rank)
+  ? character.rank[0]
+  : (character.rank ?? 'hero');
+
+const badgeColor = rankColor[rawRank];
+
+const rankNameMap: Record<keyof typeof rankColor, string> = {
+  normal: 'ノーマル',
+  hero: 'ヒーロー',
+  UR: 'UR',
+  ultra: 'ウルトラ',
+  leader: 'リーダー',
+  legend: 'レジェンド',
+};
+
+const LevelName = rankNameMap[rawRank];
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    {
+      character ? (
+        <>
+          <PagetitleH3
+            title="キャラクター一覧｜プロフィール詳細"
+            subtitle="CharacterDetail.content"
+          />
+          <div class="out_wrapper">
+            <ListBreadcrumb
+              categoryNameJa={character.category?.title ?? 'カテゴリ不明'}
+              categoryNameEn={
+                character.category?.title?.toUpperCase() ?? 'UNKNOWN'
+              }
+            />
+            <div class="in_wrapper">
+              <div class="detail_section_colum">
+                <div class="detail_wrap">
+                  <div class="detailHead">
+                    <div class="TxtTop">
+                      {character.category?.title?.toUpperCase() ?? ''}
+                    </div>
+                    <h4>
+                      {character.category?.title ?? 'カテゴリ'} ／{' '}
+                      {character.name}
+                    </h4>
+                    <span
+                      class="rank-badge"
+                      style={`background: ${badgeColor};`}
+                    >
+                      {rating}｜{LevelName}
+                    </span>
+                    <div class="ratingWrap">
+                      <div
+                        class="rating"
+                        id="ratingContainer"
+                        data-rating={character.rating_label}
+                      >
+                        <h6>世界評価：</h6>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="column_wrap">
+                    <div class="detailLeft">
+                      <div class="charaImg">
+                        <img
+                          src={
+                            character.charaimage?.url ?? '/images/default.png'
+                          }
+                          alt={character.name}
+                        />
+                      </div>
+                    </div>
+                    <div class="detailRight">
+                      <h5>{character.serifu}</h5>
+                      <p class="prof_txt">{character.description}</p>
+                      <div class="rightfooter">
+                        <div
+                          class="like like-btn"
+                          data-char-id={character.uid ?? ''}
+                        >
+                          <img src="/images/charaList/likeDetail.png" />
+                          <span>{character.like_count ?? 0}</span>
+                        </div>
+                        <div
+                          class="favo favo-btn"
+                          data-char-id={character.uid ?? ''}
+                        >
+                          <img src="/images/charaList/favoDetail.png" />
+                          <span>{character.favo_count ?? 0}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button class="BackButton" onclick="history.back()">
+                    BACK
+                  </button>
+                  <div class="TxtBottom">
+                    {character.category?.title?.toUpperCase() ?? ''}
+                  </div>
+                </div>
+                <div class="axplanation">
+                  *限界突破：★５over下場合にのみ与えられる表示
+                  *いいね、お気に入りは書き込みできません。
+                </div>
+              </div>
+              <ScrollToTop client:load />
+            </div>
+          </div>
+        </>
+      ) : (
+        <PagetitleH3
+          title="キャラが見つかりません"
+          subtitle={`"${slug}" は存在しません`}
+        />
+      )
+    }
+  </div>
+
+  <script type="module">
+    //★レイティング
+    const ratingContainer = document.getElementById('ratingContainer');
+    const rating = Number(ratingContainer?.dataset.rating ?? 0);
+
+    if (ratingContainer) {
+      const starWrap = document.createElement('div');
+      starWrap.className = 'starWrap';
+
+      for (let i = 0; i < 10; i++) {
+        const star = document.createElement('span');
+        star.className = 'star';
+        star.textContent = '★';
+        if (i < rating) star.classList.add('active');
+        starWrap.appendChild(star);
+      }
+
+      ratingContainer.appendChild(starWrap);
+    }
+
+    // K表記 → 数値
+    function parseCount(text) {
+      if (text.endsWith('K')) {
+        return parseFloat(text) * 1000;
+      }
+      return parseInt(text);
+    }
+
+    // 数値 → K表記
+    function formatCount(count) {
+      if (count >= 1000) {
+        return (count / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+      }
+      return count.toString();
+    }
+
+    // like → Like 変換
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    // ボタンイベント登録
+    function setupCounter(type) {
+      document.querySelectorAll(`.${type}-btn`).forEach((btn) => {
+        const span = btn.querySelector('span');
+
+        // 初期表示を整える
+        const raw = span.textContent.trim();
+        const formatted = formatCount(parseInt(raw)); // CMS値が100なら → 100 → "100"
+        span.textContent = formatCount(parseCount(formatted)); // 100 → "100" or "1K"
+
+        // クリックイベント
+        btn.addEventListener('click', async () => {
+          const current = parseCount(span.textContent);
+          const updated = current + 1;
+          span.textContent = formatCount(updated);
+
+          const uid = btn.dataset.charId;
+          await fetch(
+            new URL(
+              `/api/update${capitalize(type)}`,
+              import.meta.env.VITE_MICROCMS,
+            ).href,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id: uid, [`${type}_count`]: updated }),
+            },
+          );
+
+          location.reload(); // CMSと同期
+        });
+      });
+    }
+
+    // 初期化
+    setupCounter('like');
+    setupCounter('favo');
+  </script>
+</BaseLayout>

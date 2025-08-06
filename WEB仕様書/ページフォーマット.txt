@@ -1,0 +1,97 @@
+書体全体：
+16pt
+メイリオノーマル
+
+基本BG：
+black
+
+ページ背景：
+淡いネイビー
+半透明
+背景画像用意
+
+コンテンツ枠背景:
+ホワイト
+
+コンテンツホワイト内の文字色：
+ブラック
+
+ヘッドタイトル　カスタム書体+背景画像
+
+大見出し　メイリオ
+
+小見出し　アイコン+カスタム書体　「Astronaut II」
+
+<h4 class="icon-title area">タイトル</h4>
+
+::before
+
+
+icon-title は共通
+
+h4.icon-title.area::before {
+  content: url('/icons/amp.svg');
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+
+
+余白
+1.ページの表示枠から、コンテンツまでのマージン
+2.大見出しタイトルの上下のマージン
+3.小見出しタイトルの上下のマージン
+4.本文のコラム間のマージン
+5.コラムと写真のマージン
+
+本文
+テキストの行間
+1.6倍
+
+横並びレイアウト
+display: flex;
+
+<div class="row">
+  <div class="col">左カラム</div>
+  <div class="col">右カラム</div>
+</div>
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+.col {
+  flex: 1;
+}
+
+
+
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main, sans-serif);
+  background-color: #fff;
+  color: #222;
+  line-height: 1.5;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+1rem=16pxに相当

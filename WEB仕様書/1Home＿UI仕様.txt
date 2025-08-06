@@ -1,0 +1,200 @@
+PlanetUI/
+
+（仕様と設計）
+
+このエリア全画面を占める；
+
+
+コンポーネント分割構成
+| コンポーネント名 
+| PlanetCanvas.tsx | 
+
+<canvas> を使ってThree.jsで半球体Planetを描画。
+
+上半球は自転
+
+マップ（球体の断面図）＋エリアの説明画像表示付き | 
+
+コンポーネント| KoiOrbit.tsx | 錦鯉5体の自律遊泳アニメーション＋ホバー吹き出し | 
+・周回している各AIロボット鯉をホバーするとセリフ吹き出し。
+　セリフ
+　「私達は重要な存在です」
+　「重要なわけは・・・・」
+　「秘密をしりたいですか？」が表示されると＞contents.htmlへ遷移。
+　「何が御用ですか？」
+　「私はAIですが何か？」
+　「今日も平和だ」
+　「今日もロイドたちは元気」
+・鯉はドラッグとかできない。
+
+
+| MapOverlay.tsx | 13エリア座標・ピン・矢印（画像有）フェード＆バウンド登場 UI | 
+| AreaDialog.tsx | 各エリアホバー時の説明ダイアログ | 
+
+エリアをホバー：
+・エリア説明ダイアログ（画像有）がフェードインで表示される。位置：矢印の左側。
+　※ダイアログ画像有、デザインスタイルにかんして定義は不要
+
+・エリアハイライト。
+
+| ZoomView.tsx | エリアクリック時のクローズアップ表示（画像浮上） | 
+
+| FluidWaveBackground.tsx | 中央背景に流れる青とスカイブルーの有機ウェーブ＞＞CSSで背景が波打つようなアニメ
+
+| LoadingSpinner.tsx | 読み込み中表示（くるくる円形） | 表示が未だの時
+
+
+
+PlanetCanvas 基本挙動（Three.js + React Three Fiber）
+- 半球体モデル（SphereGeometry 半分、MeshStandardMaterial）
+- 自転アニメーション（gsap or useFrame）
+
+- エリア座標を極座標で指定 → サークル上のアイコン配置（バウンド付き）
+- 球体をドラッグしても回転なし
+
+- Hover → 該当座標の小領域を強調（Shader or EmissiveColor）
+
+KoiOrbit 概要（動的・非操作）
+- 5体の画像錦鯉が球体の周囲を「遊泳」
+- 2D画像を Billboard形式で常に正面に（sprite）
+- 錦鯉の座標は trigonometric function（sin/cos）で3軌道
+- 影を紙半球へ落とす（受ける側に receiveShadow, 光源調整）負荷が重いなら影は落とさない。
+- ホバー → 上に吹き出しアニメーション（セリフはランダム）
+- 「秘密を知りたいですか？」 → /contents/page.tsxに遷移
+- ドラッグ不可、クリック不可（パッシブ演出）
+
+MapOverlay（マップエリア）
+- 13個のエリア座標を極座標でサークル上に配置：
+type AreaPin = {
+  name: string
+  polarAngle: number // 北を0として時計回り（degree）
+  distance: number   // 中心からの距離（px or sphere %）
+  x?: number // 一部はXY指定あり
+  y?: number
+}
+
+
+- エリア（CSS描画）+そこを指し示す矢印を配置(透過png画像)：
+- フェードイン＋上からバウンド登場
+- 矢印ホバー → AreaDialog を左に表示（画像付き）
+
+ZoomView（クローズアップ）
+
+エリアと矢印クリックで：
+- 球体ズームイン（scale/position）＋対象エリアを強調
+- 対象エリアの画像表示（中央に浮かぶ）
+- 「戻る」ボタンを押すとフェードしてズーム解除
+
+－－－/home/の背景---------------------
+
+FluidWaveBackground
+CSSで背景が波打つようなアニメ
+
+-------半球体モデル読み込み-------------
+
+LoadingSpinner
+- Canvas初期読み込み中に表示
+- 中央に回転する円形スピナー（SVG / CSS）
+- フェードアウト → PlanetCanvasとKoiOrbitを表示
+
+実装補足
+- ライブラリ提案：
+- react-three-fiber（Three.js Reactラッパー）
+- drei（OrbitControls, Billboard, Textなど補助）
+- gsap（アニメーション、ズームイン）
+- valtio or zustand：クリック状態のグローバル管理
+- UX補足：
+- 球体に手が触れるマウスカーソル（hover中）
+- Map座標はレスポンシブ対応考慮（vwベース）
+
+
+--------------半球体断面図サークル画像有-----------------------
+1.平面エリア、サークル
+react-three-fiber の PlaneGeometryに画像テクスチャとして貼り付ける
+- 画像自体が断面になっている 
+ 
+Plane にマッピングすれば、奥行き感とフェード・ズームの演出も自然に
+- エリア座標（13点）を2D/3D空間にマッピング
+→ canvas座標 orサークル上のXY座標でピン・矢印を配置
+- 画像の透明・影領域も保持したい場合>不要
+→ PNG形式 + alphaBlendEnabled のマテリアルでレンダリング
+
+アクションステップ
+- ✅ 画像のサイズ・アスペクト比を確認
+800×800pxのサークルに近い
+
+---
+2.上半球の気体の層（画像有）Upper
+＞役割　ズームで透過する
+デフォルト：気体の層なのでゆっくりZ軸回転。
+---
+3.下半球の水球体の部分（画像有）Lower
+＞役割
+サークルを支える土台。
+回転無し。
+
+
+- ✅ 画像を Three.js の textureLoader で読み込む
+Plane に貼って斜めに設置 
+ 横倒し rotation.x = -Math.PI / 2
+
+- ✅ 上に overlayで13エリア（エリアと矢印）をフェード・バウンド描画
+
+- ✅ 錦鯉KOIは Sphere の外周を Sprite で遊泳
+KOIサイズを変える、複製5体
+
+- ✅ ホバー / ズームなどは useState で選択領域を管理
+
+手元の画像（半球体サーフェス）を /public/img/planet/planet_base.pngに置いて
+その上に、たとえば X:0, Y:-40 あたりに "アザーエリア" を配置する
+座標リスト作成済み
+
+----------------このUI中枢を展開するディレクトリ構成----------------
+
+明確に役割分担させる
+
+📁 apps/web/app/components/PlanetUI/（Planet中枢UI）
+| ファイル | 内容 | 
+| PlanetCanvas.tsx | Canvas全体定義とシーン構築（背景・Planet・ライト等） | 
+| AreaPins.tsx | エリア座標マップのピン＆矢印管理 | 
+　　　　＞座標データの読み込み 
+		planetData.ts＞＞ エリアの座標定義（例：id, label, x, y, imageなど） 
+| KoiOrbit.tsx | 錦鯉3体の軌道と吹き出し演出 | 
+　　　　＞吹き出しはこのファイル内で完結
+| ZoomView.tsx | ズームイン時の拡張描画（エリア強調など） | 
+| AreaDialog.tsx | ホバー時のエリア情報ダイアログ | 
+　　　＞ダイアログ画像があるのでそれをそのまま表示
+
+
+| LoadingSpinner.tsx | 読み込み中に表示するアニメーションスピナー | 
+
+| PlanetCanvas.module.css | レイアウトや重ね順（z-index）、ポインター定義など | 
+
+
+
+📁 apps/web/app/home/page.tsx（表示呼び出し側）
+import PlanetCanvas from '@/components/planetUI/PlanetCanvas'
+
+
+export default function Home() {
+  return (
+    <>
+      <PlanetCanvas />
+    </>
+  )
+}
+
+
+
+🧭 Z-indexと描画レイヤー想定
+| レイヤー | 内容 | 備考 |
+		｜上半球 
+| 9000 | ズームインUI（ZoomView） | 拡大時のオーバーレイ | 
+| 8000 | 吹き出し（AreaDialog） | ホバーで表示 | 
+| 7000 | 錦鯉スプライト | Canvas上に位置固定 | 
+| 6000 | ピン＋矢印 | 自転追従の一部として配置 | 
+| 5000 | Planet断面（平面）画像 | Planeにマッピング |
+		｜下半球 
+| 1000 | FluidWave背景 | 全体で下層に敷く | 
+
+

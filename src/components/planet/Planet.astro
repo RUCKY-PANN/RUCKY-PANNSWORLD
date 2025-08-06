@@ -1,0 +1,10 @@
+---
+// Astro wrapper Planet.astro
+import FingerHint from './FingerHint.jsx';
+import PlanetCanvasWrapper from './PlanetCanvasWrapper.jsx';
+---
+
+<div class="planet_wrap">
+  <PlanetCanvasWrapper client:only="react" />
+  <FingerHint />
+</div>

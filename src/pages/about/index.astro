@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../components/PagetitleH3.astro';
+import ScrollToTop from '../../components/ScrollToTop.tsx';
+import '../../styles/about.css';
+import '../../styles/common.css';
+import { getMeta } from '../../utils/metaManager';
+const meta = getMeta('/pages/about/'); // ← Astro.url.pathnameではなく明示
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="RUCKY-PANNの世界について" subtitle="World.ontent" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper_about">
+        <sectio class="scroll-fade">
+          <h5>青い液体「B-Smooth」で覆われた不可思議な回路の世界</h5>
+          <span class="about_span">
+            AIの錦鯉が遊泳し、独自の生態系で動く半球体空間。それが「RUCKY-PANN」である。
+          </span>
+          <p>
+            AI錦鯉が周回する生態系が確立した空間「PANNS-WORLD」は自転し、その中にはRoidたちの生息エリアがある。
+          </p>
+
+          <!-- 球体説明 -->
+          <div class="SphereWap">
+            <div class="planet-img"></div>
+
+            <!-- 球体説明 右-->
+            <div class="SphereWap_in">
+              <!-- 球体説明 右上-->
+              <div class="label label-right-top">
+                <div class="circleLine">
+                  <div class="circleMark"></div>
+                  <div class="horizontalLine"></div>
+                </div>
+
+                <h6>周回する錦鯉</h6>
+                <p>
+                  エネルギーの根源「AquaCore」を常に世界へ送り<br
+                  />B-Smoothへ降り注ぐ
+                </p>
+              </div>
+
+              <!-- 球体説明 右中-->
+              <div class="label label-right-middle">
+                <div class="circleLine">
+                  <div class="circleMark"></div>
+                  <div class="horizontalLine"></div>
+                </div>
+
+                <h6>B-Smooth</h6>
+                <p>
+                  世界の動脈。回路を通して命を保持し、循環させている
+                  <br />B-Smoothへ降り注ぐ
+                </p>
+                <div class="bs-img"></div>
+              </div>
+
+              <!-- 球体説明 右下-->
+              <div class="label label-right-bottom">
+                <div class="circleLine">
+                  <div class="circleMark"></div>
+                  <div class="horizontalLine"></div>
+                </div>
+                <h6>下半球のCORE</h6>
+                <p>「B-Smooth」の源流がある。</p>
+              </div>
+            </div>
+          </div>
+        </sectio>
+
+        <section class="scroll-fade">
+          <div class="about_txt">その世界では</div>
+        </section>
+
+        <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+        <section class="section_block scroll-fade">
+          <div class="ex_1">
+            <div class="arrow-mark">
+              <img src="/images/about/arrow-mark.png" />
+            </div>
+            <img src="/images/about/about_con1.png" />
+          </div>
+          <div class="anim_txt">
+            <h2>
+              <span class="emphasis">AI錦鯉</span>の<span class="emphasis"
+                >呼吸</span
+              >で
+              <span class="emphasis">世界</span>を<span class="emphasis"
+                >動かす？！</span
+              >
+            </h2>
+            <p>
+              RUCCKY-PANの世界（球体）を周回するAI錦鯉は、エネルギーの源である「AquaCore」を世界にもたらす。そのエネルギーは球体の中枢機関「R-P」によって吸収され、変換・精製されて「AMP」として再生成される。AMPはロイドたちの駆動源となり、RUCCKY-PANの生態系と循環システムを支えている。
+            </p>
+          </div>
+        </section>
+
+        <section class="section_block scroll-fade">
+          <div class="ex_1">
+            <div class="arrow-mark">
+              <img src="/images/about/arrow-mark.png" />
+            </div>
+            <img src="/images/about/about_con2.png" />
+          </div>
+          <div class="anim_txt">
+            <h2>
+              <span class="emphasis">自我</span>を持った哺乳類型<span
+                class="emphasis">AIロイドが生息！</span
+              >
+            </h2>
+            <p>
+              中枢機関「R-P」によって生み出された哺乳類動物AIアンドロイド。各自エリアを生成しそこで生活、その姿は様々なパターンで構成されたボディースタイルが特徴的。自らのアイデンティティのため己の威信をかけて、彼らの目的「ワールドチャンピオンシップ」を目指してエネルギーを注ぐ。
+            </p>
+          </div>
+        </section>
+
+        <section class="section_block scroll-fade">
+          <div class="ex_1">
+            <div class="arrow-mark">
+              <img src="/images/about/arrow-mark.png" />
+            </div>
+            <img src="/images/about/about_con3.png" /><br />
+            <img src="/images/about/about_con4.png" />
+          </div>
+          <div class="anim_txt">
+            <h2>
+              <span class="emphasis">独特</span>なエリア、エリア間の交流と<span
+                class="emphasis">独自通貨</span
+              >による<br />
+              <span class="emphasis">エネルギーマーケット</span>の形成
+            </h2>
+            <p>
+              枯渇するエネルギー問題に向けて各エリア間は交流を通じてマーケットを独自に形成していく、各エリアの独自システムの共有や独自の通貨を通じてエリア間を行き来し、マーケットを形成してAMPを流通させている。各エリアはチャンピオンシップに欠かせないエネルギーの確保とエリア広告塔としてコンパニオンの獲得にも力を入れている。
+            </p>
+          </div>
+        </section>
+
+        <section class="section_block scroll-fade">
+          <div class="ex_1">
+            <div class="arrow-mark">
+              <img src="/images/about/arrow-mark.png" />
+            </div>
+            <img src="/images/about/about_con5.png" />
+          </div>
+          <div class="anim_txt">
+            <h2>
+              <span class="emphasis">ワールドチャンピオンシップ</span>を目指す、
+              <br /><span class="emphasis">AIロイド</span>たちの<span
+                class="emphasis">活躍！！</span
+              >
+            </h2>
+            <p>
+              RUCCKY-PANの世界では個々のロイドたちが自らのアイデンティティを保つことができる「聖地」として「イベントエリア」が存在する。その主催議会「Ｒ－Ｗ」が主催する「交流イベント」が盛んに行われている。中でも、
+              最高峰とされるデザインコンペティション「ワールドチャンピオンシップ」がある。
+            </p>
+          </div>
+        </section>
+
+        <ScrollToTop clinet:load />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

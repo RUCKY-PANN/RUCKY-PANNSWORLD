@@ -1,0 +1,126 @@
+//apps/web/app/pages/area/Roid_cat.tsxの作成
+
+'use client'
+import Image from 'next/image'
+import styles from './Roid_cat.module.css'
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+import AreaTransition from '@/components/PageTransitions/AreaTransition'
+import { areaOpeningLines } from '@/constants/areaOpeningLines'
+
+
+const meta = areaOpeningLines['cat']
+
+export default function CatRoidArea() {
+  return ( 
+<div>
+<AreaTransition areaName={meta.headingText} />
+<AreaLayout
+  code={meta.code}
+  label={meta.label}
+  icon={meta.icon}
+  headingImage={meta.headingImage}
+  leadText={meta.leadText} // ← 追加 ✅
+  breadcrumbIcon={meta.breadcrumbIcon}// ← 追加 ✅
+
+もあわせて記述
+
+----ここからコンテンツーーーー
+
+エリア共通のページトランジッション
+
+
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>近未来的なおしゃれな都市空間にそびえたつ、キャットタワー。ここではどんな生活環境なんでしょうか？
+「テキストボックス　16px　color:white」
+
+余白1行分あけて
+IMG
+余白2行分あけて]
+
+その下
+「見出しテキストBOX」
+<div>優雅をと美観をもつ、超巨大で世界でも最高レベルのテクノロジーをもつ「The Tower」が象徴的。</div>
+border-left:7px; 
+border-color:#0000ffff
+padding-bottom:10px;padding-top:10px
+width:100%;
+font-siize:16px
+color:white
+
+その下
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+<section1>
+
+<div class="area_section">
+<div class="leader">リーダーキャラのIMGは背景扱い</div> .leader:width175* height290,backgroung-images:outfit;
+その横
+<div><span>リーダー：フェリス<br>
+<p>
+「このエリアは、自由と創造の交差点。ロイドたちが自らの可能性を広げ、未来を形作る場所だ」
+
+/*--area_sectionの左下に ボタン要素.RoidAreaButton border-radius12px bg-color:#000082ff　ボタンの中： 〇の中に->の描画　::beforeを使う ボタンの線無し　obClickで押されたように鏡トランジッション --*/
+
+<button class="RoidAreaButton" onClick="">
+クリック先はCharaList.tsxのOther_roidカテゴリ一覧ページを表示
+
+
+<div class="area_section2">
+
+<h4>世界最高峰のタワー型エリア。
+<div>
+THE TowerのIMG（554*554）
+の横に余白30px
+説明文<p>を配置
+width:530px
+
+<p>流線形のデザイン美学空気力学を意識した滑らかなフォルムが、すべての建築に貫かれており、角のない未来都市を象徴します。建物・モニター・家具・交通手段に至るまで「曲線」が支配するエリアです。
+2行分のとって
+<p>超高度なインフラとインターフェースすべての施設がインタラクティブで、巨大なクリアホログラムや共有モニターが情報の中枢を担っています。
+
+
+下余白30px
+
+<div class="area_section3">
+<p>自律調整型スマート環境日照量や気温、空間音響まで完全制御。人工光も自然のように変化し、快適性と集中力を保てるよう最適化されています。
+最大限の意匠性緑地は必要最低限に抑えられ、すべてが“計算された美”として存在します。噴水、ガーデン、照明も、すべてが空間演出の一部であり、無機的な世界の中にある美意識の結晶です。
+</p>
+
+説明文<p>の横 
+余白30px
+IMG align-left
+</div>
+
+余白30px
+
+<div class="area_section4">
+高速な巨大飛行船IMG align-right
+margin:30px
+横に説明コラム
+<p><span>高速な巨大飛行船
+超巨大な流線形飛行船と専用のハイエンドなエアポートが浮かび、ここが他エリア圏への接続拠点となっています。
+</div>
+
+下余白30px
+
+<div class="area_section5">
+高速な巨大飛行船IMG align-right
+margin:30px
+横に説明コラム
+<p><span>プレイゾーンと休憩エリア 
+キャットロイドたちが自在に動き回れるエリア。重力制御技術により、ロイドたちは軽やかに跳び回りながらエリアを移動。隠れ家のようなクッションスペースや、光を調整できる個室が用意され、リラックスできる環境が整えられている。各ユニットにはプライバシーを確保しつつも、他のロイドたちとのインタラクションを促すスマートインフラが組み込まれている。
+</div>
+
+
+
+------コンテンツ表示領域ここまで------
+

@@ -1,0 +1,160 @@
+---
+// 特に変数なし
+---
+
+<style>
+  .vertical-menu-container {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 0.5rem;
+    z-index: 1000;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    cursor: pointer;
+  }
+
+  .triangle-up {
+    border-bottom: 10px solid white;
+  }
+  .triangle-down {
+    border-top: 10px solid white;
+  }
+  .triangle-up:active,
+  .triangle-down:active {
+    animation:
+      bounceClick 0.4s ease-out,
+      glowFlash 0.3s ease-out;
+  }
+
+  @keyframes bounceClick {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(0.85);
+    } /* ギュッと縮む */
+    60% {
+      transform: scale(1.15);
+    } /* 跳ね返る */
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes glowFlash {
+    0% {
+      filter: drop-shadow(0 0 2px #6ff);
+    }
+    50% {
+      filter: drop-shadow(0 0 10px #6ff);
+    }
+    100% {
+      filter: drop-shadow(0 0 2px #6ff);
+    }
+  }
+
+  .circle-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-height: 60px; /* ●2個分表示 */
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  .circle-list::-webkit-scrollbar {
+    display: none; /* スクロールバー非表示（WebKit系） */
+  }
+
+  .circle-button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+  }
+
+  .circle-button:hover {
+    background-color: #0000ff63;
+  }
+  .circle-button.active-circle {
+    background-color: #00f; /* 青色で点灯 */
+    box-shadow: 0 0 6px #6ff;
+  }
+
+  .circle-button::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translate(-100%, -50%);
+    background-color: #0000ff;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 9999;
+  }
+
+  .circle-button:hover::after {
+    opacity: 1;
+  }
+</style>
+
+<nav class="vertical-menu-container">
+  <div class="triangle triangle-up" onclick="scrollMenu(-1)"></div>
+
+  <div class="circle-list" id="circleList">
+    <a href="/about/" class="circle-button" data-tooltip="RUCY-PANNについて"
+    ></a>
+    <a href="/world/" class="circle-button" data-tooltip="この世界について"></a>
+    <a href="/charaList/" class="circle-button" data-tooltip="ロイド一覧"></a>
+    <a href="/charaIntro/" class="circle-button" data-tooltip="ロイド紹介"></a>
+    <a href="/areaMap/" class="circle-button" data-tooltip="エリアマップ"></a>
+  </div>
+
+  <div class="triangle triangle-down" onclick="scrollMenu(1)"></div>
+</nav>
+
+<script type="module">
+  window.scrollMenu = function (direction) {
+    const list = document.getElementById('circleList');
+    if (list) {
+      const step = 40;
+      list.scrollBy({
+        top: direction * step,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const currentPath = window.location.pathname;
+  const buttons = document.querySelectorAll('.circle-button');
+
+  buttons.forEach((btn) => {
+    const href = btn.getAttribute('href');
+    if (currentPath.startsWith(href)) {
+      btn.classList.add('active-circle');
+    }
+  });
+</script>

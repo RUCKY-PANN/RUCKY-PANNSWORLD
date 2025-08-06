@@ -1,0 +1,35 @@
+uniform float uTime;
+varying vec2 vUv;
+
+// AI模様（脈動するグリッド）
+float aiPattern(vec2 uv, float time) {
+  float grid = step(0.02, abs(sin(uv.x * 80.0 + time)) * abs(cos(uv.y * 80.0 + time)));
+  float pulse = sin(time * 2.0 + uv.y * 10.0) * 0.5 + 0.5;
+  return grid * pulse;
+}
+
+// サーキット模様（回路っぽい線）
+float circuitPattern(vec2 uv, float time) {
+  float xMod = abs(sin(uv.x * 40.0 + time * 2.0));
+  float yMod = abs(cos(uv.y * 40.0 + time * 2.0));
+  return step(0.03, xMod * yMod);
+}
+
+void main() {
+  // カラーグラデーション（暗青 → 明青）
+  vec3 colorA = vec3(0.01, 0.03, 0.08);
+  vec3 colorB = vec3(0.1, 0.3, 0.6);
+  float gradient = smoothstep(0.0, 1.0, vUv.y + sin(uTime * 0.5) * 0.1);
+  vec3 baseColor = mix(colorA, colorB, gradient);
+
+  // 模様生成
+  float patternAI = aiPattern(vUv, uTime);
+  float patternCircuit = circuitPattern(vUv, uTime);
+
+  // 模様をブレンド
+  vec3 finalColor = baseColor 
+                  + vec3(patternAI * 0.3) // AI模様：明るく脈動
+                  + vec3(patternCircuit * 0.15); // 回路模様：細線で追加
+
+  gl_FragColor = vec4(finalColor, 0.95);
+}

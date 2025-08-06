@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '../../../styles/areaMap_bear.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+
+import { getMeta } from '../../../utils/metaManager';
+
+const meta = getMeta('/pages/areaMap/bear/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb
+          areaNameJa="ベアーロイドエリア"
+          areaNameEn="BAER-Roid AREA"
+        />
+
+        <p class="area_txt_p">
+          激しい滝が流れ込んでいますね、
+          この液体は？B-Smoothの液体ですかね。ここはどんなエリアですか。
+        </p>
+        <div class="area_head_photo_block_bear"></div>
+        <h4 class="area_txt_h4">
+          錦鯉が吐き出す「AquaCore」がBlueeSeaに降り注ぎ、
+          吸収された豊かなミネラルが溶け込んだエリア
+        </h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+            <section class="area_section_block scroll-fade">
+              <div class="leader">
+                <img src="/images/area/bear/area_bear_1.png" />
+                <p class="leader_txt">
+                  <span>リーダー：グラハム</span><br />
+                  「ここは、資源豊富なエリアだが、我々にAMP変換技術はない。 しかし保護指定区域として「R-P」の恩恵は受けているが、
+                  この恩恵を世界の貧しいエリアにもいきわたるようなシステムはないものか。
+                  議会へ提案中だ」
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_ber_wrap">
+                <p>
+                  <span class="area_txt_efec">エリアの特徴</span><br />
+                  ここは球体の「B-Smooth」が激しく流れ込むエリア、 「AquaCore」が溶けだし成分を多く含んだ世界で唯一の資源エリア。
+                  「R-P」の「AquaCore」指定回収地域になっている。 流動的な資源があるものの、ロイドたちにAMP生成技術は一切ない。
+                </p>
+                <div class="area_photo_block_bear"></div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_ber">
+                <div class="area_p_left_ber1">
+                  <p>
+                    <span class="area_txt_efec">ベアーロイドの生活圏</span><br
+                    />
+                    独自の環境を維持する河川ろ過システム「SMF-Sercle」が稼働している。AquaCoreの抽出を担うライン施設は、浄化されたSmoothをR-Pへと送る役割も持つため、R-Pの重要なエネルギー循環システムをの一躍を担っている。
+                    この区域では、オリジナルボディーの設計・リペア・製造が集中しており、AMPの消費効率は高まっているが、R-Pからの供給恩恵により消費は安定的に管理されている。
+                    さらに、休憩エリアや公共施設の美観整備も進められ、ロイドたちは静かで快適な生活を享受している。
+                  </p>
+                </div>
+                <div class="area_img_ber">
+                  <img
+                    src="/images/area/bear/area_bear_3.png"
+                    alt="河川ろ過システム「SMF-Sercle」"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_ber">
+                <div class="area_p_right_ber2">
+                  <p>
+                    <span class="area_txt_efec"
+                      >ベアーエリアへの「R-P」介入の影響</span
+                    ><br />
+                    RUCKY-PANNの資源回収地域として指定されたベアーロイドエリアでは、
+                    「R-P」回収マシンによるAquaCore成分の採取と成分調査が日夜続いている。
+                    しかし、ベアーロイドたち自身もこの回収作業に関与しているため、
+                    彼らの生活に直接的な支障はなく、むしろ保護指定区域としての恩恵を受けている。
+                  </p>
+                </div>
+                <div class="area_img_ber2">
+                  <img
+                    src="/images/area/bear/area_bear_5.png"
+                    alt="「R-P」介入の影響"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_ber">
+                <div class="area_img_ber3">
+                  <img
+                    src="/images/area/bear/area_bear_6.png"
+                    alt="保護指定エリアとしての恩恵"
+                  />
+                </div>
+                <div class="area_p_right_ber3">
+                  <p>
+                    <span class="area_txt_efec">保護指定エリアとしての恩恵</span
+                    ><br />
+                    資源管理のために都市機構が整備され、安定した住環境が確保。 ベアーロイドは作業の一部を担い、資源維持に貢献していたため、
+                    すでに保護指定区域としての認定され、 エリア維持の優先措置として都市施設の機能が強化と美観化、
+                    スマート化、資源管理の最適化を受けている。 また、AMP循環技術の開発が進み、エネルギーの利用効率が向上、
+                    ベアーロイド自身の知識と技術も進発達傾向にあり、新たなシステムの構築へ
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <ScrollToTop client:load />
+      </div>
+    </div>
+  </div>
+
+  <FloatingNavi
+    nextLabel="NEXT Area"
+    mapLabel="マップエリア"
+    topLabel="TOP"
+    iconSrc="/images/area/bread_area_top_btn.png"
+  />
+  <FloatingNavScript client:load />
+</BaseLayout>

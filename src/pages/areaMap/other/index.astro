@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '../../../styles/areaMap_other.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+
+import { getMeta } from '../../../utils/metaManager';
+const meta = getMeta('/pages/areaMap/other/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb
+          areaNameJa="アザーロイドエリア"
+          areaNameEn="OTHER-Roid AREA"
+        />
+
+        <p class="area_txt_p">
+          なんだか荒廃したエリアですね。ここはどんなところなんでしょう。
+        </p>
+        <div class="area_head_photo_block_other"></div>
+        <h4 class="area_txt_h4">
+          様々な種類のロイドが共存している、エリアで最もAMP消費率が高く、貧困率の高いエリア。出稼ぎ労働者が多い。
+        </h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+            <section class="area_section_block scroll-fade">
+              <div class="other_leader">
+                <div class="char-left">
+                  <img src="/images/area/other/area_other_1.png" />
+                  <p class="speech_txt1">
+                    <span>出稼ぎMODS　ライオンロイド</span><br />
+                    「地下マーケットは必要悪。 ここがなければ生きていけない。」
+                  </p>
+                </div>
+
+                <div class="char-center">
+                  <img src="/images/area/other/area_other_2.png" />
+                  <p class="speech_txt2">
+                    <span>出稼ぎMODS　カンガルーロイド</span><br />
+
+                    「このエリアは荒廃しているが、俺たちはまだ希望を捨てていない。」
+                  </p>
+                </div>
+
+                <div class="char-right">
+                  <img src="/images/area/other/area_other_3.png" />
+                  <p class="speech_txt3">
+                    <span>出稼ぎMODS　カンガルーロイド</span><br />
+                    「AMPの消費は激しいが、 それが俺たちの生き方だ」
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_other">
+                <p>
+                  <span class="area_txt_efec"
+                    >アザーロイドエリアの特徴
+                  </span><br />
+
+                  多様なロイドたちが共存するエリア<br />
+                  ここに住むロイドたちは、縛られず、自由に活動できる反面、そのAMPの消費も高い。それぞれのロイドたちが各自のエリア拡大を目指し、独自の手段（出稼ぎ、闇マーケット）などでAMPを稼ぐ。AMP消費率が最も高いエリア
+                  移動や活動などで高い消費率を補うため、その活動範囲は限られているが、独自のAMP流通マーケットが裏で存在し、ダークエリアから監視を強化されている。
+                </p>
+
+                <p>
+                  <span class="area_txt_efec"
+                    >暗躍する地下マーケットと取引拠点
+                  </span><br />
+                  他のエリアと異なり、固定されたルールが少なく、自由な取引が可能だが多くの危険も伴う。
+                  ロイドたちが独自のアイデアを持ち寄り、新たな流通を生み出す。
+                </p>
+
+                <div class="area_photo_block_other"></div>
+                <figurecaption
+                  >独自のAMPの地下取引エリア。このマーケットの拡大がどう影響するのか。</figurecaption
+                >
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_other">
+                <div class="wrap_area_p_other">
+                  <div class="area_img_other">
+                    <img
+                      src="/images/area/other/area_other_6.png"
+                      alt="荒廃したAMP管理システム"
+                    />
+                  </div>
+                  <div class="area_p_other">
+                    <p>
+                      <span class="area_txt_efec"
+                        >ドーム内で稼働するAMP管理システム</span
+                      ><br />
+                      定期的に供給される「R-P」からのAMPも加速的に消費。 活動が活発だが、エリア自体の管理がずさんになり、荒廃した姿に。
+                      需要と供給のバランスがすでに崩れ始め、AMPの供給と管理が重要な課題となっている。
+                      AMPの供給施設はメンテンスなしで常にフル稼働している。 AMP管理システムは荒廃した姿になりつつある。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum">
+                <div class="area_p_left_other">
+                  <p>
+                    <span class="area_txt_efec"
+                      >出稼ぎへいそしむロイドたち
+                    </span><br />
+                    <ul>
+                      <li>
+                        他エリアでの労働でAMP獲得:<br />
+
+                        アザーロイドたちは、AMPを稼ぐために他のエリアへ出向く。
+                        しかしその移動費用や労働エネルギーにも常にAMPが使われるため、
+                        成長が停滞している。
+                      </li>
+                      <li>
+                        アザーロイドエリアは、全エリアの中でも最もAMP消費率が高いため、外部からの収入が不可欠。
+                        出稼ぎによって得たAMPで何とかエリアの維持をしているがそれが追いついていないのが現状である。
+                      </li>
+                      <li>
+                        エリア拡大への意欲:<br />
+                        他エリアでの活動を通じて、新たな技術や資源を獲得し、アザーロイドエリアが発展し、
+                        独自エリアとしての独立をめざす。 競争意識を高め、各自より多くのAMPを稼ぐために、ロイドたちは常に新しい機会を探している。
+                      </li>
+                    </ul>
+                  </p>
+                </div>
+                <div class="area_img_other2">
+                  <img
+                    src="/images/area/other/area_other_7.png"
+                    alt="荒廃した移動パイプライン"
+                  />
+                  <figurecaption
+                    >荒廃した移動パイプラインが彼らの唯一の希望のライフラインだ。</figurecaption
+                  >
+                </div>
+              </div>
+              <div class="area_section_colum_other">
+                <p class="efect_txt">
+                  イベントエリアでのWORLD CHAMPOIN
+                  SHIP出場が彼らをメジャーエリアへ拡大する絶好の機会となる
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+        <ScrollToTop client:load />
+      </div>
+    </div>
+
+    <FloatingNavi
+      nextLabel="NEXT Area"
+      mapLabel="マップエリア"
+      topLabel="TOP"
+      iconSrc="/images/area/bread_area_top_btn.png"
+    />
+
+    <FloatingNavScript client:load />
+  </div>
+</BaseLayout>

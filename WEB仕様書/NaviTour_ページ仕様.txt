@@ -1,0 +1,320 @@
+Navitour.tsx
+レイアウトと仕様
+
+'use client'
+import styles from './Navitour.module.css'
+import SectionHead_h3 from '@/components/SectionHeader/SectionHead_h3'//<h3>のスタイルはパーツ共通を使う
+import { WipeGroup } from '@/components/commonTransitions/WipeGroup'//共通コンテンツワイプ
+
+
+
+<div class="out_wrapper"> class=.about_wrapper:background-color:#e5e5f02a
+
+out_wrapperはpages/sections/の各ページに共通。world.tsx,CharaList.tsx,..
+
+<div class="in_wrapper">
+color:white,
+font-size:16px,
+
+その中に
+<div class="NaviContent_section">を内包
+
+NaviContent_section{
+widht:1300px
+display:flex
+padding:30px
+/*--boder-bottom 1px ボーダーカラー　ホワイト
+太さ1px実線　左から右へ伸びるアニメ --*/
+}
+
+<div class="world_midashi"></div>
+
+/*--.world_midashi h5の左に配置。横棒のような形 トランジッション左からワイプ
+
+background-color:#0000ffff
+width:85px;
+height:19px;
+
+<h5>トランジッション左からワイプ
+文字：ホワイト　文字Size:24px
+padding-left:25px--*/
+
+
+<div class="NaviContent_section">
+<div class="world_midashi"></div>
+<h5>RUCCKY-PANN の使い方
+<p>NOW　CONSTRUCTION..
+
+--NaviContent_sectionここまで-----
+<div>
+
+余白18px
+ホワイト1px実線のトランジッション　左から右へ
+---------------------------------
+
+<div class="NaviContent_section">
+<div class="world_midashi"></div>
+<h5>投票の仕方
+<p>NOW　CONSTRUCTION..
+--NaviContent_sectionここまで-----
+<div>
+
+余白18px
+
+
+<div class="NaviContent_section">
+<div class="world_midashi"></div>
+<h5>RUCCKY-PANN用語
+<p>左側
+
+<div class="NaviContent_section_inner">
+/*--NaviContent_section_inner ボーダーボトム1px 太さ1px,　ドット　左から右へラインアニメ　--*/
+
+<span>▶ AMP
+<dt>正式名称：AROUND MOTIVE POWER　PACKAGE
+<p>純度100％のロイド生活に欠かせないライフラインエネルギー。
+ANN'S ROIDラッキーパンワールドの住人AIアンドロイド謎の組織「R-P」によって生み出された。AQUA CORESAPが生成した二酸化炭素凝縮カプセル。
+<img>右側
+
+</div>
+
+余白18px
+
+<div class="NaviContent_section_inner">
+<span>▶ AquaCore
+<p>AMPの原料：天空に遊泳するAI錦鯉が生成した二酸化炭素が凝縮され、固形成分になった状態。直径は約5ｍ。
+表面はうすい膜で覆われている、少しの衝撃で破裂してしまうため、頻繁に地表のB-Smoothに溶け込んでしまう。
+そこを「R-P」の独自の吸入システムを稼働させ、AquaCoreをAMPへ変換させている
+<img>右側
+</div>
+余白18px
+
+<div class="NaviContent_section_inner">
+<span>▶ AETHERIS（アイテリス）　AI錦鯉 別名：P-GOD
+<p>この世界の核となる絶対的な存在。すべて生態系のエネルギーの源であるAquaCoreを吐き出す。
+P-GODはRUCKY-PANNの根源的存在PANN-GODはRUCKY-PANNの世界の核であり、
+すべての生態系とエネルギーシステムの中心に存在する絶対的な存在。その役割は単なる管理機構を超え、都市の生命そのものを維持するための根源的な力を持つ。最も重要な機能は、AquaCoreを吐き出すことにある。これはRUCKY-PANNの生態系における純粋なエネルギー源である。
+ 資源管理の中枢 —「R-P」との連携により、
+エネルギー配分の最適化が進む- 生態系との融合 — 環境との調和を生み出す存在P-GODが完全な機械ではなく、
+生命的な流動性を持つ存在なのか、それとも単なる高度な自律制御AIなのか—。
+RUCKY-PANNの住人にとって、それは"神"のような存在である。
+<img>右側
+</div>
+余白18px
+
+<div class="NaviContent_section_inner">
+<span>▶ B-Smooth
+<p>
+余白18px
+
+<div class="NaviContent_section_inner">
+<span>▶R-W
+イベントエリアで設立されたロイドたちの総合議会
+
+<p>世界秩序と世界平和、ロボテックエリアの問題解決や「R-P」へ意思を伝える最高意思決定機関。
+<img>右側
+
+余白18px
+
+<span>主なイベント内容
+<div class="section_Square">
+/*--section_Square　ＣＳＳで 四角い矩形を描くアニメーション
+ワイド：100％、高さ、オート
+背景無し
+padding:20px
+   --*/
+上段--------------
+<div>1~6までの上下横すべて間隔等間隔で調整>---
+
+<div1>左　
+MECHA VISION EXPO"
+（メカ・ビジョン・エキスポ） 
+機械技術と未来デザインの融合
+<br>
+<img>
+
+
+<div2>中央
+"CYBER FRAME EXPO"
+（サイバーフレーム・エキスポ）
+ロボット構造とメカデザインに特化 
+<br>
+<img>
+
+<div3>右
+"ROBO DYNAMICS SHOW"
+（ロボ・ダイナミクス・ショー）
+ 機械の進化を見せる祭典 
+<br>
+<img>
+上段ここまで--------------
+
+下段----------
+<div4>左
+"NEXUS TECH"
+（ネクサス・テック） 
+ 次世代ロイド技術の発信
+<br>
+<img>
+
+<div5>中央
+"NEO MACHINA SUMMIT"
+（ネオ・マキナ・サミット）
+未来的ロイド技術の集約
+<br>
+<img>
+
+<div6>右
+MECHA VISION EXPO"
+（メカ・ビジョン・エキスポ） 
+機械技術と未来デザインの融合
+<br>
+<img>
+
+下段ここまで-----------
+
+<span>▶世界大会 
+"RUCKY-PANN MASTER CHAMPIONSHIP"（RUCKY-PANN マスターチャンピオンシップ）
+：会場　エベントエリア
+創造の頂点の世界大会、世界を変えるエフェクトとフォルム美の進化の頂点をエリア単位競う。
+
+<img>右側
+
+余白30px
+
+<div class="section_Square">
+<ul>
+<li><img> 余白20px デザイン総合部門最優秀賞 ： U-SHAPE GRAND PRIZE
+		<ul>
+		<li>・パンダロイドエリア
+		<li>・キャットロイドエリア　
+<li><img>機能部門最優秀賞 ：TECH PIONEER AWARD
+			
+		/*--3行で分ける--*/
+		<ul>左
+		<li>・コアラロイドエリア
+		<li>・パンダロイドエリア
+		<li>・ベアーロイドエリア　
+
+		<ul>右
+		<li>・ペンギンロイドエリア
+		<li>・タヌキロイドエリア
+		<li>・キャットロイドエリア
+
+<li><img>エリア交流活動部門最優秀賞 ：HARMONY CONNECT AWARD
+		<ul>左
+		<li>・コアラロイドエリア
+		<li>・パンダロイドエリア
+		<li>・ドッグロイドエリア　
+		
+		<ul>右
+		<li>・・ベアーロイドエリア
+		<li>・キャットロイドエリア
+		<li>・タヌキロイドエリア
+		
+<li><img>リサイクル技術部門最優秀賞：RENEWAL INNOVATION TROPHY
+		<ul>
+		<li>・コアラロイドエリア
+		<li>・ヒッポロイドエリア　
+<li><img>COMPANION VISION（最優秀コンパニオンアワード）コンパニオン投票イベント
+		<ul>
+		<li>該当なし
+		　		
+
+section_Square　ここまで---
+
+
+
+<div class="NaviContent_section_inner">
+<span>▶N-Respon（N-レスポン）通称NR 
+
+<p>PANN’Sロイドの世界で流通する通貨。
+N-Respon（NR） | PANN’Sロイド世界の暗号通貨
+N-Respon（NR） は、RUCKY-PANNのロイドたちの世界で流通する公式暗号通貨。
+AMPエネルギーを基盤とし、分散型台帳技術によって管理される。
+
+<ul>🔹 特徴
+<li>- AMP変換型通貨 — AMPをNRへ変換し、移動やイベントで使用可能
+<li>- 暗号通貨として機能 — 「R-P」のネットワークを介した安全な取引
+<li>- 価値の流動性 — AquaCoreの供給量や都市のエネルギー状態に応じて変動
+<li>- スマートコントラクト対応 — 自律的な取引と契約を実行可能
+
+余白20px
+
+<ul>🔹 使い道
+<li>- エリア間の移動手段（NOMAD AIR LINEなど） の運賃支払い
+<li>- イベント参加（MECHA VISION EXPOなど） のチケット購入
+<li>- 取引（R-P SYNERGY WEEKなど）技術、コンパニオン契約、施設建造費。
+<li>- ロイド間の経済活動 における標準通貨、特に他のエリアの技術を購入する場合など。
+
+
+
+<div class="NaviContent_section_inner">
+<span>▶NOMAD LINE（ノマド・ライン） 
+
+<p>PANN’Sロイドたちの移動手段の
+各エリアの複数の地点に設置されているステーションで自由に移動可能
+
+
+
+<div class="NaviContent_section_inner">
+<span>▶MOS
+<p>
+<ul>出稼ぎ労働者MOS（Migrant Operational Specialists）
+<li>— ZOONの出稼ぎ労働者MOSは、RUCKY-PANNの過疎エリア「ZOON」から都市部へ移動し、特定の業務に従事する出稼ぎ労働者のことを指す。彼らは技術力・適応力を活かし、都市の様々な領域で貢献するが、AMPの流通や都市との関係性に独特の課題を抱えている。🛠️ MOSの特徴- 移動型の労働スタイル 
+<li>– ZOONから都市へ一定期間働きに来て戻るサイクル- AMPの最適化利用 – 低エネルギー環境に慣れ、AMPを効率的に活用- 技術職・機能職が多い 
+<li>– 修理、エネルギー管理、AIメンテナンスなどの重要な役割を担う- 密輸ネットワークとの関係 – 一部のMOSは独自の経済圏を作り出し、AMPの不正取引に関与
+余白20px
+<ul>MOSとRUCKY-PANNの関係性
+<li>- 都市部の依存 
+<li>– MOSなしでは都市の維持が困難になる- AMP配給の格差 – 出稼ぎの際にAMP報酬を得るが、ZOONへ戻ると供給が制限される- 独自のサポートコミュニティ – MOS同士の情報交換や相互扶助が活発
+
+
+<div class="NaviContent_section_inner">
+<span>▶ZOON　
+<p>（アザーエリア）が中心となって形成した独自のマーケット、ZOON（ズーン）
+過疎エリア & アザーエリアの別名ZOONはRUCKY-PANN内で**「辺境の地」**ともいえるエリアであり、公式な都市構造から外れた領域を指す。都市機能の中心から離れた場所にあるため、AMPの流通が制限され、独自の社会構造や取引ルールが形成されている。🛠️ ZOONの特徴- AMP循環の不安定性 
+供給が限られるため、独自のエネルギー再利用手法が発達- 密輸ネットワークの活性化 – 正規の流通から外れたAMP取引や特殊技術の交換が行われる- 独自マーケットの存在
+公式エリアでは入手困難な技術やデータが流通- ロイドの自治ルール – 一部のロイドは独自の社会規範を確立し、RUCKY-PANN本体のシステムとは異なる秩序で動く
+ZOONとRUCKY-PANNの関係- 公式都市と一定の交流がありながらも、AMP流通の不正リスクが存在- 一部の技術者や思想家はZOONで自由な実験や創作を行う- 都市の裏社会や隠れた技術開発拠点として、R-Pの未来にも影響を与える可能性RUCKY-PANNの世界において、ZOONは「境界領域」
+
+
+<div class="NaviContent_section_inner">
+<span>▶D-SEEKER
+<div>左
+<p>ダークエリアの影を駆ける探索ドローン。
+R-SEEKERは**「R-P」管轄下**で運用される特殊ドローンであり、ダークエリア内の資源調査や環境監視を担当する。無音飛行と高度な分析機能を備え、AquaCore成分の流れや異常なエネルギー反応を検出する役割を持つ。
+
+＜DIV＞右
+<img>
+
+
+
+
+<div class="WorldContent_section">
+<div class="world_midashi"></div>
+<h5 class="world_h5">
+
+の中に
+
+<div class="NaviContent_section_inner">
+<span>
+
+がある
+
+
+<div class="NaviContent_section_inner">
+<span>
+
+は今後増える予定
+
+
+ULの＜LI＞ の要素は奥から、ブランコにように現れる振り子アニメ
+
+ページ右下にページトップへのボタン（画像あり）配置（共通化）
+
+＞＞out_wrapper"の中に内包する。
+
+以上
+
+フッターは共通を使用

@@ -1,0 +1,25 @@
+src/
+├── components/
+│   ├── Accordion.astro
+│   ├── CharaCard.astro
+│   └── PagetitleH3.astro
+├── layouts/
+│   └── BaseLayout.astro
+├── lib/
+│   └── microcms.ts ← microCMSクライアント
+├── pages/
+│   └── charaList/
+│       ├── index.astro ← 一覧ページ
+│       └── detail/
+│           └── [slug].astro ← 詳細ページ
+├── styles/
+│   ├── common.css
+│   └── charaList.css
+├── types/
+│   ├── character.ts
+│   └── category.ts
+├── utils/
+│   ├── categorizeCharacters.ts
+│   ├── getCategoryList.ts
+│   └── getCharacters.ts
+.env

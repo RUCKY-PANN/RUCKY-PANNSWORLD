@@ -1,0 +1,160 @@
+マップエリア　
+app/pages/Contents.tsx
+でimport About from '@/pages/sections/About'済み
+
+app/pages/sections/Area.tsx
+
+
+------レイアウト------
+共通ヘッダー
+ContentsHeader.tsx
+
+----ここから切り替えの内容-------
+
+見出し
+<div id="about_h3">の背景指定（画像有）
+#about_h3{background-image:url()；
+padding-bottom-10px}
+id="about_h3"の中に
+
+<h3>「マップエリア紹介」 
+<span>MapArea.contens
+display:block
+background-image:url()；
+margin-left:10px
+
+その下
+コンテンツ矩形（実際の中身表示）"about_wrapper"
+bacgroung-color:e5e5f02a;
+
+<h4>各エリアの全体図
+h4の左に#0000ffffの矩形あり、width:50px heihgt:13px
+
+その下
+----角Rの矩形吹き出し　class="about_ex_dialog"----　
+width:80% heihgt:200px
+border-bolor:#7cb3fffe;
+bordrt-style:dot;
+border-width:6px;
+
+（内容）
+説明分：左
+<div>
+左
+<ul><li>「R-P」管轄エリア+セキュリティーエリア
+<li>ロイドエリア
+<li>イベント、コンパニオンエリア
+</ul>
+<span>に分類されています。
+
+中央
+画像有）画像はバウンドフェードイン、吹き出し矩形から少しはみだし
+z-indexで調整
+
+右
+ロイドエリアは順次、縮小拡大、分裂で変化していきます。
+各ロイドエリア間では輸送パイプラインで行き来ができ、
+出入りが自由、交流が行われています。
+
+----"about_ex_dialog"　ここまで----
+
+各エリアエリア(Area_BOX)画像が、奥行きのある３Dグリッド円形（AreaGrid）の上にサークル状に配置。
+(Area_BOX)が、奥行きのある３D風グリッド円形（AreaGrid）の上にサークル状に配置。
+
+1）
+AreaGrid　フェードイン
+
+時計回りに順番にAreaGridのやや内側にそってフェードイン配置
+ ①<パンダロイド(Area_BOX)>②<コアラロイド(Area_BOX)>③<ペンギンロイド(Area_BOX)>
+ ④<ドッグロイド(Area_BOX)>⑤<キャットロイド(Area_BOX)>⑥<ベアーロイド(Area_BOX)>⑦<タヌキロイド(Area_BOX)>
+ ⑧<ヒッポロイド(Area_BOX)>⑨<アザーロイド(Area_BOX)>
+の順に
+
+2）
+AreaGrid の上にさらに小さい奥行きのある３D風サークル　AreaGrid_Inner_Circleフェードイン。で重なって表示
+　
+　・イベントエリア(Area_BOX)
+　・コンパニオンエリア(Area_BOX)それぞれフェードインして上から、降りてくる動き。
+AreaGrid_Inner_Circleの「中心」に配置
+
+
+3）
+AreaGrid　の下側に「奥行きのある３D風」つぶれた楕円形　AreaGrid_Outer_Circleがフェードイン
+　・R-Pエリア(Area_BOX_RP)
+　・ダークガードエリア(Area_BOX)がそれぞれフェードインして上から、降りてくる動き。
+
+4）
+AreaGrid_Inner_Circleから、各エリアに向かってそれぞれに
+パイプラインのようにライン（AreaGrid_Inner_Circle_line）を伸ばすアニメ。
+
+5）
+areaPoint(画像有)がフェードイン表示。ゆらゆらフェードイン表示
+
+位置：
+・パンダエリア(Area_BOX)の上（P1）　
+・コンパニオンエリア(Area_BOX)の上（P2）
+・アザーロイドエリア(Area_BOX)の上（P3）
+・R-Pエリア(Area_BOX)の上（P4）
+
+
+areaPoint
+ホバーで「角R吹き出しエリア：背景ホワイト、文字：ブラック」が左から右へ伸びるフェードイン表示
+
+（P1）ロイドたちはエリア間を行き来して、交流が活発います。
+（P2）コンパニオンとイベントエリアは密接に連携しています。
+（P3）アザーロイドの活動範囲は限られています。
+（P4）R-Pと直属のダークガードエリアが密接、他のエリアの監視をしています。
+
+（Area_BOX）×12　サイズ：340*170
+背景画像あり、
+その上にセンター揃えで
+テキスト表示：パンダエリア
+
+（Area_BOX_PR）　サイズ：420＊200
+専用背景画像あり、
+その上にセンター揃えで
+テキスト表示：R-Pエリア
+
+（AreaGrid）
+色：#a2a2a21b中央が濃く、周囲は薄いグラデーション
+奥行きのあるグリッド円形
+width:120%; "about_wrapper" 内に収めるが、両サイドは入りきらなくていい、見切れてもいい。
+hieght:900px
+
+（AreaGrid_Inner_Circle）
+色：#b3b3ffff単一色
+奥行きのある円形
+AreaGridの中に配置
+サイズ：750*360
+
+（AreaGrid_Inner_Circle_line）
+色：#b3b3ffff　先端は丸い。
+
+（AreaGrid_Outer_Circle）
+bg-color:#69696942;
+width:80%;
+height:330px
+奥行きのある３D風、少し潰れた楕円
+
+
+（一番下）
+トップへ戻るアイコン表示：画像有
+位置：右下
+ゆらゆら動きあり。
+"about_wrapper"の上に重なってはみ出してもよい。必ずしも中に納まっている必要ない。
+
+
+（クリックイベント）
+(Area_BOX)、(Area_BOX_PR）
+ホバー：少し上に浮く、シャドウとかなし。
+クリック：該当の(Area_BOX)が浮いて、中央へ浮き出す。それ以外の(Area_BOX）、(Area_BOX_PR）はすべてはけて、
+ワイプトランジッションそのエリアのコンテンツへ遷移される。
+
+ワイプトランジッション
+
+フェードイン
+＞＞＞＞MOVE＞＞＞
+の文字表示
+フェードアウト
+
+素早く

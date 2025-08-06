@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '../../../styles/areaMap_dog.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+
+import { getMeta } from '../../../utils/metaManager';
+
+const meta = getMeta('/pages/areaMap/dog/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb
+          areaNameJa="ドッグロイドエリア"
+          areaNameEn="dog-Roid AREA"
+        />
+
+        <p class="area_txt_p">
+          中央の特徴的なスタジアム？でしょうか？
+          このエリアではドッグロイドたちはどんな生活を送っているのでしょうか。
+        </p>
+        <div class="area_head_photo_block_dog"></div>
+        <h4 class="area_txt_h4">
+          ドッグロイドアリーナは技術と躍動が融合する、未来型スポーツ空間が象徴的
+        </h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+            <section class="area_section_block scroll-fade">
+              <div class="leader">
+                <img src="/images/area/dog/area_dog_1.png" />
+                <p class="leader_txt">
+                  <span>リーダー：オレン</span><br />
+                  「ここは、限界を超え、可能性を広げる場所。 技術と本能が交差する、
+                  未来の競技場だ。」
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_p_dog">
+                <p>
+                  <span class="area_txt_efec">エリアの特徴</span><br />
+                  中央のコートエリアは、広々とした開放感を持つ場所でありながら、各ドッグロイドが快適に過ごせる
+                  個別ブース も用意されています。このエリアは、自由な活動と適度なプライバシーが絶妙に調和する設計になっています。
+                  <br />
+                  <span class="area_txt_efec">コートエリアの特徴</span><br />
+                  広大なスペース: ドッグロイドが思い切り動き回れる空間。地面には衝撃吸収素材が敷かれ、活動しやすい設計に。
+                  中央のコートエリアは、広々とした開放感を持つ場所でありながら、各ドッグロイドが快適に過ごせる
+                  個別ブース も用意されています。このエリアは、自由な活動と適度なプライバシーが絶妙に調和する設計になっています。
+                  コートエリアの特徴 広大なスペース: ドッグロイドが思い切り動き回れる空間。地面には衝撃吸収素材が敷かれ、活動しやすい設計に。
+                </p>
+              </div>
+              <div class="area_photo_block_dog"></div>
+            </section>
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_dog">
+                <div class="area_p_dog">
+                  <p>
+                    <span class="area_txt_efec"
+                      >個別ブースとドッグロイドの生活</span
+                    ><br />
+                    リラックスエリア: 個別ブース内には休憩スペースが設置され、静かな環境で充電
+                    しながら次の活動に備える。 AIアシスタント: それぞれのブースに専属のサポートシステムがあり、各ロイドの動作ログを分析し、最適なケアやアップグレードを提案。
+                  </p>
+                </div>
+                <div class="area_img_row_dog">
+                  <div class="area_img_dog">
+                    <img
+                      src="/images/area/dog/area_dog_3.png"
+                      alt="自律調整型スマート"
+                    />
+                  </div>
+                  <div class="area_img_dog">
+                    <img
+                      src="/images/area/dog/area_dog_4.png"
+                      alt="自律調整型スマート"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <ScrollToTop client:load />
+
+        <FloatingNavi
+          nextLabel="NEXT Area"
+          mapLabel="マップエリア"
+          topLabel="TOP"
+          iconSrc="/images/area/bread_area_top_btn.png"
+        />
+        <FloatingNavScript client:load />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

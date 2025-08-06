@@ -1,0 +1,128 @@
+.product_wrap {
+  width: 95%;
+  height: auto;
+  flex-direction: column;
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  color: black;
+  padding: 3rem;
+  gap: 2rem;
+  user-select: none;
+}
+
+.txt_H5_product {
+  padding-top: 20px;
+  font-size: 1.2rem;
+  color: #10065f;
+  position: relative;
+  text-align: center;
+}
+.txt_H5_product::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 100px;
+  height: 20px;
+  background-color: rgb(78, 71, 216);
+}
+.txt_H5_product::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 25px;
+  width: 100px;
+  height: 20px;
+  background-color: rgb(78, 71, 216);
+}
+.txt_H5_product2 {
+  padding-top: 20px;
+  font-size: 1.2rem;
+  color: #86441e;
+  position: relative;
+  text-align: center;
+}
+.txt_H5_product2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 25px;
+  width: 100px;
+  height: 20px;
+  background-color: rgb(226, 163, 16);
+}
+.txt_H5_product2::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 25px;
+  width: 100px;
+  height: 20px;
+  background-color: rgb(226, 163, 16);
+}
+.product_block {
+  margin-top: 1rem;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  color: rgb(26, 20, 142);
+  gap: 2rem;
+}
+.product_block dt {
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin: 1rem auto;
+}
+.product_block2 dt {
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin: 1rem auto;
+  text-align: center;
+  color: rgb(131, 94, 9);
+  animation: pulseGlow 1.8s infinite ease-in-out;
+}
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 4px rgb(240, 255, 102);
+  }
+  50% {
+    box-shadow: 0 0 12px rgb(219, 255, 102);
+    background-color: rgb(150, 255, 102);
+  }
+  100% {
+    box-shadow: 0 0 4px #6ff;
+  }
+}
+
+.product_block2 h3 {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 2rem auto;
+}
+.block_wrap {
+  flex-direction: column;
+  gap: 2rem;
+  margin: auto 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.block_img_wrap_f {
+  width: 90%;
+  height: auto;
+  gap: 0.5rem;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin: auto 0;
+}
+.block_img_wrap_f p {
+  text-align: left;
+}
+.block_img_wrap_f img {
+  max-width: 200px;
+  height: auto;
+  margin: 0;
+}

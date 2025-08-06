@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../components/PagetitleH3.astro';
+import ScrollToTop from '../../components/ScrollToTop.tsx';
+import '../../styles/common.css';
+import '../../styles/charaIntro.css';
+import IntroCard from '../../components/introCard.astro';
+// JSONデータを読み込む（src/data 配下）
+import cards from '../../data/introCard.json';
+
+import { getMeta } from '../../utils/metaManager';
+const meta = getMeta('/pages/charaIntro/'); // ← Astro.url.pathnameではなく明示
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3
+      title="RUCKY-PANNキャラクター紹介"
+      subtitle="CharacterIntro.ontent"
+    />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <h5 class="intro_txt_H5 scroll-fade">
+          ここでは各カテゴリーの「キャラクターの特徴」を一挙にご紹介。
+        </h5>
+        <div class="intro_contens_wrapper">
+          <!--カード枠-->
+
+          <div class="card_grid_wrap">
+            <!-- カード -->
+            {cards.map((card) => <IntroCard {...card} />)}
+          </div>
+        </div>
+        <ScrollToTop client:load />
+      </div>
+    </div>
+  </div></BaseLayout
+>

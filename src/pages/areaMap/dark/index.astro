@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../../components/PagetitleH3.astro';
+import AreaBreadcrumb from '../../../components/AreaBreadcrumb.astro';
+import ScrollToTop from '../../../components/ScrollToTop.tsx';
+import '../../../styles/areaMap_dark.css';
+import '../../../styles/common.css';
+import FloatingNavi from '../../../components/FloatingNavi.astro';
+import FloatingNavScript from '../../../components/FloatingNavi.jsx';
+
+import { getMeta } from '../../../utils/metaManager';
+const meta = getMeta('/pages/areaMap/dark/');
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <AreaBreadcrumb
+          areaNameJa="ダークガードロイドエリア"
+          areaNameEn="DARK GUARD-Roid AREA"
+        />
+
+        <p class="area_txt_p">
+          巨大な目つきをしたモニュメントが怖いです。迷路のような壁が幾重にもそびえたっていて不気味なイメージですね
+        </p>
+        <div class="area_head_photo_block_dark"></div>
+        <h4 class="area_txt_h4">「R-P」をガードするセキュリティーエリア</h4>
+        <div class="area_wrap">
+          <div class="Content_section">
+            <!-- ↓ここからsection2〜5は後でコンポーネント分離可能 -->
+            <section class="area_section_block scroll-fade">
+              <div class="leader">
+                <img src="/images/area/dark/area_dark_1.png" />
+                <p class="leader_txt">
+                  <span>リーダー：DAATTO</span><br />
+                  「静寂こそが真の秩序。動きを見せるものには、理由がある。だが、沈黙はすべてを語るわけではない。水面下の変化にこそ、目を向けよ。」
+                  「安全とは、確認された平穏ではない。未確認の兆候に対し、先手を打つ意志である。」
+                </p>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_dark">
+                <div class="wrap_area_p_dark">
+                  <div class="area_p_left_dark">
+                    <p>
+                      <span class="area_txt_efec">エリア特徴 </span><br />
+                      高い塀と監視システム 外部からの侵入を防ぐため、強化された防壁「TALLMAN」
+                      が設置されている。 監視タワーの特徴 高密度合金で構成され、外部からの侵入を完全に防ぐ。
+                      内部には衝撃吸収層があり、爆発や衝撃にも耐えられる設計。監視アイとドローンネットワーク
+                      。頂部には 楕円形の監視アイが設置され、360度の視野を確保。全天候型監視ドローン
+                      が巡回し、リアルタイムで異常を検知。 ・ 監視タワーの役割 エリア全体のセキュリティ管理
+                      AI制御の監視システムが、侵入者や異常を即座に検知。 レーザービーム監視
+                      により、外部からのアクセスを制限。 ロイドたちのエネルギーAMP管理
+                      監視タワーは ロイドたちのエネルギー供給を統括し、最適な稼働状態を維持。
+                      AMPの流通を管理 し、不正アクセスやエネルギーの損失を防ぐ。
+                      ・ロイドたちの管理とガードロイドの生成。 ガードロイドの配置と統制
+                      監視タワー周辺にはガードロイドが常駐し、侵入者を排除。各ロイドの動作ログを分析し、最適な配置を決定。ロイドたちはメンテナンスとアップグレードで定期的に監視タワーで
+                      システムチェックを受ける。必要に応じてアップグレード が施され、性能を維持。
+                    </p>
+                  </div>
+                  <div class="area_img_dark">
+                    <figure>
+                      <img
+                        src="/images/area/dark/area_dark_2.png"
+                        alt="「TALLMAN」"
+                      />
+                      <figcaption>
+                        ダークエリアにそびえたつ「TALLMAN」
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_dark">
+                <div class="wrap_area_p_dark">
+                  <div class="area_p_left_dark">
+                    <p>
+                      <span class="area_txt_efec"
+                        >監視ドローンを操る巨大なカメラ</span
+                      ><br />
+                      そこから発せられる不気味なレーザーによって、 侵入物を即座に感知し、それに従いガードロイドたちは即座に行動、
+                      強力な捕獲力で瞬時侵入者、侵入物を捕獲する。
+                    </p>
+                  </div>
+                  <div class="area_img_dark">
+                    <figure>
+                      <img
+                        src="/images/area/dark/area_dark_3.png"
+                        alt="T-ZOON"
+                      />
+                      <figcaption>監視ドローンを操る巨大なカメラ</figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="area_section_colum_dark">
+                <div class="wrap_area_p_dark">
+                  <div class="area_p_left_dark">
+                    <p>
+                      <span class="area_txt_efec">ドローンD-SHEEKER </span><br
+                      />
+                      ダークエリアの影を駆ける探索ドローン。 R-SEEKERは**「R-P」管轄下**で運用される特殊ドローンであり、
+                      ダークエリア内の資源調査や環境監視を担当する。 無音飛行と高度な分析機能を備え、AquaCore成分の流れや異常なエネルギー反応を検出する役割を持つ。
+                    </p>
+                  </div>
+                  <div class="area_img_dark">
+                    <figure>
+                      <img
+                        src="/images/area/dark/area_dark_5.png"
+                        alt="ドローンD-SHEEKER "
+                      />
+                      <figcaption>ドローンD-SHEEKER</figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="area_section_block scroll-fade">
+              <div class="wrap_area_p_dark">
+                <div class="area_img">
+                  <figure>
+                    <img
+                      src="/images/area/dark/area_dark_4.png"
+                      alt="内部の施設 中央管理センター"
+                    />
+                    <figcaption>内部の施設 中央管理センター</figcaption>
+                  </figure>
+                </div>
+                <div class="area_p_dark">
+                  <p>
+                    <span class="area_txt_efec"
+                      >内部の施設 中央管理センター</span
+                    ><br />
+                    ここでは、AIによるセキュリティ監視 が行われ、エリア全体の安全が確保されている。
+                    データ分析システム により、異常が検知されると即座に対応。 研究・開発エリア
+                    最新技術の開発 が進められており、セキュリティシステムのアップグレードが定期的に行われる。
+                    ドローンの自律制御技術 や 防衛AI の研究が行われている可能性も。
+                    このエリアは、R-Pの重要な拠点 であり、外部からの脅威に対して万全の体制が整えられているようですね。
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <ScrollToTop client:load />
+      </div>
+    </div>
+  </div>
+
+  <FloatingNavi
+    nextLabel="NEXT Area"
+    mapLabel="マップエリア"
+    topLabel="TOP"
+    iconSrc="/images/area/bread_area_top_btn.png"
+  />
+
+  <FloatingNavScript client:load />
+</BaseLayout>

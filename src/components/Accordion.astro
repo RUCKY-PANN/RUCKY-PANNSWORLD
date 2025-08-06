@@ -1,0 +1,15 @@
+---
+//components/Accordion.astro
+// props: title (string), subtitle (string)
+const { title, subtitle } = Astro.props;
+---
+
+<div class="accordion-content scroll-fade">
+  <div class="acrordion_bar">
+    {title}
+    <div class="spanfont">ーーーー{subtitle}ーーーー</div>
+  </div>
+  <div class="card-wrapper">
+    <slot /><!-- ← キャラカード群がここに注入される -->
+  </div>
+</div>

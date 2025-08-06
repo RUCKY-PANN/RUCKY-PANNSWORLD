@@ -1,0 +1,58 @@
+
+🧱 基礎構造：Three.js & React Three Fiber
+| 用語 | 説明 | 使用例 | 
+| Three.js | JavaScriptの3Dライブラリ。WebGLを抽象化し、3D描画を簡素化 | mesh, geometry, camera | 
+| React Three Fiber (R3F) | Three.jsをReact構文で扱えるライブラリ | <mesh>, <ambientLight>, useFrame() | 
+| Canvas | 3D描画領域。R3Fのルートとして使う | <Canvas camera={...}>...</Canvas> | 
+| group | 複数の3Dオブジェクトをまとめるコンテナ | <group>...</group> | 
+
+
+
+🎨 表示要素：Geometry & Material
+| 用語 | 説明 | 使用箇所 | 
+| mesh | Geometry（形状）とMaterial（質感）をセットで描画する基本単位 | 地面・断面・光球など | 
+| geometry | 形状定義。sphereGeometry, planeGeometry, circleGeometry など | circleGeometry args={[2, 64]} | 
+| material | 表面の質感・色・透明度などを指定 | meshBasicMaterial, shaderMaterial | 
+| texture | 画像素材を貼り付けて質感を表現 | useTexture('/images/planet.webp') | 
+
+
+
+💡 描画制御・アニメーション
+| 用語 | 役割 | 備考 | 
+| useRef() | meshやカメラなどのDOM参照を保持 | シェーダーの uniforms.time 制御など | 
+| useFrame() | 毎フレーム処理を書くReact Hook | 時間で回転や揺らぎを与える | 
+| clock.getElapsedTime() | アニメーション時間取得 | uniforms.time.value = clock.getElapsedTime() | 
+
+
+
+🔦 ライティング & カメラ
+| 用語 | 説明 | 使用箇所 | 
+| ambientLight | 全体に均等に照らす光源。影ができない | intensity={0.5} | 
+| pointLight | 点から放射される光源 | position={[x,y,z]}で配置 | 
+| CameraController | カメラ操作用カスタムコンポーネント | PlanetSceneで target を指定 | 
+
+
+
+🧪 シェーダー構造（GLSL）
+| 用語 | 説明 | 例 | 
+| .vert | 頂点シェーダー。形状や座標処理を書く | varying vec2 vUv → gl_Position | 
+| .frag | フラグメントシェーダー。色や光の表現を書く | uniform float time でアニメーション | 
+| shaderMaterial | GLSLコードを使用するThree.jsのマテリアル | vertexShader, fragmentShader, uniforms | 
+
+
+
+🌐 データ連携とセクター管理
+| 要素 | 説明 | 
+| areaData | セクターの定義情報。名前・位置・コメントなどが含まれる | 
+| PlanetContext | セクターの選択状態（activeArea）をグローバルに管理 | 
+| AreaTrigger | 各セクターへのインタラクティブ要素（クリックで反応） | 
+
+
+
+🔗 連携フロー（PlanetUI内）
+graph TD
+A[PlanetInterior] --> B[AreaTrigger]
+B --> C[setActiveArea(index)]
+C --> D[PlanetContext]
+D --> E[PlanetScene]
+E --> F[CameraController]

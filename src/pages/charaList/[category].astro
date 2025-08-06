@@ -1,0 +1,78 @@
+---
+// pages/charaList/[category].astro
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CharaCard from '../../components/CharaCard.astro';
+import PageatitleH3 from '../../components/PagetitleH3.astro';
+import ScrollToTop from '../../components/ScrollToTop.tsx';
+import Accordion from '../../components/Accordion.astro';
+
+import { getCharacters } from '../../utils/getCharacters';
+import { getCategoryList } from '../../utils/getCategoryList';
+import type { Character } from '../../types/character';
+import type { Category } from '../../types/category';
+
+import '../../styles/common.css';
+import '../../styles/charaList.css';
+
+export async function getStaticPaths() {
+  const categories = await getCategoryList();
+  console.log('Fetched categories:', categories); // ← ここ！
+
+  return categories.map((category: Category) => ({
+    params: {
+      category: category.code.toLowerCase(),
+    },
+    props: {
+      title: category.title,
+      subtitle: category.subtitle,
+    },
+  }));
+}
+
+const { category } = Astro.params as { category: string };
+const { title, subtitle } = Astro.props;
+const characters: Character[] = await getCharacters();
+const categories: Category[] = await getCategoryList();
+const currentCategory = categories.find((c) => c.code === category);
+
+if (!currentCategory) {
+  throw new Error(`カテゴリ「${category}」が見つかりませんでした`);
+}
+
+const filteredCharacters = characters.filter(
+  (char) => char.category.id === currentCategory.id,
+);
+---
+
+<BaseLayout>
+  <div class="contents_wrapper">
+    <PageatitleH3
+      title={`カテゴリー別リスト｜${currentCategory.title} のロイド`}
+      subtitle="Category.contents"
+    />
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <Accordion
+          title={`｜${currentCategory.title}`}
+          subtitle={currentCategory.subtitle}
+          id={currentCategory.id}
+        />
+        <div class="category_wrapper">
+          {
+            filteredCharacters.length > 0 ? (
+              filteredCharacters.map((char) => (
+                <>
+                  <CharaCard character={char} />
+                </>
+              ))
+            ) : (
+              <p>このカテゴリにはまだキャラクターが登録されていません。</p>
+            )
+          }
+        </div>
+        <ScrollToTop client:load />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

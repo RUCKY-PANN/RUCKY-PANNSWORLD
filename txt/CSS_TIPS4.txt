@@ -1,0 +1,30 @@
+flex: 1 1 10% の指定は本来
+
+「この要素に10%の初期幅を持たせたうえで、余白があれば伸び、足りなければ縮む」っていう柔軟なレイアウトに使うものです。
+でもレーダーチャートに関しては、この指定が予期せぬサイズ収縮を起こしていた可能性があります。
+
+🔍 なぜ flex: 1 1 10% を変更したか
+
+- チャート表示が小さすぎる／端に寄る問題が発生していた
+- flex: 1 1 10% は「子要素として整列する」用途が主で、
+親要素として canvas にスペースを与えたいときには不向き
+- display: flex + justify-content: center + align-items: center に変えることで、
+canvas を中央に配置してサイズ制御をCSSで明示的に行えるようになる
+
+🧪 どうすると理想的か？
+.chart_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+これで、子要素（タイトルとキャンバス）が縦に中央揃えされ、余白も整う。
+そのうえで .canvas_size にサイズを指定すれば、チャートが小さすぎたり巨大化したりするのも防げます：
+.canvas_size {
+  width: 300px;
+  height: 300px;
+  max-width: 90%;
+}

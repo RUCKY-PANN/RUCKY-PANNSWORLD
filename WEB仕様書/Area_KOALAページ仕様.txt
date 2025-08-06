@@ -1,0 +1,127 @@
+//apps/web/app/pages/area/Roid_koala.tsxの作成
+
+'use client'
+import Image from 'next/image'
+import styles from './Roid_koala.module.css'
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+import AreaTransition from '@/components/PageTransitions/AreaTransition'
+import { areaOpeningLines } from '@/constants/areaOpeningLines'
+
+
+const meta = areaOpeningLines['koala']
+
+export default function koalaRoidArea() {
+  return ( 
+<div>
+<AreaTransition areaName={meta.headingText} />
+<AreaLayout
+  code={meta.code}
+  label={meta.label}
+  icon={meta.icon}
+  headingImage={meta.headingImage}
+  leadText={meta.leadText} // ← 追加 ✅
+  breadcrumbIcon={meta.breadcrumbIcon}// ← 追加 ✅
+
+もあわせて記述
+----ここからコンテンツーーーー
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>超巨大な大木そびえたってますね、不思議なエリア。近未来的な雰囲気も漂います。
+「テキストボックス　16px　color:white」
+
+余白1行分あけて
+IMG
+余白2行分あけて]
+
+その下
+「見出しテキストBOX」
+<div>巨木「U Tree」は悠久の時を感じさせる-KOALAロイドの誕生の記憶遺産、そしてヒーリングの聖域</div>
+border-left:7px; 
+border-color:#0000ffff
+padding-bottom:10px;padding-top:10px
+width:100%;
+font-siize:16px
+color:white
+
+その下
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+<section1>
+
+<div class="area_section">
+<div class="leader">リーダーキャラのIMGは背景扱い</div> .leader:width175* height290,backgroung-images:outfit;
+その横
+<div><span>リーダー：パナム<br>
+<p>
+「ここは時を抱く静寂の聖域、ヒーリングエネルギーにより、我々は深く思索し、知識を記録する。渓谷の風がユーカリの香りを運び、天空都市は穏やかさを保ち続ける。ここへ訪れる者は、精神統一とバランスを鍛え、新たな成長を見つめることができる。」
+
+/*--area_sectionの左下に ボタン要素.RoidAreaButton border-radius12px bg-color:#000082ff　ボタンの中： 〇の中に->の描画　::beforeを使う ボタンの線無し　obClickで押されたように鏡トランジッション --*/
+
+<button class="RoidAreaButton" onClick="">
+クリック先はCharaList.tsxのKoala_roidカテゴリ一覧ページを表示
+
+余白30px
+
+<div class="area_section2">
+
+<h4>天空にそびえたつ「超巨大な巨木」ー「U-TREE」。
+<p>樹齢数千年とも言われる超巨大木「U-TREE」の頂点に広がるエリアは天空都市として発展、周囲はユーカリ巨木群が密集し、AMPを長期保存できるシステムを築き上げている。
+1行分あけて
+<div>
+中央に<IMG配置
+
+下余白30px
+
+<div class="area_section3">
+<h4>コアラエリアの特徴
+<p>U-TREEの根幹が紡ぐ静寂のヒーリングエネルギーにより、天空都市は豊かな環境を維持しながら、AMPの保存と循環を促進している。
+このエネルギーシステムに支えられたコアラロイドたちは、精神活動がより活性化し、各種イベントへの参加も積極的になっている。
+その結果、都市の活気は高まり、人口も増加傾向にある。
+1行分開けて
+<div＞
+中央に
+IMG配置
+
+下余白30px
+
+<div class="area_section4">
+<div>左側
+<h4>巨大球体「U-sphere」
+<p>「EUCAL-CORE」を生成し、AMPの有効な保存成分「ユーカロイド」を貯蔵することができ、さらにAMPを凝縮し、エリア全体に供給する。貯蔵と供給システムの役割を持った存在。巨木の枝にぶら下がることで、自然の流れに沿った循環システムを維持。球体は風を受けると微細な振動を発し、エリア全体に静寂の波動を広げる。
+
+margin-right:30px
+<div>横にIMG</div>
+
+下余白30px
+
+<div class="area_section5">
+<div>左側
+<div>横にIMG</div>
+margin-right:30px
+<div>右側
+<h4>「U-sphere」の内部
+<p>球体の内部には、過去の記録や思想が蓄積されている。ロイドたちは瞑想を通じて、球体と精神的にリンクし、知識を共有。これにより、瞑想や精神統一の効果が高まる。
+
+下余白30px
+
+<div class="area_section6">
+<div>左側
+<div>横にIMG</div>
+margin-right:30px
+<div>右側
+<h4>巨木の生命力よる、高いヒーリング効果
+<p>渓谷の風がユーカリの香りを運び、エリア全体に落ち着いた雰囲気をもたらす。巨木の根から吸収されたエネルギーが、都市全体に供給される。
+コアラロイドたちはこのエネルギーを活用し、瞑想や情報記録を行う。
+静寂とヒーリングスポットとして、他エリアのロイドたちも訪れ、精神統一など行う。
+
+
+------コンテンツ表示領域ここまで------
+

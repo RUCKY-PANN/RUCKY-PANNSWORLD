@@ -1,0 +1,117 @@
+---
+type NewsItem = {
+  id: string;
+  title: string;
+  description: string;
+  newsImage?: { url: string };
+};
+
+const newsList: NewsItem[] = [
+  {
+    id: 'update01',
+    title: 'Catroid領域でエネルギー密度10%向上',
+    description: 'AMP-Gridによる自動調整が奏功。AquaCoreの水循環にも影響あり。',
+    newsImage: { url: '/images/catroid-update.jpg' },
+  },
+  {
+    id: 'update02',
+    title: 'PANNS-GODが新たな光の循環を発生',
+    description: '神経エネルギー回路「LUX-RAY」が地層下に広がる現象を確認。',
+    newsImage: { url: '/images/panns-event.jpg' },
+  },
+  {
+    id: 'update03',
+    title: 'Tower周辺の交通パターンを再設計',
+    description: '新導線によりPhase5までの到達時間が22%短縮。',
+    newsImage: { url: '/images/tower-redesign.jpg' },
+  },
+];
+---
+
+<div class="news-dialog">
+  <h4>News</h4>
+  {
+    newsList.map((news) => (
+      <div class="news-card" data-id={news.id}>
+        <img
+          class="news-image"
+          src={news.newsImage?.url ?? '/fallback.jpg'}
+          alt={news.title}
+        />
+        <div class="news-info">
+          <div class="news-title">{news.title}</div>
+          <div class="news-description">{news.description}</div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .news-dialog {
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    background: linear-gradient(135deg, #0d0d0d, #1e1e1e);
+    padding: 0 1rem;
+    gap: 1rem;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+
+  .news-dialog::-webkit-scrollbar {
+    display: none;
+  }
+
+  .news-card {
+    min-width: 420px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 60px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 14px rgba(0, 255, 200, 0.3);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .news-card:hover {
+    transform: scale(1.04);
+  }
+
+  .news-image {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-right: 1rem;
+    background-color: #333;
+  }
+
+  .news-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+  }
+
+  .news-title {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+
+  .news-description {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+</style>

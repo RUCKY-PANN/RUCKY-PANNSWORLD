@@ -1,0 +1,12 @@
+
+
+✅ 修正点一覧
+| 修正項目 | 内容 | Before | After | 
+| カード構造 | 入れ子が複雑／無駄なラップあり | .card-wrap > .card-content > .card | .card-wrap > .card のミニマル化 | 
+| 上下余白 | 意図しない padding-top による隙間 | padding-top: 48px | padding-top: 0／コンテンツ余白は個別管理へ | 
+| 横並びレイアウト | 左右に余白が出すぎる | justify-content: center | justify-content: space-between／横幅計算で等幅に | 
+| 下端揃え | 高さは揃っても下がズレる | height: auto だけの指定 | flex: 1 ＋ align-items: stretch／均等配置 | 
+| 中身のセンター揃え | テキスト・画像が中央になっていない | text-align 未指定 | align-items: center ＋ text-align: center | 
+| SVG背景構造 | <svg> の冗長コードが大量 | <svg><text>... | ::before によるCSS擬似要素化 | 
+| レスポンシブ対応 | 画面幅で崩れる | 固定 flex 幅のみ | @media で 3 → 2 → 1列に分岐 | 
+

@@ -1,0 +1,172 @@
+World.tsx
+レイアウトと仕様
+
+------共通仕様-----------
+テキストトランジッション　ワイプ右から
+画像トランジッション　上から下へ
+ページスクロールで<section>フェードイン表示
+テキスト行間1.5
+<p>の中に説明テキストを入れる
+
+.world_midashi <- h5の左に配置。横棒のような形 トランジッション左からワイプ
+
+background-color:#0000ffff
+width:85px;
+height:19px;
+
+world_h5 
+トランジッション左からワイプ
+文字：ホワイト　文字Size:24px
+padding-left:25px
+
+
+<h3>のスタイルはパーツ共通を使う
+
+<div class="out_wrapper"> 
+out_wrapper:background-color:#e5e5f02a;width:1600px
+
+out_wrapperはpages/sections/の各ページに共通。
+About.tsx,
+World.tsx,
+CharaList.tsx,
+Production,
+Navitour,
+CharIntro、
+
+その中に
+<div class="in_wrapper_world">を内包
+widht:1360px
+color:white,
+font-size:16px,
+padding、right,left,は40px
+padding、top,bottomは40px
+
+
+
+----内容-------------
+
+in_wrapper_worldの中に
+<div class="WorldContent_section">を内包
+
+＞＞WorldContent_section{
+display:flex,
+padding-bottom,-top:18px;
+background-image:url(images/world/world_sectionbg.png);
+no-repeat;
+position:bottom;背景はコンテンツの下のほうへ配置
+}
+<div class="WorldContent_section">
+<div class="world_midashi"></div>
+<h5 class="world_h5">球体の異世界空間「PANN's Wolrd」</h5>　
+<p>AI錦鯉が周回する生態系が確立した空間「PANNS-WORLD」は自転し、その中にはRoidたちの生息エリアがある。
+
+.world_midashi <- h5の左に配置。横棒のような形 トランジッション左からワイプ
+
+background-color:#0000ffff
+width:85px;
+height:19px;
+
+world_h5 
+トランジッション左からワイプ
+文字：ホワイト　文字Size:24px
+padding-left:25px
+
+その中の要素
+<section1>
+<IMG><IMG>横並び
+width:100%;
+height:auto
+
+その下画像の説明テキスト
+<pre>エナジーの源、錦鯉からAquaCoreが降り注ぐ。
+
+----sectionここまで------
+
+----section２------------
+
+<div class="WorldContent_section">
+<div class="world_midashi"></div>
+<h5 class="world_h5">Rロイド製造機関「R-P」</h5>　
+<p>Rucky-Pann Nexus Autonamous Robotics Projecr Organization
+通称「R-P」という機関がPANNSWORLDを構築し、様々なRoidたちを開発。様々な機能を持つR-TECHXという技術も開発。ロイドたちのエネルギー生成を定量性にし活動量をコントロール、世界の維持と錦鯉から提供されるAquaCoreと呼ばれる二酸化炭素状の特殊なカプセルを吸収し、また錦鯉へ還元するリサイクルを行っている。
+
+<p>の中の左
+<IMG>
+width:100%;
+height:auto
+
+----ここまで------------------------
+
+----ここから------------------------
+
+<div class="WorldContent_section">
+<div class="world_midashi"></div>
+<h5 class="world_h5">「ロイドエネルギー問題」とR-Pセキュリティエリアの確立</h5>　
+<p>彼らロイドたちの活動の活発化で消費されていく「ＡＭＰ」。ロイド達がイベントで消費するＡＭＰはやがては枯渇していきます。
+各エリアには独自のＡＭＰリサイクルシステムや維持保存システムが機能しているエリアもありますが、完璧ではなく、エリア活性化とロイドの維持のため、エネルギーの供給量を増やすような活動をや不正闇取引などのマーケットも作り始めます。
+なかには「RーP」に侵入し、ＡＭＰやＡＭＰ生成システムの技術を盗むことを計画するロイドたちも存在します。
+2行分あけて
+<p>これに対して、「R-P」は独自のセキュリティエリアとして、「ダークエリア」を生成。無数のドローンと徹底した監視、侵入検知システムを導入し、「R-P」への侵入を防いでいます。
+
+
+その下の要素
+<section1>
+<IMG><br>
+<p>活発な活動の中で消費するＡＭＰ枯渇問題
+<section2>横並び
+<IMG><br>
+<p>R-Pセキュリティエリアには様々なダークロイドたちが監視している
+
+----ここまで------------------------
+
+----ここから------------------------
+
+<div class="WorldContent_section">
+<div class="world_midashi"></div>
+<h5 class="world_h5">ロイドのエリア間でのAMP流通とAMP交流の確立</h5>　
+<p>RUCKY-PANN内のロイドたちの交流と流通は、公式のエネルギー循環と非公式な市場の間で多層的に展開されます。各エリアが持つ独自の機能とAMPの流通を通じ、ロイドたちは情報交換・資源調達を行いますが、一部には不正アクセスや闇ルートの存在も考えられます。
+各エリアの適正なAMP分配（精神活動の活性化・データ保存）
+事例）専門エリア活用による交流
+ヒーリングエリアでは精神統一のセッションが開催され、ロイド同士の交流が深まる。技術研究エリアではAMPの効率化や新技術開発が進行 、記録アーカイブエリアでは知識共有と歴史の保存が行われる。
+<IMG>左側
+</p>
+
+
+<p>過疎地域のエリア</p>
+<p>AMPの消費が高いため、需要が追い付かず、枯渇し、非公式な交流と闇市場- 闇マーケットが次第に形成されていく。一部のロイドが団結してAMPの違法取引を行い、通常の流通網を外れたエネルギーの交換が発生。不正アクセス・ハッキング- R-Pのシステムに不正侵入する者が出現し、一部の知識データを改変しようとする。
+セキュリティロイドが防衛するが、定期的に新たな攻撃手法が試みられる。
+密輸ネットワークの形成
+遠隔地へのAMP供給が正規ルートで行われない。
+過疎地域のエリアのロイドを中心に闇ルートによる独自のサプライチェーンが形成され、秘密の活動が活発化していく。
+<IMG>左側
+</p>
+
+<div class="WorldContent_section">
+<div class="world_midashi"></div>
+
+<span>エリア別純度維持率<br>
+※維持・保存のため再構築されたAMPの純度維持率
+
+<div>背景ホワイト四角い矩形　padding:10px,<section1>と縦ラインそろえる
+<ul>
+<li>AMP-IMGの横にボーダーソリッド配置、右から左へにラインアニメーション、右から左へにラインアニメーション　0-95％ border-color:#143e7fff
+　　　<span>純度　80～95％維持　　　　エリア／コアラ・ヒッポ
+<li>AMP-IMG2の横にボーダーソリッド配置、右から左へにラインアニメーション、右から左へにラインアニメーション　0-80％ border-color:#1d273eff
+　　　<span>純度　70～80％維持　　　　エリア／パンダ・ベアー
+<li>AMP-IMG3の横にボーダーソリッド配置、右から左へにラインアニメーション、右から左へにラインアニメーション　0-60％ border-color:#3a3837ff
+　　　<span>純度　50～60％維持　　　　エリア／キャット・ドッグ・タヌキ
+<li>AMP-IMG4の横にボーダードット配置、右から左へにラインアニメーション、右から左へにラインアニメーション　0-100％ border-color:レッド~グレーを繰り返す
+　　　<span>リサイクル不可「Crack」AMP枯渇　▶出稼ぎ、不正取引、闇ルート　　　　エリア／アザーエリア
+
+※<section2><div>表示はワイプトランジッションして中身をフェードイン表示
+
+---<section2>ここまで-----------
+
+余白を25px
+
+ページ右下にページトップへのボタン（画像あり）配置
+＞＞out_wrapper"の中に内包する。
+
+以上
+
+フッターは共通を使用

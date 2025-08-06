@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PagetitleH3 from '../../components/PagetitleH3.astro';
+import ScrollToTop from '../../components/ScrollToTop.tsx';
+import '../../styles/common.css';
+import '../../styles/world.css';
+
+import { getMeta } from '../../utils/metaManager';
+const meta = getMeta('/pages/world/'); // ← Astro.url.pathnameではなく明示
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="RUCKY-PANNの世界について" subtitle="World.ontent" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <div class="Content_section">
+          <section class="section_block_world scroll-fade">
+            <h5 class="txt_H5">球体の異世界空間「PANN's Wolrd」</h5>
+
+            <div class="world_content">
+              <p>
+                AI錦鯉が周回する生態系が確立した空間「PANNS-WORLD」は自転し、その中にはRoidたちの生息エリアがある。
+              </p>
+              <div class="world_content_img">
+                <img
+                  src="../../images/world/world_con2.png"
+                  alt="AI錦鯉が周回する生態系が確立した空間"
+                />
+                <br /><span class="span_txt"
+                  >エナジーの源、錦鯉からAquaCoreが降り注ぐ。</span
+                >
+              </div>
+            </div>
+          </section>
+
+          <section class="section_block_world scroll-fade">
+            <h5 class="txt_H5">Rロイド製造機関「R-P」</h5>
+
+            <div class="world_content">
+              <div class="world_column">
+                <p class="world_column_right_p">
+                  Rucky-Pann Nexus Autonamous Robotics Projecr Organization
+                  　通称「R-P」という機関がPANNSWORLDを構築し、様々なRoidたちを開発。様々な機能を持つR-TECHXという技術も開発。ロイドたちのエネルギー生成を定量性にし活動量をコントロール、世界の維持と錦鯉から提供されるAquaCoreと呼ばれる二酸化炭素状の特殊なカプセルを吸収し、
+                  また錦鯉へ還元するリサイクルを行っている。
+                </p>
+                <div class="world_content_img_right">
+                  <img
+                    src="../../images/world/world_con1.png"
+                    alt="AI錦鯉が周回する生態系が確立した空間"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section_block_world scroll-fade">
+            <h5 class="txt_H5">
+              「ロイドエネルギー問題」とR-Pセキュリティエリアの確立
+            </h5>
+
+            <div class="world_content">
+              <p>
+                彼らロイドたちの活動の活発化で消費されていく「ＡＭＰ」。ロイド達がイベントで消費するＡＭＰはやがては枯渇していきます。
+                各エリアには独自のＡＭＰリサイクルシステムや維持保存システムが機能しているエリアもありますが、完璧ではなく、エリア活性化とロイドの維持のため、エネルギーの供給量を増やすような活動をや不正闇取引などのマーケットも作り始めます。
+                なかには「RーP」に侵入し、ＡＭＰやＡＭＰ生成システムの技術を盗むことを計画するロイドたちも存在します。
+                <br />
+                これに対して、「R-P」は独自のセキュリティエリアとして、「ダークエリア」を生成。無数のドローンと徹底した監視、侵入検知システムを導入し、「R-P」への侵入を防いでいます。
+              </p>
+              <div class="world_content_img_wrap">
+                <div class="world_content_img_wrap_sm">
+                  <img src="../../images/world/world_con3.png" alt="AMP警告" />
+                  <br /><span class="span_txt"
+                    >活発な活動の中で消費するＡＭＰ枯渇問題</span
+                  >
+                </div>
+                <div class="world_content_img_wrap_sm">
+                  <img
+                    src="../../images/world/world_con3-1.png"
+                    alt="ダークロイド"
+                  />
+                  <br /><span class="span_txt"
+                    >R-Pセキュリティエリアには様々なダークロイドたちが監視している</span
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section_block_world scroll-fade">
+            <h5 class="txt_H5">ロイドのエリア間でのAMP流通とAMP交流の確立</h5>
+            <div class="world_content">
+              <div class="world_column_wrap2">
+                <div class="world_column">
+                  <p class="world_column_right_p2">
+                    RUCKY-PANN内のロイドたちの交流と流通は、公式のエネルギー循環と非公式な市場の間で多層的に展開されます。各エリアが持つ独自の機能とAMPの流通を通じ、ロイドたちは情報交換・資源調達を行いますが、一部には不正アクセスや闇ルートの存在も考えられます。
+                    各エリアの適正なAMP分配（精神活動の活性化・データ保存）
+                    事例）専門エリア活用による交流
+                    ヒーリングエリアでは精神統一のセッションが開催され、ロイド同士の交流が深まる。
+                    技術研究エリアではAMPの効率化や新技術開発が進行 、
+                    記録アーカイブエリアでは知識共有と歴史の保存が行われる。
+                  </p>
+                  <div class="world_content_img_right2">
+                    <img
+                      src="../../images/world/world_con4.png"
+                      alt="交流と流通"
+                    />
+                  </div>
+                </div>
+
+                <div class="world_column">
+                  <p class="world_column_right_p2">
+                    過疎地域のエリア<br />
+                    AMPの消費が高いため、需要が追い付かず、 枯渇し、非公式な交流と闇市場-
+                    闇マーケットが次第に形成されていく。 一部のロイドが団結してAMPの違法取引を行い、
+                    通常の流通網を外れたエネルギーの交換が発生。 不正アクセス・ハッキング-
+                    R-Pのシステムに不正侵入する者が出現し、 一部の知識データを改変しようとする。
+                    セキュリティロイドが防衛するが、定期的に新たな攻撃手法が試みられる。
+                    <br />
+                    密輸ネットワークの形成<br />
+                    遠隔地へのAMP供給が正規ルートで行われない。 過疎地域のエリアのロイドを中心に闇ルートによる独自のサプライチェーンが形成され、
+                    秘密の活動が活発化していく。
+                  </p>
+                  <div class="world_content_img_right2">
+                    <img src="../../images/world/world_con5.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="section_block_world scroll-fade">
+          <h5 class="txt_H5">
+            エリア別純度維持率※維持・保存のため再構築されたAMPの純度維持率
+          </h5>
+
+          <div class="world_content">
+            <div class="world_content_wrap">
+              <div class="world_content_img_wrap_sm">
+                <div class="world_content_list">
+                  <img src="../../images/world/world_con6.png" alt="AMP" />
+                  <div class="list_wrap">
+                    <div class="gradient_line1"></div>
+                    <!-- グラデーションライン -->
+                    <ul>
+                      <li>純度　80～95％維持　　　　エリア／コアラ・ヒッポ</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="world_content_list">
+                  <img src="../../images/world/world_con7.png" alt="AMP" />
+                  <div class="list_wrap">
+                    <div class="gradient_line2"></div>
+                    <!-- グラデーションライン -->
+                    <ul>
+                      <li>純度　70～80％維持　　　　エリア／パンダ・ベアー</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="world_content_list">
+                  <img src="../../images/world/world_con8.png" alt="AMP" />
+                  <div class="list_wrap">
+                    <div class="gradient_line3"></div>
+                    <!-- グラデーションライン -->
+                    <ul>
+                      <li>
+                        純度　50～60％維持　　　　エリア／キャット・ドッグ・タヌキ
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="world_content_list">
+                  <img src="../../images/world/world_con9.png" alt="AMP" />
+                  <div class="list_wrap">
+                    <div class="gradient_line4"></div>
+                    <!-- グラデーションライン -->
+                    <ul>
+                      <li>
+                        リサイクル不可「Crack」AMP枯渇　▶出稼ぎ、不正取引、闇ルート　　　　エリア／アザーエリア
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <ScrollToTop client:load />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

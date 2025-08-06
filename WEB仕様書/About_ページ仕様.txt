@@ -1,0 +1,245 @@
+Astroでページ作成
+
+about/index.astro
+レイアウトと仕様
+
+
+共通ヘッダーを使用
+
+ヘッダーの下
+---------------------------
+<div>class="pagetitle"はバックグラウンド画像あり、位置は上
+
+<h3>のスタイルはパーツ共通を使う
+.pagetitle　h3
+color:white
+padding-left:35px
+BGは画像を左に配置
+文字の大きさ25px
+
+---------------------------
+その下
+
+<div class="out_wrapper">
+ class=about_wrapper:background-color:#e5e5f02a
+
+out_wrapperはpages/の各ページに共通。/world,/CharaList
+
+--------------------------------------------------
+out_wrapper
+の中に
+共通スタイル　areaName　を使う
+
+<div class="areaName">
+要素すべて横並び
+<h4>｛エリア名｝+エリア　 <span>｛EVENT｝ AREA  ←書体は　Astronaut IIを使用
+
+text-alighn:center
+padding:30px
+color:white
+border-bottom:2px 
+border-color:white
+
+ヘッドレスCMSなどで
+*｛エリア名｝変数化できないか、データーで取得できないか？
+*｛EVENT｝変数化できないか、データーで取得できないか？
+
+右端　画像でエリアTOPへ戻るアイコン配置
+
+-------------------------------------
+
+<div class="in_wrapper_about">
+color:white,
+font-size:16px,
+
+--共通--
+テキストトランジッション　ワイプ右から
+画像トランジッション　上から下へ
+ページスクロールでフェードイン表示
+
+
+
+<h5>青い液体「B-Smooth」で覆われた不可思議な回路の世界</h5>　
+<span class="about_span">AIの錦鯉が遊泳し、独自の生態系で動く半球体空間。それが「RUCKY-PANN」である。
+
+h5 
+文字：ホワイト　文字Size:24px
+
+about_span
+文字：ホワイト　文字Size:16px
+
+その中に
+<div class="aboutContent_section">を内包
+
+＞＞aboutContent_section{
+widht:1300px
+display:flex
+padding:30px
+}
+その中の要素
+右側<img>←球体画像
+width:100%;
+height:aout
+
+aboutContent_sectionの左上に"aboutContent_child"を配置
+
+aboutContent_child1、2は
+potison:absolute;
+diplay:box;
+widht:auto;
+height:auto
+text-alighn:left
+
+<div="aboutContent_child">
+<span="ex_circle1">改行して
+<span>周回する錦鯉<span>改行
+<p>エネルギーの根源「AquaCore」を常に世界へ送り
+B-Smoothへ降り注ぐ
+
+〇ex_circle1
+実線サークルborder-dadius:50% border:1px;
+サークルの大きさ　30*30px
+
+サークルからホワイトの実線がIMGに右下に向かって伸びる。
+実線は直角に折れ曲がったような動き
+
+その下
+スペース　160px
+を確保して
+
+<span="ex_circle2">改行して
+<span>B-Smooth改行
+<p>世界の動脈。回路を通して世界の命を保持し、循環させている
+B-Smoothへ降り注ぐ
+
+〇ex_circle2　　
+実線サークルborder-dadius:50% border:1px;
+サークルの大きさ30*30
+サークルからホワイトの実線がIMGに右へ向かって伸びる。
+実線は直角に折れ曲がったような動き
+
+
+----"aboutContent_child"ここまで--
+
+----"aboutContent_child2"ここから----
+<span class="ex_circle3">改行して
+<span>下半球のCORE　改行
+<p>「B-Smooth」の源流がある。
+
+〇ex_circle3　
+実線サークルborder-dadius:50% border:1px;
+大きさ　30*30px
+サークルからホワイトの実線がIMGに左上向かって伸びる。
+実線は直角に折れ曲がったような動き
+
+----"aboutContent_child2"ここまで----
+その下
+aboutContent_section内
+
+<p>AI錦鯉が周回する生態系が確立した空間「PANNS-WORLD」は自転し、その中にはRoidたちの生息エリアがある。</p>
+<h6>その世界では
+その下
+実線のトランジッション　左から右へ
+＞線ホワイト
+＞botder-size:1px
+
+その下
+<section2>
+<div class="ex_1">
+「矢印」あり、形は>>を下にした矢印で上下に動いている。
+その下
+＜IMG＞錦鯉のIMG
+</div>
+
+その横に見出しとして
+<div class="anim_txt">AI錦鯉の呼吸で世界を動かす？！ 
+
+テキストワイプ表示の後,
+anim_txt で動くテキストエフェクト　グラデーション。
+
+テキスト内の大きさは「AI錦鯉」「呼吸」「世界」「動かす」が40px
+それ以外のテキストサイズ26px
+<p>RUCCKY-PANの世界（球体）を周回するAI錦鯉は、エネルギーの源である「AquaCore」を世界にもたらす。そのエネルギーは球体の中枢機関「R-P」によって吸収され、変換・精製されて「AMP」として再生成される。AMPはロイドたちの駆動源となり、RUCCKY-PANの生態系と循環システムを支えている。
+
+<div>
+
+<section2>---おわり
+
+余白18px
+実線のトランジッション　左から右へ
+
+<section3>----
+<div class="ex_1">
+「矢印」あり、形は>>を下にした矢印で上下に動いている。
+その下
+＜IMG＞ROIDのIMG
+</div>
+
+その横に見出しとして
+<div class="anim_txt">自我を持った哺乳類型AIロイドが生息 
+
+テキストワイプ表示の後,
+anim_txt で動くテキストエフェクト　グラデーション。
+
+テキスト内の大きさは「自我」「AIロイド」が40px
+それ以外のテキストサイズ26px
+<p>中枢機関「R-P」によって生み出された哺乳類動物AIアンドロイド。各自エリアを生成しそこで生活、その姿は様々なパターンで構成されたボディースタイルが特徴的。自らのアイデンティティのため己の威信をかけて、彼らの目的「ワールドチャンピオンシップ」を目指してエネルギーを注ぐ。
+
+<section3>---おわり
+
+余白18px
+実線のトランジッション　左から右へ
+
+<section4>----
+<div class="ex_1">
+「矢印」あり、形は>>を下にした矢印で上下に動いている。
+その下
+＜IMG＞マーケットのIMG、改行、
+通貨のIMG
+</div>
+
+その横に見出しとして
+<div class="anim_txt">独特なエリア、エリア間の交流と独自通貨によるエネルギーマーケットの形成 
+
+テキストワイプ表示の後,
+anim_txt で動くテキストエフェクト　グラデーション。
+
+テキスト内の大きさは「独特」「エリア」「エリア間の交流」「マーケットの形成」が40px
+それ以外のテキストサイズ26px
+<p>枯渇するエネルギー問題に向けて各エリア間は交流を通じてマーケットを独自に形成していく、各エリアの独自システムの共有や独自の通貨を通じてエリア間を行き来し、マーケットを形成してAMPを流通させている。各エリアはチャンピオンシップに欠かせないエネルギーの確保とエリア広告塔としてコンパニオンの獲得にも力を入れている。
+
+<section4>---おわり
+
+余白18px
+実線のトランジッション　左から右へ
+
+<section5>----
+
+<div class="ex_1">
+「矢印」あり、形は>>を下にした矢印で上下に動いている。
+</div>
+
+下
+余白10ｐｘ
+
+見出し
+<div class="anim_txt">ワールドチャンピオンシップを目指す、AIロイドたちの活躍！！ 
+
+テキストワイプ表示の後,
+anim_txt で動くテキストエフェクト　グラデーション。
+
+テキスト内の大きさは「ワールドチャンピオンシップ」が40px
+それ以外のテキストサイズ26px
+<p>RUCCKY-PANの世界では個々のロイドたちが自らのアイデンティティを保つことができる「聖地」として「イベントエリア」が存在する。その主催議会「Ｒ－Ｗ」が主催する「交流イベント」が盛んに行われている。中でも、最高峰とされるデザインコンペティション「ワールドチャンピオンシップ」がある。
+
+<p>の横
+＜IMG＞トロフィー画像のIMG
+
+<section5>ここまで----
+
+ページ右下にページトップへのボタン　＜＜は上へrotation　●　の形
+＞＞out_wrapper"の中に内包する。
+
+以上
+
+フッターは共通を使用

@@ -1,0 +1,358 @@
+.section_block_areaMap {
+  width: 100%;
+  margin: 30px 0;
+}
+.section_block_areaMap {
+  background: url(/images/area/circle_bg_main.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.section_block_areaMap2 {
+  width: auto;
+  height: auto;
+}
+
+.txt_H5_area {
+  padding-top: 20px;
+  font-size: 25px;
+  color: #fff;
+  position: relative;
+  padding-left: 110px; /* 矩形の分だけスペースを確保 */
+}
+.txt_H5_area::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 95px;
+  height: 20px;
+  background-color: rgb(27, 16, 226);
+}
+
+/* 説明ダイアログ */
+.dialog_areamap {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    to bottom,
+    rgb(70, 134, 157) 0%,
+    rgb(5, 93, 125) 50%,
+    rgb(21, 15, 103) 100%
+  );
+  border-radius: 20px;
+  border: 4px dashed #77aadd;
+  padding: 20px;
+  gap: 20px;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.info-left {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.info-left ul {
+  margin: 0 0 0.5em 1em;
+  padding: 0;
+  list-style: none;
+}
+
+.info-left li {
+  margin-bottom: 0.3em;
+}
+
+.info-image {
+  flex-shrink: 0;
+}
+
+.info-image img {
+  max-height: 200px;
+  width: auto;
+}
+
+.info-text {
+  flex: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.section_block_areaMap h2 {
+  margin: 20px 0px;
+}
+
+/* MAP */
+.map-container {
+  position: relative;
+  width: 90%;
+  height: 100vh;
+  margin: 50px auto;
+  background: url(/images/area/circle_bg_inner.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: visible;
+}
+
+.area_inn {
+  position: relative;
+  top: 20%;
+  width: 50%;
+  height: 50vh;
+  margin: 50px auto;
+  background: url(/images/area/circle_bg_inner_inn.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: scale(0);
+  opacity: 0;
+  animation: wipeIn 1.2s ease-out forwards;
+}
+
+@keyframes wipeIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.area {
+  position: absolute;
+  width: 340px;
+  height: auto;
+  background: url(/images/area/area.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: white;
+  text-align: center;
+  line-height: 1.4;
+  padding: 10px;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background 0.3s;
+}
+.area:hover {
+  transform: scale(1.05);
+}
+
+/* 中心2つ */
+.center-event {
+  top: 50%;
+  left: 0%;
+}
+.center-companion {
+  top: 38%;
+  left: 40%;
+}
+
+/*  マーカー   */
+.pos_wrap {
+  position: absolute; /* ← マップ上の座標用 */
+  display: block;
+  margin: 20px;
+  z-index: 3;
+}
+
+/* マーカー画像 */
+.pos img {
+  width: 140px;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.pos {
+  width: 140px;
+  height: auto;
+  position: absolute;
+  animation: bounceY 2.5s infinite ease-in-out;
+  cursor: pointer;
+}
+@keyframes bounceY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.pos_wrap.point1 {
+  position: absolute;
+  top: 18%;
+  left: 10%;
+}
+
+.pos_wrap.point2 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+.pos_wrap.point3 {
+  position: absolute;
+  top: 22%;
+  left: 80%;
+}
+
+/* 吹き出し基本 */
+.balloon {
+  display: block;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: #fff;
+  color: #333;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  font-size: 0.9rem;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+/* 各吹き出し固有の位置調整（必要に応じて変更） */
+.balloon1 {
+  top: -80px;
+  left: 80%;
+}
+.balloon2 {
+  top: -80px;
+  left: 60%;
+}
+.balloon3 {
+  top: -80px;
+  left: 40%;
+}
+
+.balloon4 {
+  top: -80px;
+  left: 50%;
+}
+
+/* ホバー時に表示（アニメーション） */
+.pos_wrap:hover .balloon {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-20px);
+  pointer-events: auto;
+}
+
+/* 放射状配置 */
+.area_dog {
+  top: 15%;
+  left: 40%;
+}
+.area_hipo {
+  top: 18%;
+  left: 20%;
+}
+.area_other {
+  top: 35%;
+  left: 85%;
+}
+.area_cat {
+  top: 55%;
+  left: 65%;
+}
+.area_koala {
+  top: 80%;
+  left: 45%;
+}
+.area_penguin {
+  top: 5%;
+  left: 25%;
+}
+.area_panda {
+  top: 50%;
+  left: 5%;
+}
+.area_bear {
+  top: 35%;
+  left: 2%;
+}
+.area_tanuki {
+  top: 70%;
+  left: 25%;
+}
+
+.map-container2 {
+  position: relative;
+  width: 90%;
+  height: 50vh;
+  margin: 50px auto;
+  background: url(/images/area/circle_bg_under.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*  マーカー 2  */
+.pos_wrap2 {
+  position: absolute;
+  display: block;
+  margin: 20px;
+}
+
+.areaRP {
+  position: absolute;
+  width: 340px;
+  height: 15vh;
+  background: url(/images/area/area_rp.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: white;
+  text-align: center;
+  line-height: 1.4;
+  padding: 10px;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background 0.3s;
+}
+.areaRP:hover {
+  transform: scale(1.05);
+}
+
+.pos_wrap2.point4 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+}
+
+.pos_wrap2.areaRP_pos {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+}
+
+.pos_wrap2.area_dark_pos {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+}
+.pos_wrap2:hover .balloon {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-20px);
+  pointer-events: auto;
+}

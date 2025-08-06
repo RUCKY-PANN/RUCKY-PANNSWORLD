@@ -1,0 +1,150 @@
+---
+import PagetitleH3 from '../../components/PagetitleH3.astro';
+import ScrollToTop from '../../components/ScrollToTop.tsx';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/areaMap.css';
+import '../../styles/common.css';
+
+import { getMeta } from '../../utils/metaManager';
+const meta = getMeta('/pages/areaMap/'); // ← Astro.url.pathnameではなく明示
+---
+
+<BaseLayout {...meta}>
+  <div class="contents_wrapper">
+    <PagetitleH3 title="エリアマップ紹介" subtitle="AreaMap.content" />
+
+    <div class="out_wrapper">
+      <div class="in_wrapper">
+        <div class="areaMap_wrap">
+          <div class="Content_section">
+            <h5 class="txt_H5_area">各エリアの全体図</h5>
+            <section class="section_block_areaMap scroll-fade">
+              <div class="dialog_areamap">
+                <div class="info-left">
+                  <ul>
+                    <li>● 「R-P」 管轄エリア＋セキュリティーエリア</li>
+                    <li>● ロイドエリア</li>
+                    <li>◈ イベント、コンパニオンエリア</li>
+                  </ul>
+                  <p>に分類されています。</p>
+                </div>
+                <div class="info-image">
+                  <img src="/images/area/area_chara.png" alt="キャラクター" />
+                </div>
+                <div class="info-text">
+                  ロイドエリアは順次、縮小拡大、分裂で変化していきます。
+                  各ロイドエリア間では輸送パイプラインで行き来ができ、
+                  出入りが自由、交流が行われています。
+                </div>
+              </div>
+            </section>
+
+            <section class="section_block_areaMap scroll-fade">
+              <div class="map-container">
+                <!-- 中央 -->
+                <div class="area_inn">
+                  <div class="area center-event">
+                    <a href="/areaMap/event/">イベント<br />エリア</a>
+                  </div>
+                  <div class="area center-companion">
+                    <a href="/areaMap/companion/">RPコンパニオン<br />エリア</a>
+                  </div>
+                </div>
+                <div class="pos_wrap point1">
+                  <div class="pos">
+                    <img
+                      src="/images/area/area_point.png?v=3"
+                      alt="エリアポイント"
+                    />
+                  </div>
+                  <div class="balloon balloon1">
+                    ロイド達の区域は外側に位置しています。
+                  </div>
+                </div>
+
+                <div class="pos_wrap point2">
+                  <div class="pos">
+                    <img
+                      src="/images/area/area_point.png?ts=20250718"
+                      alt="エリアポイント"
+                    />
+                  </div>
+                  <div class="balloon balloon2">
+                    コンパニオンとイベントエリアは密接に連携しています。
+                  </div>
+                </div>
+                <div class="pos_wrap point3">
+                  <div class="pos">
+                    <img
+                      src="/images/area/area_point.png?v=1"
+                      alt="エリアポイント"
+                    />
+                  </div>
+                  <div class="balloon balloon3">辺境の地　アザーエリア</div>
+                </div>
+
+                <!-- 放射エリア -->
+                <div class="area area_dog">
+                  <a href="/areaMap/dog/">ドッグロイド<br />エリア</a>
+                </div>
+                <div class="area area_hipo">
+                  <a href="/areaMap/hipo/">ヒッポロイド<br />エリア</a>
+                </div>
+                <div class="area area_other">
+                  <a href="/areaMap/other/">アザーロイド<br />エリア</a>
+                </div>
+                <div class="area area_cat">
+                  <a href="/areaMap/cat/">キャットロイド<br />エリア</a>
+                </div>
+                <div class="area area_koala">
+                  <a href="/areaMap/koala/">コアラロイド<br />エリア</a>
+                </div>
+                <div class="area area_panda">
+                  <a href="/areaMap/panda/">パンダロイド<br />エリア</a>
+                </div>
+                <div class="area area_penguin">
+                  <a href="/areaMap/penguin/">ペンギンロイド<br />エリア</a>
+                </div>
+                <div class="area area_bear">
+                  <a href="/areaMap/bear/">ベアーロイド<br />エリア</a>
+                </div>
+                <div class="area area_tanuki">
+                  <a href="/areaMap/tanuki/">タヌキロイド<br />エリア</a>
+                </div>
+              </div>
+            </section>
+
+            <section class="section_block_areaMap2 scroll-fade">
+              <div class="map-container2">
+                <div class="pos_wrap2 point4">
+                  <div class="pos">
+                    <img
+                      src="/images/area/area_point.png?ts=20718"
+                      alt="エリアポイント"
+                    />
+                  </div>
+                  <div class="balloon balloon4">
+                    R-Pとセキュリティーエリアは密接に関係しています。
+                  </div>
+                </div>
+
+                <div class="pos_wrap2 areaRP_pos">
+                  <div class="areaRP">
+                    <a href="/areaMap/rp/">R-P<br />エリア</a>
+                  </div>
+                </div>
+
+                <div class="pos_wrap2 area_dark_pos">
+                  <div class="area">
+                    <a href="/areaMap/dark/">ダークガード<br />エリア</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <ScrollToTop client:load />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

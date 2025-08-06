@@ -1,0 +1,96 @@
+//apps/web/app/pages/area/Roid_dog.tsxの作成
+
+import AreaLayout from '@/components/AreaLayout/AreaLayout'
+＞＞ヘッダー、フッター、パンくず、ページトップ、などのナビゲーションが設置された親ページ
+
+import Image from 'next/image'
+import style from  './Roid_dog.module.css'が必要
+
+----ここからコンテンツーーーー
+
+エリア共通のページトランジッション
+
+
+<div class="Area_Roidwrapper">
+背景#e5e5f02a
+
+<p>中央の特徴的なスタジアム？でしょうか？このエリアではドッグロイドたちはどんな生活を送っているのでしょうか。
+「テキストボックス　16px　color:white」
+
+余白1行分あけて
+IMG
+余白2行分あけて]
+
+その下
+/*--見出しマーカー見出しのDIVの左横に配置--*/
+<span class="midashiBox"></span>
+/*--見出し--*/
+<div>ドッグロイドアリーナは技術と躍動が融合する、未来型スポーツ空間が象徴的</div>
+
+div{padding-bottom:10px;padding-top:10px;/*left,rightも10pxの余白*/
+width:100%;
+font-siize:16px
+color:white}
+
+.midashiBox{/*「見出しの横の横長矩形」　フェードイン+バウンド　*/
+width:100%; 
+display:flex;
+height:20px;
+bg-color:#0000ffff}
+
+
+その下
+16px余白
+
+角Rの矩形
+<div class="Area_Roid_Contents">
+width:100%;
+背景：ホワイト、文字：ブラック
+@font-face:Meiryo normal
+行間：1.5
+
+<section1>
+
+<div class="area_section">
+<div class="leader">リーダーキャラのIMGは背景扱い</div> .leader:width175* height290,backgroung-images:outfit;
+その横
+<div><span>リーダー：オレン<br>
+/*--セリフ <p>は　一文字づつ出てくるように演出　--*/
+<p>
+「ここは、限界を超え、可能性を広げるスポーツの聖地。身体能力と躍動する本能が加熱する未来の競技場だ。」
+
+
+/*--area_sectionの左下に ボタン要素.RoidAreaButton border-radius12px bg-color:#000082ff　ボタンの中： 〇の中に->の描画　::beforeを使う ボタンの線無し　obClickで押されたように鏡トランジッション --*/
+
+<button class="RoidAreaButton" onClick="ドッグロイドリストのカテゴリ抽出したページへ">このエリアのロイド達　〇の中に->の描画</button>
+
+<div class="area_section2">
+<div>
+<p>中央のコートエリアは、広々とした開放感を持つ場所でありながら、各ドッグロイドが快適に過ごせる 個別ブース も用意されています。このエリアは、自由な活動と適度なプライバシーが絶妙に調和する設計になっています。
+<span>コートエリアの特徴
+<p>広大なスペース: ドッグロイドが思い切り動き回れる空間。地面には衝撃吸収素材が敷かれ、活動しやすい設計に。
+
+余白30px
+
+<div><IMG　770*auto></div>
+
+</div>
+
+余白30px
+
+<div class="area_section3">
+<div class="textArea1">
+<div>
+<span>個別ブースとドッグロイドの生活
+<ul>
+<li>リラックスエリア: 個別ブース内には休憩スペースが設置され、静かな環境で充電 しながら次の活動に備える。
+<li>AIアシスタント: それぞれのブースに専属のサポートシステムがあり、各ロイドの動作ログを分析し、最適なケアやアップグレードを提案。</span>
+</ul>
+</div>
+
+余白30px
+下
+<div>その説明のIMG　　余白30PX　その説明のIMG は横並び</div>
+
+
+------コンテンツ表示領域ここまで------

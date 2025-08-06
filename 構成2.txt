@@ -1,0 +1,26 @@
+src/
+├── components/
+│   └── CharacterIntroCard.astro       //　charaIntro/index.astroで使うカード単体コンポーネント（展開対応）
+├── layouts/
+│   └── BaseLayout.astro               // レイアウト用　　※pages/index.astroは別
+├── pages/
+│   └── charaIntro/
+│       └── index.astro                // 一覧ページ（.map 展開）
+├── scripts/
+│   └── intro_open_close_logic.js      // 展開／閉じる JSロジック
+├── data/
+│   └── charaIntroData.json            // ダミーデータ（microCMSの代替）
+└── styles/
+    └── charaIntro.css                  //index.astro　のスタイル指定（ 展開アニメ・カードスタイル）
+
+
+//charaList/index.astroをMicroCMSから取得するときの構成
+src/
+├── data/
+│   └── characters.ts         ← getCharacters関数（CMSフェッチ）
+├── types/
+│   └── character.ts          ← Character型 / Category型など
+├── utils/
+│   └── categorizeCharacters.ts ← 分類関数
+├── pages/
+│   └── charaList/index.astro ← 表示ページ

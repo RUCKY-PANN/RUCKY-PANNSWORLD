@@ -1,0 +1,59 @@
+Home.tsx　現在の状態
+
+	<PlanetCanvas />
+     <FluidWaveBackground />
+	 
+	 <Dialog />
+		└import Dialog from '@/components/Home_Dialog'
+		
+		
+		これを<PlanetCanvas />内で制御する。
+　　			/components/PlanetUI/PlanetCanvas.tsx
+
+		
+-----------------------------------------------------------------
+		
+Home.tsx
+
+	<PlanetCanvas />
+　　		/components/PlanetUI/PlanetCanvas.tsx
+
+		└<Dialog />※ウェルカムダイアログ
+			└import Dialog from '@/components/PlanetUI/ModalDialog'　名前変更
+		└<ReleaseDialog />
+			└import Dialog from '@/components/PlanetUI/ReleaseDialog'　新規作成
+			機能　テキストの内容が多すぎる場合、スクロールで対応
+			テキストエリア１
+			：新キャラ誕生（charaDetailへリンク）、
+			　＞内容：「R-P」より報告です。
+				〇7/6アザーエリアに新ロイドを誕生させました。彼の活躍を期待しています。応援よろしくお願いします。詳細はこちら
+			テキストエリア2
+			：イベント状況の報告
+			　＞内容：イベント主宰「R-W」より報告です。
+				〇.現在ワールドチャンピオンシップ開催中ですが、ロイド状態の不具合のため一時中断しています。
+				〇.コンパニオンロイド「nhuoo-ru」がパンダエリアの新マスコットとして契約しました。
+			
+			テキストエリア3
+			：エリア状況（各エリアの報告やロイド個人の報告）
+				〇.「R-P」より、AMPが配給されました。AquaCoreの供給が不足しています。イベントの開催を一部中止します。
+				〇.パンダエリアより、「R-W」へ報告、PANNSGODの下腹部にほんの小さな亀裂が見つかりました。
+
+
+
+			各テキストエリアをコンポーネント化、テキストエリア間はボーダーで区切る
+			各セクションテキストエリアは左－右のワイプフェードイン
+			<ul><li>でリスト表示
+
+			ReleaseDialogのデザインスタイル
+			位置、画面左下。　
+			radius12px
+			width:45%
+			height:30%
+			BGカラー：ホワイト
+			各セクションテキストエリアは左－右のワイプフェードイン
+			枠線ソリッド、カラー、薄いブルー、
+			クローズボタン無し。
+			
+			ModalDialog
+			位置、画面左中心。
+			デザインスタイルやクローズボタンは現在のまま
